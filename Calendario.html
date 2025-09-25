@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="EstiloCalendario.css">
   <title>Calendario de cursos 2025 </title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+
   <header>
     <img src="./img/unlam-logo.png" class="logo-img" alt="Logo UNLaM">
     <search class="barra-busqueda">
@@ -28,8 +30,7 @@
     <a>Inscripción para empresas</a>
     <a>Contactanos</a>
   </nav>
-
-
+<main>
   <div class="calendar">
     <div class="calendar-header">
       <button class="prev">&lt;</button>
@@ -55,7 +56,21 @@
       <div class="calendar-day">4</div>
 
       <div class="calendar-day">5</div>
-      <div class="calendar-day">6</div>
+      <div class="calendar-day con-cursos">6
+        <div class="curso-tarjeta">
+          <a href="#" class="curso">Curso 1 JAVA</a>
+          <div class="curso-detalle">
+            Introducción a la lógica y algoritmos para principiantes a la programación en JAVA.
+          </div>
+        </div>
+        <div class="curso-tarjeta">
+          <a href="#" class="curso">Curso Phytom 1</a>
+          <div class="curso-detalle">
+            Fundamentos de Python: variables, estructuras de control y funciones básicas.
+          </div>
+        </div>
+      </div>
+
       <div class="calendar-day">7</div>
       <div class="calendar-day">8</div>
       <div class="calendar-day">9</div>
@@ -64,18 +79,28 @@
 
       <div class="calendar-day">12</div>
       <div class="calendar-day">13</div>
-      <div class="calendar-day">14<a href="https://workspace.google.com/intl/es-419/products/calendar/"> Curso CCS
-          1B</a> </div>
+      <div class="calendar-day">14</div>
       <div class="calendar-day">15</div>
       <div class="calendar-day">16</div>
-      <div class="calendar-day">17</div>
+      <div class="calendar-day">17
+        <div class="curso-tarjeta"><a href="#" class="curso">
+            Curso 1 CCS </a>
+          <div class="curso-detalle"> Principios básicos sobre estilos y aplicación del c+odigo en cascada.
+          </div>
+        </div>
+      </div>
       <div class="calendar-day">18</div>
 
       <div class="calendar-day">19</div>
       <div class="calendar-day">20</div>
       <div class="calendar-day">21</div>
-      <div class="calendar-day">22<a href="https://workspace.google.com/intl/es-419/products/calendar/"> Curso HTML 1A
-        </a></div>
+      <div class="calendar-day">22
+        <div class="curso-tarjeta"><a href="#" class="curso">
+            Curso HTML 1A </a>
+          <div class="curso-detalle"> Introducción a la estructura y etiquetas básicas de HTML.
+          </div>
+        </div>
+      </div>
       <div class="calendar-day">23</div>
       <div class="calendar-day">24</div>
       <div class="calendar-day">25</div>
@@ -89,13 +114,11 @@
       <div class="calendar-day empty"></div>
     </div>
   </div>
-
+</main>
   <footer>
-  <p>Datos del grupo</p>
-  <p>Integrantes: Apellido, Nombre - Apellido, Nombre - Apellido, Nombre</p>
-  <p>Materia: Programación Web I - Año 2024 - Cuatrimestre
-  <p>Universidad Nacional de La Matanza</p>
+    <p>Datos del grupo</p>
   </footer>
+
 </body>
 
 </html>
