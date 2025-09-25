@@ -2,68 +2,100 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="EstiloCalendario.css">
-    <title>Calendario de cursos 2025 </title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="EstiloCalendario.css">
+  <title>Calendario de cursos 2025 </title>
 </head>
 
 <body>
-    <div class="calendar">
-  <div class="calendar-header">
-    <button class="prev">&lt;</button>
-    <h2>Octubre 2025</h2>
-    <h4> Haga click sobre el curso deseado para obtener mas detalles</h4>
-    <button class="next">&gt;</button>
+  <header>
+    <img src="./img/unlam-logo.png" class="logo-img" alt="Logo UNLaM">
+    <search class="barra-busqueda">
+      <form>
+        <input type="search" placeholder="Buscar..">
+        <button type="submit">
+          <img src="./img/lupa-icono.png" class="lupa-icono" alt="Buscar">
+        </button>
+      </form>
+    </search>
+    <img src="./img/avatar-icono.png" class="avatar-img" alt="Mi perfil">
+  </header>
+
+  <nav class="barra-navegacion">
+    <a>Inicio</a>
+    <a>Próximos cursos</a>
+    <a>Regalá un curso</a>
+    <a>Inscripción para empresas</a>
+    <a>Contactanos</a>
+  </nav>
+
+
+  <div class="calendar">
+    <div class="calendar-header">
+      <button class="prev">&lt;</button>
+      <h2>Calendario de cursos de Octubre 2025</h2>
+      <button class="next">&gt;</button>
+    </div>
+    <p class="descripcion"> Haga click sobre el curso deseado para obtener mas detalles</p>
+    <div class="calendar-grid">
+      <div class="day-name">D</div>
+      <div class="day-name">L</div>
+      <div class="day-name">M</div>
+      <div class="day-name">X</div>
+      <div class="day-name">J</div>
+      <div class="day-name">V</div>
+      <div class="day-name">S</div>
+
+      <div class="calendar-day empty"></div>
+      <div class="calendar-day empty"></div>
+      <div class="calendar-day empty"></div>
+      <div class="calendar-day today"><span>1</span></div>
+      <div class="calendar-day">2</div>
+      <div class="calendar-day">3</div>
+      <div class="calendar-day">4</div>
+
+      <div class="calendar-day">5</div>
+      <div class="calendar-day">6</div>
+      <div class="calendar-day">7</div>
+      <div class="calendar-day">8</div>
+      <div class="calendar-day">9</div>
+      <div class="calendar-day">10</div>
+      <div class="calendar-day">11</div>
+
+      <div class="calendar-day">12</div>
+      <div class="calendar-day">13</div>
+      <div class="calendar-day">14<a href="https://workspace.google.com/intl/es-419/products/calendar/"> Curso CCS
+          1B</a> </div>
+      <div class="calendar-day">15</div>
+      <div class="calendar-day">16</div>
+      <div class="calendar-day">17</div>
+      <div class="calendar-day">18</div>
+
+      <div class="calendar-day">19</div>
+      <div class="calendar-day">20</div>
+      <div class="calendar-day">21</div>
+      <div class="calendar-day">22<a href="https://workspace.google.com/intl/es-419/products/calendar/"> Curso HTML 1A
+        </a></div>
+      <div class="calendar-day">23</div>
+      <div class="calendar-day">24</div>
+      <div class="calendar-day">25</div>
+
+      <div class="calendar-day">26</div>
+      <div class="calendar-day">27</div>
+      <div class="calendar-day">28</div>
+      <div class="calendar-day">29</div>
+      <div class="calendar-day">30</div>
+      <div class="calendar-day">31</div>
+      <div class="calendar-day empty"></div>
+    </div>
   </div>
-  <div class = "calendar-grid">
-    <div class="day-name">Dom</div>
-    <div class="day-name">Lun</div>
-    <div class="day-name">Mar</div>
-    <div class="day-name">Mie</div>
-    <div class="day-name">Jue</div>
-    <div class="day-name">Vie</div>
-    <div class="day-name">Sab</div>
 
-    <div class="calendar-day"></div>
-    <div class="calendar-day"></div>
-    <div class="calendar-day"></div>
-    <div class="calendar-day today">1</div>
-    <div class="calendar-day">2</div>
-    <div class="calendar-day">3</div>
-    <div class="calendar-day">4</div>
-
-    <div class="calendar-day">5</div>
-    <div class="calendar-day">6</div>
-    <div class="calendar-day">7</div>
-    <div class="calendar-day">8</div>
-    <div class="calendar-day">9</div>
-    <div class="calendar-day">10</div>
-    <div class="calendar-day">11</div>
-
-    <div class="calendar-day">12</div>
-    <div class="calendar-day">13</div>
-    <div class="calendar-day">14</div>
-    <div class="calendar-day">15</div>
-    <div class="calendar-day">16</div>
-    <div class="calendar-day">17</div>
-    <div class="calendar-day">18</div>
-
-    <div class="calendar-day">19</div>
-    <div class="calendar-day">20</div>
-    <div class="calendar-day">21</div>
-    <div class="calendar-day">22</div>
-    <div class="calendar-day">23</div>
-    <div class="calendar-day">24</div>
-    <div class="calendar-day">25</div>
-
-    <div class="calendar-day">26</div>
-    <div class="calendar-day">27</div>
-    <div class="calendar-day">28</div>
-    <div class="calendar-day">29</div>
-    <div class="calendar-day">30</div> 
-    <div class="calendar-day">31</div>
-    <div class="calendar-day"></div>
-</div>
-</div>  
+  <footer>
+  <p>Datos del grupo</p>
+  <p>Integrantes: Apellido, Nombre - Apellido, Nombre - Apellido, Nombre</p>
+  <p>Materia: Programación Web I - Año 2024 - Cuatrimestre
+  <p>Universidad Nacional de La Matanza</p>
+  </footer>
 </body>
-    </html>
+
+</html>
