@@ -254,49 +254,111 @@ nav {
 /*Footer*/
 
 footer {
+    background-color: rgb(2, 48, 71);
+    color: rgb(255, 255, 255);
+    padding: 2em 1em;
+    font-size: 0.813em;
+    font-weight: 400;
+}
+/*Contenedor de las 3 columnas*/
+
+.footer-container {
     display: flex;
-    justify-content: center;
-    align-items: stretch;
-    background: #555;
-    color: white;
-    padding: 2rem;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap:2rem;
+    gap: 2em;
+    padding: 0 1em;
 }
 
-footer section {
+/*por columna*/
+
+.footer-logo {
+    display: flex;
+    align-items:start;
+    justify-content:left;
     flex: 1;
-    min-width: 12.5rem;
-    padding: 0.625rem;
-    border: 0.063rem solid white;
+    min-width: 10em;
+}
+
+.footer-logo img{
+    height: 5em;
+    width: auto;
+    margin-top: -1em;
+}
+
+
+.footer-datos,.footer-menu, .footer-redes {
+    flex: 1;
+    min-width: 15em;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 0.5em;
 }
 
-footer section *{
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-}
-
+/*Títulos de cada columna*/
 footer h3 {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
-footer p,
-footer a,
-footer li {
-    margin-bottom: 0.5rem;
-}
+/*Lista del menú*/
 
-footer ul {
+.footer-menu ul{
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
-footer a {
-    display: block;
-    color: white;
+.footer-menu a {
+    color: rgb(255, 255, 255);
     text-decoration: none;
+}
+
+.footer-menu a:hover{
+    color: rgb(255,183,3);
+}
+
+/*Redes sociales*/
+.footer-redes a{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-bottom: 0.5em;
+}
+
+.footer-redes a:hover{
+    color: rgb(255,183,3);
+}
+
+.footer-redes img {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.875em;
+    color: rgb(255,255,255,0.7);
+}
+
+/*Responsive */
+
+@media (max-width: 48em){
+    .footer-container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5em;
+    }
+
+    .footer-redes a {
+        justify-content: center;
+    }
 }
