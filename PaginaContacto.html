@@ -11,15 +11,22 @@
         <nav>
             <!-- Logo -->
         <a href="/" class="logo">
-            <img src="" alt="SkillUp">
+            <img src="img/logo skillup.png" alt="SkillUp">
         </a>
 
         <!-- Buscador -->
 
         <form class= "search-form" action="#" method="get">
-            <input type="search" list="cursos" name "q" placeholder="¿Qué cursos quieres buscar?">
-            <datalist id="cursos"></datalist>
-
+            <div class="search-wrapper">
+                <img src="img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
+            </div>
         </form>
 
         <!-- Menú -->
@@ -31,10 +38,15 @@
             <li><a href="#">Contacto</a></li>
         </ul>
 
-        <!-- Acceso / CTA -->
-
-        <a href="#" class="login">Iniciar sesión</a>
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
         </nav>
+        </div>
     </header>
 
     <main>
