@@ -8,24 +8,34 @@
 </head>
 <body>
     <header>
-    <div class="logo">
-        <h1>LOGO</h1>
-    </div>
-        <div class="buscador">
-            <input type="text" placeholder="Buscar...">
-            <button aria-label="Buscar">🔍</button>
-        </div>
-        <div class="carrito">
-            <button aria-label="Carrito">🛒</button>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li> <a href="#">Inicio </a></li>
-            <li> <a href="#">Cursos </a></li>
-            <li> <a href="#">Contacto </a></li>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="" alt="SkillUp">
+        </a>
+
+        <!-- Buscador -->
+
+        <form class= "search-form" action="#" method="get">
+            <input type="search" list="cursos" name "q" placeholder="¿Qué cursos quieres buscar?">
+            <datalist id="cursos"></datalist>
+
+        </form>
+
+        <!-- Menú -->
+
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
         </ul>
-    </nav>
+
+        <!-- Acceso / CTA -->
+
+        <a href="#" class="login">Iniciar sesión</a>
+        </nav>
+    </header>
 
     <main>
     <section id="contacto">
