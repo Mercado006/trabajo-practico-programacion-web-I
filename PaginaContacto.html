@@ -19,7 +19,7 @@
         <form class= "search-form" action="#" method="get">
             <div class="search-wrapper">
                 <img src="img/lupa.png" alt="Buscar" class="search-icon">
-                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
                 <datalist id="cursos">
                     <option value="UX/UI"></option>
                     <option value="JavaScript"></option>
@@ -50,34 +50,55 @@
     </header>
 
     <main>
-    <section id="contacto">
-        <h2>Contacto</h2>
+
+        <!-- Banner contacto  -->
+    <section class="banner-contacto">
+        <div class="banner-text">
+            <h1>Contáctanos</h1>
+                <p>Te ayudamos a elegir el curso perfecto para alcanzar tus metas</p>
+        </div>
+    </section>
+
+    <!-- Sección contacto -->
+    <section id="contacto" class="contacto">
 
     <!-- Formulario -->
-
-        <form action="mailto:empresa@ejemplo.com" method="post" enctype="text/plain">
-            <label for="nombre">Nombre y Apellido:</label>
+        <div class="formulario">
+        <h2>Escribinos tu consulta</h2>
+        <form action="mailto:empresa@ejemplo.com" method="get" enctype="text/plain">
+            <label for="nombre">Nombre y Apellido*:</label>
             <input type="text" id="nombre" name="nombre" required>
 
-            <label for="email">Correo electrónico:</label>
+            <label for="email">Correo electrónico*:</label>
             <input type="email" id="email" name="email" required>
 
             <label for="telefono">Teléfono (opcional):</label>
             <input type="tel" id="telefono" name="telefono">
 
-            <label for="consulta">Consulta:</label>
+            <label for="consulta">Consulta*:</label>
             <textarea name="consulta" id="consulta" rows="5" required></textarea>
             
             <button type="submit">Enviar</button>
         </form>
+    </div>
 
     <!-- Datos de la empresa -->
-
-        <div class="datos-empresa">
-            <h3>Datos de contacto</h3>
-            <p><strong>Dirección:</strong> Calle Falsa 123, Buenos Aires</p>
-            <p><strong>Teléfono:</strong> +54 11 1234 5678</p>
-            <p><strong>Email:</strong> empresa@ejemplo.com</p>
+            <div class="datos-empresa">
+                <p class="dato-titulo">Dirección</p>
+                <p class="dato-contenido">Av. Corrientes 1234, Buenos Aires, Argentina</p>
+            </div>
+            <div class="dato">
+                <p class="dato-titulo">Teléfono</p>
+                <p class="dato-contenido">+54 11 4321 8765</p>
+            </div>
+            <div class="dato">
+                <p class="dato-titulo">Email</p>
+                <p class="dato-contenido">contacto@skillup.com</p>
+            </div>
+            <div class="dato">
+                <p class="dato-titulo">Horario de atención</p>
+                <p class="dato-contenido">Lunes a Viernes, 9:00 a 18:00</p>
+            </div>
         </div>
     </section>
 
@@ -101,7 +122,6 @@
          <section class="footer-logo">
             <img src="img/logo skillup blanco.png" alt="Logo Skillup">
          </section>
-
 
         <section class="footer-datos">
             <h3>Datos del grupo</h3>

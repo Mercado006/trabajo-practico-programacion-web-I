@@ -55,6 +55,12 @@ nav {
     font-size: 1em;
 }
 
+.search-wrapper input:focus {
+    outline: 0.125em solid rgb(2, 48, 71); 
+    box-shadow: none; 
+}
+
+
 .search-icon {
     position: absolute;
     left: 0.6em;
@@ -151,104 +157,117 @@ nav {
     gap:1em;
 }
 
-/* Responsive - Mobile */
-@media (max-width: 48em) { 
-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5em;
-}
 
-.menu {
-    flex-direction: column;
-    gap: 0.5em;
-    width: 100%;
+/*Banner Contacto*/
+
+.banner-contacto{
+    background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), /* overlay negro al 50% */
+        url('img/banner2.jpg');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-}
-
-.search-wrapper {
-    width: 100%;
-    justify-content: center;
-}
-
-.login {
-    margin-top: 0.5em;
-}
-
-.cart {
-    margin-left: 0;
-}
-}
-
-
-
-/*Contacto*/
-
-#contacto {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    padding: 1.875rem;
-}
-
-#contacto h2{
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-#contacto form, #contacto .datos-empresa{
-    flex: 1;
-    min-width: 18.75rem;
-}
-
-#contacto form{
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-}
-
-
-#contacto form input, #contacto form textarea {
-    padding: 0.625rem;
-    border: 0.063rem solid #ccc;
-}
-
-#contacto form button{
-    background: #555;
     color: white;
-    border-radius: 0.5rem;
-    padding: 0.625rem;
-    cursor: pointer;
-    max-width: 6.25rem;
-    text-align: center;
-    align-self: flex-end;
+    padding: 2em;
+}
+
+.banner-text h1{
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.banner-text p {
+    font-size: 1.2em;
+}
+
+/*Sección principal*/
+
+.contacto {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3em;
+    padding: 3em 8%;
+    color: rgb(0, 0, 0);
+}
+
+/*Encabezados*/
+.contacto h2 {
+    font-size: 1.6em;
+    margin-bottom: 1em;
+    color: rgb(2, 48, 71);
+}
+
+/*Formulario*/
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.formulario label {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.formulario input,.formulario textarea {
+    padding: 0.8em;
+    border: 0;
+    background-color: rgb(235, 245, 250);
+    border-radius: 0.5em;
+    font-size: 0.938em;
+    font-family: inherit;
+}
+
+.formulario input:focus, .formulario textarea:focus {
+    outline: 0.188em solid rgb(2, 48, 71);
+}
+
+.formulario button {
+    margin-top: 1em;
+    background-color: rgb(2, 48, 71);
+    color: rgb(255, 255, 255);
+    padding: 0.9em;
     border: none;
-    box-shadow: none;
+    border-radius: 0.5em;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-#contacto .datos-empresa {
-    background: #f2f2f2;
-    padding: 1.25rem;
-    border: 0.063rem solid #ccc;
+.formulario button:hover{
+    background-color: rgb(255,183,3);
+    color: rgb(0, 0, 0);
 }
 
-#contacto .datos-empresa h3 {
-    text-align: center;
+/* DATOS DE LA EMPRESA */
+
+.datos-empresa {
+    background-color: rgb(181, 210, 224);
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.1);
 }
 
-/*ubicacion*/
-
-#ubicacion{
-    padding: 1.875rem;
-    text-align: center;
+.dato {
+    margin-bottom: 1.5em;
 }
 
-#ubicacion iframe{
-    width: 100%;
-    max-width: 100rem;
-    height: 25rem;
-    margin-top: 1.25rem;
-    border: 0.063rem solid #ccc;
+.dato-titulo {
+    font-weight: 600;
+    color: rgb(2, 48, 71);
+    margin-bottom: 0.3em;
+}
+
+.dato-contenido {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
 }
 
 /*Footer*/
