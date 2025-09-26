@@ -1,59 +1,67 @@
 <!DOCTYPE html>
-<html lang = "es">
-    <head>
-        <meta charset = "UTF-8">
-        <link rel = "stylesheet" href ="EstiloInicio.css">
-        <title>Inicio</title>
-    </head>
-    <body>
-       <header>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="EstiloInicio.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header>
+        
         <nav>
             <!-- Logo -->
-        <a href="/" class="logo">
-            <img src="img/logo skillup.png" alt="SkillUp">
-        </a>
+            <a href="/" class="logo">
+                <img src="./Imagenes header y footer/logo skillup.png" alt="SkillUp">
+            </a>
 
-        <!-- Buscador -->
+            <!-- Buscador -->
 
-        <form class= "search-form" action="#" method="get">
-            <div class="search-wrapper">
-                <img src="img/lupa.png" alt="Buscar" class="search-icon">
-                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
-                <datalist id="cursos">
-                    <option value="UX/UI"></option>
-                    <option value="JavaScript"></option>
-                    <option value="Python"></option>
-                    <option value="Marketing digital"></option>
-                </datalist>
+            <form class="search-form" action="#" method="get">
+                <div class="search-wrapper">
+                    <img src="./Imagenes header y footer/lupa.png" alt="Buscar" class="search-icon">
+                    <input type="search" list="cursos" name="q" placeholder="¿Qué cursos quieres buscar?"
+                        autocomplete="off">
+                    <datalist id="cursos">
+                        <option value="UX/UI"></option>
+                        <option value="JavaScript"></option>
+                        <option value="Python"></option>
+                        <option value="Marketing digital"></option>
+                    </datalist>
+                </div>
+            </form>
+
+            <!-- Menú -->
+
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Empresas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+
+            <!-- Acceso / CTA y carrito-->
+            <div class="nav-actions">
+                <a href="#" class="login">Acceder</a>
+                <a href="#" class="cart">
+                    <img src="./Imagenes header y footer/carrito.png" alt="Shopping cart icon representing selected courses in the website navigation bar">
+                    <span class="cart-count">3</span> <!-- por ahora número fijo -->
+                </a>
             </div>
-        </form>
-
-        <!-- Menú -->
-
-        <ul class="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Cursos</a></li>
-            <li><a href="#">Empresas</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-
-        <!-- Acceso / CTA y carrito-->
-    <div class="nav-actions">
-        <a href="#" class="login">Acceder</a>
-        <a href="#" class="cart">
-        <img src="img/carrito.png" alt="Carrito de cursos">
-        <span class="cart-count">3</span> <!-- por ahora número fijo -->
-        </a>
         </nav>
-        </div>
+
     </header>
-<main>
-        <section class = "Slider">
+
+    <main>
+        <!-- Slider-Cursos-Recomendados -->
+
+        <section class="Slider">
             <h2>Cursos recomendados</h2>
-            <img src = "./Imagenes/Captura de pantalla 2025-09-23 000644.png" alt = "Slider">
         </section>
 
-        <section class = "Pasos">
+        <!--Seccion-Pasos -->
+        <section class="Steps-to-enroll">
             <h2>Seguí los pasos para inscribirte a nuestros cursos</h2>
             <ol>
                 <li>
@@ -72,27 +80,67 @@
 
         </section>
 
-        <section class = "Cursos destacados">
+        <!--Cursos-Destacados -->
+        <section class="Fetured-courses">
             <h2>Cursos destacados</h2>
-            <article class = "Curso 1">
-                <img src = "./Imagenes/photo-1613490900233-141c5560d75d.jpeg" alt = "Curso 1">
+            <article class="Course-1">
                 <h3>Programación Basica I</h3>
                 <p>Duración: 20hs</p>
                 <p>Precio: $30.000</p>
             </article>
 
-            <article class = "Curso 2">
-                <img src = "./Imagenes/photo-1613490900233-141c5560d75d.jpeg" alt = "Curso 2">
+            <article class="Course-2">
                 <h3>Ingles Tecnico II</h3>
                 <p>Duración: 20hs</p>
                 <p>Precio: $30.000</p>
             </article>
-            
+
+            <article class="Course-3">
+                <h3>Base de datos</h3>
+                <p>Duración: 20hs</p>
+                <p>Precio: $40.000</p>
+            </article>
+
         </section>
     </main>
 
-    </body>
-    
+    <footer>
+        <div class="footer-container">
+            <section class="footer-logo">
+                <img src="./Imagenes header y footer/logo skillup blanco.png" alt="Logo Skillup">
+            </section>
+
+            <section class="footer-datos">
+                <h3>Datos del grupo</h3>
+                <p>Alegre Melisa - DNI 42.094.003</p>
+                <p>Cali Francisco - DNI 00.000.000</p>
+                <p>Leonardi Mayra - DNI 00.000.000</p>
+                <p>Mercado Sofía Victoria - DNI 00.000.000</p>
+                <p>Possentini Rafael - DNI 00.000.000</p>
+            </section>
+
+            <section class="footer-menu">
+                <h3>Acerca de</h3>
+                <ul>
+                    <li><a href="#">¿Quienés somos?</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </section>
+
+            <section class="footer-redes">
+                <h3>Siguenos</h3>
+                <a href="#"><img src="./Imagenes header y footer/facebook.png" alt="Facebook">Facebook</a>
+                <a href="#"><img src="./Imagenes header y footer/instagram.png" alt="Instagram">Instagram</a>
+                <a href="#"><img src="./Imagenes header y footer/linkedin.png" alt="LinkedIn">LinkedIn</a>
+            </section>
+        </div>
+        <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
 
 
 
