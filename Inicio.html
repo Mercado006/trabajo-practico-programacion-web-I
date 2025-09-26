@@ -6,34 +6,48 @@
         <title>Inicio</title>
     </head>
     <body>
-        <header>  
-            <div class = "Imagen Logo">
-                <img src = "./imagenes/Group 261.png" alt = "Logo">
-            </div> 
+       <header>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="img/logo skillup.png" alt="SkillUp">
+        </a>
 
-            <nav>
-                <div class = "Boton explorar">
-                <button>Explorar</button>
-            </div>      
+        <!-- Buscador -->
 
-            <div class = "Barra de busqueda">
-                <input type = "text" placeholder = "Buscar cursos">
-                <button type = "submit">Buscar</button>
+        <form class= "search-form" action="#" method="get">
+            <div class="search-wrapper">
+                <img src="img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
             </div>
+        </form>
 
-            <div class = "Carrito de cusos">
-                <img src = "./Imagenes/book_ribbon_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt = "Carrito de cursos">
-            </div>
-        
-            </nav>
+        <!-- Menú -->
 
-        </header>
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
 
-        <main>
-            
-        </main>
-    </body>
-    <main>
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
+        </nav>
+        </div>
+    </header>
+<main>
         <section class = "Slider">
             <h2>Cursos recomendados</h2>
             <img src = "./Imagenes/Captura de pantalla 2025-09-23 000644.png" alt = "Slider">
@@ -76,6 +90,9 @@
             
         </section>
     </main>
+
+    </body>
+    
 
 
 
