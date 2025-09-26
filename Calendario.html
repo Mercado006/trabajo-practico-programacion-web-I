@@ -3,121 +3,156 @@
 
 <head>
   <meta charset="UTF-8">
+  <title>Calendario</title>
   <link rel="stylesheet" href="EstiloCalendario.css">
-  <title>Calendario de cursos 2025 </title>
-  <link rel="stylesheet" href="./style.css">
+  
+
 </head>
 
 <body>
 
   <header>
-    <img src="./img/unlam-logo.png" class="logo-img" alt="Logo UNLaM">
-    <search class="barra-busqueda">
-      <form>
-        <input type="search" placeholder="Buscar..">
-        <button type="submit">
-          <img src="./img/lupa-icono.png" class="lupa-icono" alt="Buscar">
-        </button>
-      </form>
-    </search>
-    <img src="./img/avatar-icono.png" class="avatar-img" alt="Mi perfil">
+    <nav>
+
+      <div class="logo">
+        <img src="Imagenes header y footer/logo skillup.png" alt="Logo SkillUp">
+      </div>
+
+      <div class="search-wrapper">
+        <img src="Imagenes header y footer/lupa.png" class="search-icon" alt="Buscar">
+        <input type="text" placeholder="Buscar productos, marcas y más...">
+      </div>
+
+      <div class="nav-actions">
+        <ul class="menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Cursos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <a href="#" class="login">Iniciar Sesión</a>
+
+        <a href="#" class="cart">
+          <img src="Imagenes header y footer/carrito.png" alt="Carrito">
+          <span class="cart-count">3</span>
+        </a>
+      </div>
+    </nav>
   </header>
 
-  <nav class="barra-navegacion">
-    <a>Inicio</a>
-    <a>Próximos cursos</a>
-    <a>Regalá un curso</a>
-    <a>Inscripción para empresas</a>
-    <a>Contactanos</a>
-  </nav>
-<main>
-  <div class="calendar">
-    <div class="calendar-header">
-      <button class="prev">&lt;</button>
-      <h2>Calendario de cursos de Octubre 2025</h2>
-      <button class="next">&gt;</button>
+  <main>
+    <div class="calendar">
+      <div class = "titulo" > Calendario de Cursos 📅 </div>
+      <div class="calendar-header">
+        <button class="prev" aria-label="Mes anterior">&lt;</button>
+        <h1> Octubre 2025 </h1>
+        <button class="next" aria-label="Mes siguiente">&gt;</button>
+
+      </div>
+      <p class="descripcion"> Haga click sobre el curso deseado para obtener mas detalles</p>
+      <div class="calendar-grid">
+        <div class="day-name">D</div>
+        <div class="day-name">L</div>
+        <div class="day-name">M</div>
+        <div class="day-name">X</div>
+        <div class="day-name">J</div>
+        <div class="day-name">V</div>
+        <div class="day-name">S</div>
+
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day today"><span>1</span></div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day">4</div>
+        <div class="calendar-day">5</div>
+        <div class="calendar-day con-cursos">6
+          <div class="curso-tarjeta">
+            <a href="#" class="curso">Curso 1 JAVA</a>
+            <div class="curso-detalle">
+              Introducción a la lógica y algoritmos para principiantes a la programación en JAVA.
+            </div>
+          </div>
+          <div class="curso-tarjeta">
+            <a href="#" class="curso">Curso Phyton 1</a>
+            <div class="curso-detalle">
+              Fundamentos de Python: variables, estructuras de control y funciones básicas.
+            </div>
+          </div>
+        </div>
+
+        <div class="calendar-day">7</div>
+        <div class="calendar-day">8</div>
+        <div class="calendar-day">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day">11</div>
+
+        <div class="calendar-day">12</div>
+        <div class="calendar-day">13</div>
+        <div class="calendar-day">14</div>
+        <div class="calendar-day">15</div>
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17
+          <div class="curso-tarjeta"><a href="#" class="curso">
+              Curso 1 CCS </a>
+            <div class="curso-detalle"> Principios básicos sobre estilos y aplicación del código en cascada.
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day">18</div>
+
+        <div class="calendar-day">19</div>
+        <div class="calendar-day">20</div>
+        <div class="calendar-day">21</div>
+        <div class="calendar-day">22
+          <div class="curso-tarjeta"><a href="#" class="curso">
+              Curso HTML 1A </a>
+            <div class="curso-detalle"> Introducción a la estructura y etiquetas básicas de HTML.
+            </div>
+          </div>
+        </div>
+        <div class="calendar-day">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day">25</div>
+
+        <div class="calendar-day">26</div>
+        <div class="calendar-day">27</div>
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
+        <div class="calendar-day">31</div>
+        <div class="calendar-day empty"></div>
+      </div>
     </div>
-    <p class="descripcion"> Haga click sobre el curso deseado para obtener mas detalles</p>
-    <div class="calendar-grid">
-      <div class="day-name">D</div>
-      <div class="day-name">L</div>
-      <div class="day-name">M</div>
-      <div class="day-name">X</div>
-      <div class="day-name">J</div>
-      <div class="day-name">V</div>
-      <div class="day-name">S</div>
+  </main>
 
-      <div class="calendar-day empty"></div>
-      <div class="calendar-day empty"></div>
-      <div class="calendar-day empty"></div>
-      <div class="calendar-day today"><span>1</span></div>
-      <div class="calendar-day">2</div>
-      <div class="calendar-day">3</div>
-      <div class="calendar-day">4</div>
-
-      <div class="calendar-day">5</div>
-      <div class="calendar-day con-cursos">6
-        <div class="curso-tarjeta">
-          <a href="#" class="curso">Curso 1 JAVA</a>
-          <div class="curso-detalle">
-            Introducción a la lógica y algoritmos para principiantes a la programación en JAVA.
-          </div>
-        </div>
-        <div class="curso-tarjeta">
-          <a href="#" class="curso">Curso Phytom 1</a>
-          <div class="curso-detalle">
-            Fundamentos de Python: variables, estructuras de control y funciones básicas.
-          </div>
-        </div>
-      </div>
-
-      <div class="calendar-day">7</div>
-      <div class="calendar-day">8</div>
-      <div class="calendar-day">9</div>
-      <div class="calendar-day">10</div>
-      <div class="calendar-day">11</div>
-
-      <div class="calendar-day">12</div>
-      <div class="calendar-day">13</div>
-      <div class="calendar-day">14</div>
-      <div class="calendar-day">15</div>
-      <div class="calendar-day">16</div>
-      <div class="calendar-day">17
-        <div class="curso-tarjeta"><a href="#" class="curso">
-            Curso 1 CCS </a>
-          <div class="curso-detalle"> Principios básicos sobre estilos y aplicación del c+odigo en cascada.
-          </div>
-        </div>
-      </div>
-      <div class="calendar-day">18</div>
-
-      <div class="calendar-day">19</div>
-      <div class="calendar-day">20</div>
-      <div class="calendar-day">21</div>
-      <div class="calendar-day">22
-        <div class="curso-tarjeta"><a href="#" class="curso">
-            Curso HTML 1A </a>
-          <div class="curso-detalle"> Introducción a la estructura y etiquetas básicas de HTML.
-          </div>
-        </div>
-      </div>
-      <div class="calendar-day">23</div>
-      <div class="calendar-day">24</div>
-      <div class="calendar-day">25</div>
-
-      <div class="calendar-day">26</div>
-      <div class="calendar-day">27</div>
-      <div class="calendar-day">28</div>
-      <div class="calendar-day">29</div>
-      <div class="calendar-day">30</div>
-      <div class="calendar-day">31</div>
-      <div class="calendar-day empty"></div>
-    </div>
-  </div>
-</main>
   <footer>
-    <p>Datos del grupo</p>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="Imagenes header y footer/logo skillup blanco.png" alt="Logo SkillUp">
+      </div>
+
+      <div class="footer-datos">
+        <h3>Contacto</h3>
+        <p><img src="Imagenes header y footer/ubicacion.png" alt="icono de ubicación"> Dirección 123</p>
+        <p><img src="Imagenes header y footer/telefono.png" alt="Icono de teléfono"> (011) 1234-5678</p>
+        <p><img src="Imagenes header y footer/email.png" alt="icono email"> contacto@skillup.com</p>
+      </div>
+
+      <div class="footer-redes">
+        <h3>Seguinos</h3>
+        <a href="#"><img src="Imagenes header y footer/facebook.png" alt="">Facebook</a>
+        <a href="#"><img src="Imagenes header y footer/instagram.png" alt="">Instagram</a>
+        <a href="#"><img src="Imagenes header y footer/linkedin.png" alt="">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      <p>&copy; 2025 SkillUp - Todos los derechos reservados</p>
+    </div>
   </footer>
 
 </body>
+
 </html>
