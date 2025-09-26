@@ -10,50 +10,50 @@
 <body>
 
   <header>
-        <nav>
-            <!-- Logo -->
-        <a href="/" class="logo">
-            <img src="img/logo skillup.png" alt="SkillUp">
-        </a>
+    <nav>
+      <!-- Logo -->
+      <a href="/" class="logo">
+        <img src="img/logo skillup.png" alt="SkillUp">
+      </a>
 
-        <!-- Buscador -->
+      <!-- Buscador -->
 
-        <form class= "search-form" action="#" method="get">
-            <div class="search-wrapper">
-                <img src="img/lupa.png" alt="Buscar" class="search-icon">
-                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
-                <datalist id="cursos">
-                    <option value="UX/UI"></option>
-                    <option value="JavaScript"></option>
-                    <option value="Python"></option>
-                    <option value="Marketing digital"></option>
-                </datalist>
-            </div>
-        </form>
+      <form class="search-form" action="#" method="get">
+        <div class="search-wrapper">
+          <img src="img/lupa.png" alt="Buscar" class="search-icon">
+          <input type="search" list="cursos" name="q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+          <datalist id="cursos">
+            <option value="UX/UI"></option>
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="Marketing digital"></option>
+          </datalist>
+        </div>
+      </form>
 
-        <!-- Menú -->
+      <!-- Menú -->
 
-        <ul class="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Cursos</a></li>
-            <li><a href="#">Empresas</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Empresas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
 
-        <!-- Acceso / CTA y carrito-->
-    <div class="nav-actions">
+      <!-- Acceso / CTA y carrito-->
+      <div class="nav-actions">
         <a href="#" class="login">Acceder</a>
         <a href="#" class="cart">
-        <img src="img/carrito.png" alt="Carrito de cursos">
-        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+          <img src="img/carrito.png" alt="Carrito de cursos">
+          <span class="cart-count">3</span> <!-- por ahora número fijo -->
         </a>
-        </nav>
-        </div>
-    </header>
+    </nav>
+    </div>
+  </header>
 
   <main>
     <div class="calendar">
-      <div class = "titulo" > Calendario de Cursos 📅 </div>
+      <div class="titulo"> Calendario de Cursos 📅 </div>
       <div class="calendar-header">
         <button class="prev" aria-label="Mes anterior">&lt;</button>
         <h1> Octubre 2025 </h1>
@@ -80,15 +80,21 @@
         <div class="calendar-day">5</div>
         <div class="calendar-day con-cursos">6
           <div class="curso-tarjeta">
-            <a href="#" class="curso">Curso 1 JAVA</a>
+            <a href="#" class="curso">JAVA 1</a>
             <div class="curso-detalle">
-              Introducción a la lógica y algoritmos para principiantes a la programación en JAVA.
+              <img src="img/JAVA.jpg" alt="JAVA 1">
+              <h4>JAVA 1</h4>
+              <p class="duracion">Duración: 2 semanas.</p>
+              <p class="descripcion">Descubre los principios de lógica. Ideal para principiantes en programación.</p>
             </div>
           </div>
           <div class="curso-tarjeta">
-            <a href="#" class="curso">Curso Phyton 1</a>
+            <a href="#" class="curso">PHYTON 2</a>
             <div class="curso-detalle">
-              Fundamentos de Python: variables, estructuras de control y funciones básicas.
+              <img src="img/Phyton.jpg" alt="PHYTON 2">
+              <h4>PHYTON 2</h4>
+              <p class="duracion">Duración: 4 semanas.</p>
+              <p class="descripcion">Introducción y desarrollo de la producción orientada a objetos.</p>
             </div>
           </div>
         </div>
@@ -105,9 +111,13 @@
         <div class="calendar-day">15</div>
         <div class="calendar-day">16</div>
         <div class="calendar-day">17
-          <div class="curso-tarjeta"><a href="#" class="curso">
-              Curso 1 CCS </a>
-            <div class="curso-detalle"> Principios básicos sobre estilos y aplicación del código en cascada.
+          <div class="curso-tarjeta">
+            <a href="#" class="curso">CCS 1</a>
+            <div class="curso-detalle">
+              <img src="img/ccs.jpg" alt="CCS 1">
+              <h4>CCS 1</h4>
+              <p class="duracion">Duración: 1 semana.</p>
+              <p class="descripcion">Aprendé los principios básicos de estilos y el código en cascada.</p>
             </div>
           </div>
         </div>
@@ -117,9 +127,13 @@
         <div class="calendar-day">20</div>
         <div class="calendar-day">21</div>
         <div class="calendar-day">22
-          <div class="curso-tarjeta"><a href="#" class="curso">
-              Curso HTML 1A </a>
-            <div class="curso-detalle"> Introducción a la estructura y etiquetas básicas de HTML.
+          <div class="curso-tarjeta">
+            <a href="#" class="curso">HTML 1A</a>
+            <div class="curso-detalle">
+              <img src="img/html.jpg" alt="HTML 1A">
+              <h4>HTML 1A</h4>
+              <p class="duracion">Duración: 2 semanas.</p>
+              <p class="descripcion">Aprendé la estructura básica de una página web con etiquetas HTML.</p>
             </div>
           </div>
         </div>
@@ -137,41 +151,41 @@
       </div>
     </div>
   </main>
-  
+
   <footer>
     <div class="footer-container">
-         <section class="footer-logo">
-            <img src="img/logo skillup blanco.png" alt="Logo Skillup">
-         </section>
+      <section class="footer-logo">
+        <img src="img/logo skillup blanco.png" alt="Logo Skillup">
+      </section>
 
-        <section class="footer-datos">
-            <h3>Datos del grupo</h3>
-            <p>Alegre Melisa - DNI 42.094.003</p>
-            <p>Cali Francisco - DNI 00.000.000</p>
-            <p>Leonardi Mayra - DNI 00.000.000</p>
-            <p>Mercado Sofía Victoria - DNI 00.000.000</p>
-            <p>Possentini Rafael - DNI 00.000.000</p>
-        </section>
+      <section class="footer-datos">
+        <h3>Datos del grupo</h3>
+        <p>Alegre Melisa - DNI 42.094.003</p>
+        <p>Cali Francisco - DNI 00.000.000</p>
+        <p>Leonardi Mayra - DNI 00.000.000</p>
+        <p>Mercado Sofía Victoria - DNI 00.000.000</p>
+        <p>Possentini Rafael - DNI 00.000.000</p>
+      </section>
 
-        <section class="footer-menu">
-            <h3>Acerca de</h3>
-            <ul>
-                <li><a href="#">¿Quiénes somos?</a></li>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">Privacidad</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-            </ul>
-        </section>
+      <section class="footer-menu">
+        <h3>Acerca de</h3>
+        <ul>
+          <li><a href="#">¿Quiénes somos?</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </section>
 
-        <section class="footer-redes">
-            <h3>Siguenos</h3>
-            <a href="#"><img src="img/facebook.png" alt="Facebook">Facebook</a>
-            <a href="#"><img src="img/instagram.png" alt="Instagram">Instagram</a>
-            <a href="#"><img src="img/linkedin.png" alt="LinkedIn">LinkedIn</a>
-        </section>
+      <section class="footer-redes">
+        <h3>Siguenos</h3>
+        <a href="#"><img src="img/facebook.png" alt="Facebook">Facebook</a>
+        <a href="#"><img src="img/instagram.png" alt="Instagram">Instagram</a>
+        <a href="#"><img src="img/linkedin.png" alt="LinkedIn">LinkedIn</a>
+      </section>
     </div>
     <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
-    </footer>
+  </footer>
 
 </body>
 

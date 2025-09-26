@@ -152,25 +152,55 @@ body {
     top: 0;
     left: 100%;
     margin-left: 0.5rem;
-    background-color: #fff8dc;
+    background-color: #fff;
     border: 1px solid #ccc;
-    padding: 0.5rem;
+    padding: 0.75rem;
     font-size: 0.75rem;
-    width: 220px;
+    width: 240px;
     z-index: 10;
     border-radius: 0.75rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: fadeIn 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-main {
-    padding: 2em 0em 1em 0em;
+.curso-detalle img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.curso-detalle h4 {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: rgb(2, 48, 71);
+}
+
+.curso-detalle .duracion {
+    font-size: 0.75rem;
+    font-style: italic;
+    margin: 0.25rem 0;
+}
+
+.curso-detalle .descripcion {
+    font-size: 0.75rem;
+    margin: 0;
+    color: #333;
+}
+
+.curso-tarjeta {
+    position: relative;
 }
 
 .curso-tarjeta:hover .curso-detalle {
     display: block;
     opacity: 1;
 }
+
+
+main {
+    padding: 2em 0em 1em 0em;
+}
+
 
 header {
     width: 100%;
