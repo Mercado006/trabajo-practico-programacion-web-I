@@ -160,30 +160,40 @@ nav {
 /*Main*/
 
 /*Slider-Cursos-Recomendados*/
+
 .suggested-courses {
     display: flex;
-    gap: 5.5em;
+    gap: 3.5em;
     padding: 2.25em;
+    align-items: center;
 }
 
+/*info inicial*/
 .first-info {
-    flex: 0;
+    flex: 1;
 }
 
 .first-info h2 {
     margin-bottom: 0.625em;
+    font-size: 2em;
+    color: rgb(2 48 71)
 }
 
 .first-info p {
-    color: #555;
+    font-size: 1em;
+    line-height: 1.5;
+    color: rgb(2 48 71);
+
 }
 
+/*contenedor slider*/
 .slider {
     display: flex;
     gap: 1.25em;
-    flex: 2;
+    flex: 3;
 }
 
+/*Tarjeta individual*/
 .slider-card {
     min-width: 15.625em;
     display: flex;
@@ -204,29 +214,45 @@ nav {
     align-items: center;
     gap: 0.3125em;
     margin-bottom: 0.3125em;
-    margin-top: 0.875em; /* Ojo: antes tenías coma , */
 }
 
 .students-icon {
-    width: 1em;
-    height: 1em;
-    margin-left: 0.3125em;
-    margin-top: 0.875em; /* Ojo: antes tenías coma , */
+    width: 3em !important;
+    height: auto;
+    margin:0.5em
 }
 
 .students-text {
     font-size: 0.875em;
-    color: #555;
+    color: rgb(2 48 71);
 }
 
 .slider-card h3 {
     font-size: 1.5em;
     font-weight: 600;
+    color: rgb(2 48 71);
     margin-bottom: 0.625em;
-    padding: 0 0.625em 0.625em 0.625em;
+    padding: 0.625em;
+    line-height: 1.3em;
+
+}
+.slider-wrappwe{
+    position: relative;
+}
+.slider-arrows button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
 }
 
-
+.slider-arrows img {
+    width: 2.5em;
+    height: 2.5em;
+    filter: invert(20%) sepia(100%) saturate(500%) hue-rotate(170deg) brightness(90%) contrast(85%);
+    object-fit: contain;
+}
 
 
 
