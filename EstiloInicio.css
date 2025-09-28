@@ -190,7 +190,7 @@ nav {
 .slider {
     display: flex;
     gap: 1.25em;
-    flex: 3;
+    flex: 2;
 }
 
 /*Tarjeta individual*/
@@ -219,7 +219,7 @@ nav {
 .students-icon {
     width: 3em !important;
     height: auto;
-    margin:0.5em
+    margin: 0.5em
 }
 
 .students-text {
@@ -234,26 +234,94 @@ nav {
     margin-bottom: 0.625em;
     padding: 0.625em;
     line-height: 1.3em;
+}
 
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
 }
-.slider-wrappwe{
-    position: relative;
+
+.slider-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
 }
+
 .slider-arrows button {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-
 }
 
 .slider-arrows img {
     width: 2.5em;
-    height: 2.5em;
-    filter: invert(20%) sepia(100%) saturate(500%) hue-rotate(170deg) brightness(90%) contrast(85%);
-    object-fit: contain;
+    height: auto;
 }
 
+/*Seccion-Pasos*/
+.steps-to-enroll {
+    padding: 2em;
+    color: rgb(2, 48, 71);
+    background-color: #e3f2f8;
+}
+
+.steps-to-enroll h2 {
+    font-size: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.steps-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Cada tarjeta de paso */
+.step-card {
+    background-color: white;
+    border-radius: 0.75em;
+    box-shadow: 0 0.25em 0.5em rgba(2, 48, 71, 0.2);
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15em;
+    text-align: center;
+}
+
+/* Número del paso */
+.step-number {
+    width: 3em;
+    height: 3em;
+    background-color: rgb(2, 48, 71);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+/* Texto del paso */
+.step-text h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.2em;
+}
+
+.step-text p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4em;
+}
 
 
 /*Footer*/
