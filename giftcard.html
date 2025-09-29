@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estiloGiftCard.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de contacto</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="img/logo skillup.png" alt="SkillUp">
+        </a>
+
+        <!-- Buscador -->
+
+        <form class= "search-form" action="#" method="get">
+            <div class="search-wrapper">
+                <img src="img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
+            </div>
+        </form>
+
+        <!-- Menú -->
+
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
+        </nav>
+        </div>
+    </header>
+
+    <main class="giftcard-main">
+
+        <!-- Vista previa -->
+        <section class="giftcard-preview">
+            <div class="card" id="preview-card" style="background-image: url('img/fondo1.jpg');">
+                <div class="card-amount" id="preview-amount">$0000</div>
+                <p class="preview-note">Vista previa de resultado de personalización</p>
+            </div>
+        </section>
+
+        <!-- Personalización -->
+
+        <section class="giftcard-form">
+            <h2>Elige el diseño</h2>
+            <form>
+                <label for="nombre">Nombre del destinatario</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ana Gómez">
+
+        <!-- Color -->
+
+        <label>Color del texto</label>
+            <div class="options color-options">
+                <input type="radio" name="color" id="c1"><label for="c1" class="color-swatch" style="background:#000;"></label>
+                <input type="radio" name="color" id="c2"><label for="c2" class="color-swatch" style="background:#435645;"></label>
+                <input type="radio" name="color" id="c3"><label for="c3" class="color-swatch" style="background:#7BCDBA;"></label>
+                <input type="radio" name="color" id="c4"><label for="c4" class="color-swatch" style="background:#E63946;"></label>
+                <input type="radio" name="color" id="c5"><label for="c5" class="color-swatch" style="background:#F4A261;"></label>
+            </div>
+
+        <label>Tamaño de fuente</label>
+            <div class="options">
+                <input type="radio" name="font-size" id="s20"><label for="s20">20px</label>
+                <input type="radio" name="font-size" id="s28"><label for="s28">28px</label>
+                <input type="radio" name="font-size" id="s32"><label for="s32">32px</label>
+                <input type="radio" name="font-size" id="s48"><label for="s48">48px</label>
+                <input type="radio" name="font-size" id="s60"><label for="s60">60px</label>
+            </div>
+
+        <!-- Monto -->
+        <label for="monto">Monto $</label>
+        <input type="number" id="monto" name="monto" min="100" step="100">
+
+        <!-- Ubicación -->
+
+        <label>Ubicación</label>
+            <div class="options location-options">
+                <input type="radio" name="ubicacion" id="u1"> <label for="u1">Arriba izq</label>
+                <input type="radio" name="ubicacion" id="u2"><label for="u2">Arriba der</label>
+                <input type="radio" name="ubicacion" id="u3"><label for="u3">Abajo izq</label>
+                <input type="radio" name="ubicacion" id="u4"><label for="u4">Abajo der</label>
+            </div>
+
+        <!-- Fondo -->
+
+        <label>Fondo</label>
+            
+            <div class="options background-options">
+                <input type="radio" name="fondo" id="f1"><label for="f1" class="bg-swatch" style="background-image:url('img/fondo1-thumb.jpg');"></label>
+                <input type="radio" name="fondo" id="f2"><label for="f2" class="bg-swatch" style="background-image:url('img/fondo2-thumb.jpg');"></label>
+                <input type="radio" name="fondo" id="f3"><label for="f3" class="bg-swatch" style="background-image:url('img/fondo3-thumb.jpg');"></label>
+                <input type="radio" name="fondo" id="f4"><label for="f4" class="bg-swatch" style="background-image:url('img/fondo4-thumb.jpg');"></label>
+            </div>
+
+        <!-- Botón -->
+        <button type="submit" class="btn-confirmar">Confirmar</button>
+
+
+
+
+            </form>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <section class="footer-logo">
+            <img src="img/logo skillup blanco.png" alt="Logo Skillup">
+        </section>
+
+        <section class="footer-datos">
+            <h3>Datos del grupo</h3>
+            <p>Alegre Melisa - DNI 42.094.003</p>
+            <p>Cali Francisco - DNI 00.000.000</p>
+            <p>Leonardi Mayra - DNI 00.000.000</p>
+            <p>Mercado Sofía Victoria - DNI 00.000.000</p>
+            <p>Possentini Rafael - DNI 00.000.000</p>
+        </section>
+
+        <section class="footer-menu">
+            <h3>Acerca de</h3>
+            <ul>
+                <li><a href="#">¿Quienés somos?</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+        </section>
+
+        <section class="footer-redes">
+            <h3>Siguenos</h3>
+            <a href="#"><img src="img/facebook.png" alt="Facebook">Facebook</a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram">Instagram</a>
+            <a href="#"><img src="img/linkedin.png" alt="LinkedIn">LinkedIn</a>
+        </section>
+    </div>
+    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
