@@ -274,7 +274,7 @@ nav {
     text-align: center;
 }
 
-.steps-container {
+.steps-wrapper {
     padding: 0;
     margin: 0;
     display: flex;
@@ -283,7 +283,6 @@ nav {
     justify-content: center;
 }
 
-/* Cada tarjeta de paso */
 .step-card {
     background-color: white;
     border-radius: 0.75em;
@@ -296,7 +295,6 @@ nav {
     text-align: center;
 }
 
-/* Número del paso */
 .step-number {
     width: 3em;
     height: 3em;
@@ -311,7 +309,6 @@ nav {
     margin-bottom: 1em;
 }
 
-/* Texto del paso */
 .step-text h3 {
     margin: 0 0 0.5em 0;
     font-size: 1.2em;
@@ -322,6 +319,86 @@ nav {
     font-size: 1em;
     line-height: 1.4em;
 }
+
+/* Sección Cursos Destacados */
+.highlighted-courses {
+    padding: 2em;
+    background-color: rgb(255, 255, 255);
+    color: rgb(2, 48, 71);
+}
+
+.highlighted-courses h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2em;
+    color: rgb(2, 48, 71);
+}
+
+.wrapper-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+    border-radius: 1.5em;
+    max-width: 23em;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to top, rgb(2, 48, 71), rgb(33, 158, 188));
+    align-items: center;
+}
+
+.box img {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+}
+
+.box h3 {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.25em 0;
+}
+
+.box p {
+    font-size: 1em;
+    margin: 0.2em 0;
+}
+
+.box button {
+    margin-top: 1em;
+    padding: 0.5em 1.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.75em;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255, 183, 3);
+    color: rgb(2, 48, 71);
+    transition: background 0.3s;
+}
+
+.box button:hover {
+    background-color: rgb(3, 93, 138);
+    color: #fff;
+}
+
+@media screen and (min-width: 48em) {
+    .box {
+        flex: 1 1 calc(50% - 2em);
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .box {
+        flex: 1 1 calc(33.3% - 2em);
+    }
+}
+
 
 
 /*Footer*/
