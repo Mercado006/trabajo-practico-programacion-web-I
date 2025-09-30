@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estiloGiftCard.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de contacto</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="img/logo skillup.png" alt="SkillUp">
+        </a>
+
+        <!-- Buscador -->
+
+        <form class= "search-form" action="#" method="get">
+            <div class="search-wrapper">
+                <img src="img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
+            </div>
+        </form>
+
+        <!-- Menú -->
+
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
+        </nav>
+        </div>
+    </header>
+
+    <main class="giftcard-main">
+
+        <div class="giftcard-content">
+
+        <!-- Vista previa -->
+        <section class="giftcard-preview">
+            <div class="card" id="preview-card" style="background-image: url('img/fondo5.jpg');">
+                <div class="card-amount" id="preview-amount">$0</div>
+                <p class="preview-note">Vista previa</p>
+            </div>
+        </section>
+
+        <!-- Personalización -->
+
+        <section class="giftcard-form">
+            <h2>Personalizá tu Gift Card</h2>
+            <form>
+                <label for="nombre">Nombre del destinatario</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej:Ana Gómez">
+
+        <!-- Color -->
+        <div class="form-columns">
+        <div class="form-group">
+        <label>Color del texto</label>
+            <div class="options color-options">
+                <input type="radio" name="color" id="c1"><label for="c1" class="color-swatch black"></label>
+                <input type="radio" name="color" id="c2"><label for="c2" class="color-swatch pink"></label>
+                <input type="radio" name="color" id="c3"><label for="c3" class="color-swatch green"></label>
+                <input type="radio" name="color" id="c4"><label for="c4" class="color-swatch violet"></label>
+                <input type="radio" name="color" id="c5"><label for="c5" class="color-swatch red"></label>
+            </div>
+        </div>
+        </div>
+        
+        <label for="font-size">Tamaño de fuente</label>
+            <select name="font-size" id="font-size">
+                <option value="20">20px</option>
+                <option value="28">28px</option>
+                <option value="32">32px</option>
+                <option value="48">48px</option>
+                <option value="60">60px</option>
+            </select>
+            
+
+        <!-- Monto -->
+        <label>Monto</label>
+        <div class="options amount-options">
+    <label>
+        <input type="radio" name="monto" value="100">
+        <span>$5.000</span>
+    </label>
+    <label>
+        <input type="radio" name="monto" value="200">
+        <span>$10.000</span>
+    </label>
+    <label>
+        <input type="radio" name="monto" value="300">
+        <span>$15.000</span>
+    </label>
+    <label class="other-swatch">
+        <input type="radio" name="monto" value="other">
+        <span>+</span>
+        <input type="number" name="monto-otro" class="other-input" placeholder="$">
+    </label>
+</div>
+
+        <!-- Ubicación -->
+
+        <label>Ubicación</label>
+            <div class="options location-options">
+                <input type="radio" name="ubicacion" id="u1">
+                <label for="u1" class="loc-swatch top-left"></label>
+
+                <input type="radio" name="ubicacion" id="u2">
+                <label for="u2" class="loc-swatch top-right"></label>
+
+                <input type="radio" name="ubicacion" id="u3">
+                <label for="u3" class="loc-swatch bottom-left"></label>
+
+                <input type="radio" name="ubicacion" id="u4">
+                <label for="u4" class="loc-swatch bottom-right"></label>
+</div>
+
+        <!-- Fondo -->
+
+        <label>Fondo</label>
+            
+            <div class="options background-options">
+                <input type="radio" name="fondo" id="f1"><label for="f1" class="bg-swatch" style="background-image:url('img/fondo1.jpg');"></label>
+                <input type="radio" name="fondo" id="f2"><label for="f2" class="bg-swatch" style="background-image:url('img/fondo2.jpg');"></label>
+                <input type="radio" name="fondo" id="f3"><label for="f3" class="bg-swatch" style="background-image:url('img/fondo4.jpg');"></label>
+                <input type="radio" name="fondo" id="f4"><label for="f4" class="bg-swatch" style="background-image:url('img/fondo3.jpg');"></label>
+                <input type="radio" name="fondo" id="f5"><label for="f5" class="bg-swatch" style="background-image:url('img/fondo7.jpg');"></label>
+            </div>
+
+            <!-- Mensaje -->
+    <label for="mensaje">Mensaje para el destinatario</label>
+    <textarea id="mensaje" name="mensaje" placeholder="Escribí tu mensaje aquí..." rows="3"></textarea>
+
+
+        <!-- Botón -->
+        <button type="button" class="btn-añadircarrito">Añadir al carrito</button>
+        <button type="submit" class="btn-comprar">Comprar</button>
+            </form>
+        </section>
+</div>
+
+        <!-- Preguntas frecuentes -->
+
+        <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+
+    <details>
+        <summary>¿Cómo puedo personalizar mi gift card?</summary>
+        <p>Podés elegir el color, fondo, monto y la ubicación del mensaje directamente en el formulario de personalización.</p>
+    </details>
+
+    <details>
+        <summary>¿La gift card tiene vencimiento?</summary>
+        <p>Sí, las gift cards tienen una validez de 6 meses desde la fecha de compra.</p>
+    </details>
+
+    <details>
+        <summary>¿Puedo enviar la gift card por email?</summary>
+        <p>Sí, podés enviarla por correo electrónico al destinatario o descargarla para imprimir.</p>
+    </details>
+
+    <details>
+        <summary>¿Qué medios de pago aceptan?</summary>
+        <p>Aceptamos tarjeta de crédito, débito y billeteras virtuales.</p>
+    </details>
+
+    <details>
+        <summary>¿Puedo pedir devolución de una gift card?</summary>
+        <p>No realizamos devoluciones, pero podés transferir la gift card a otra persona.</p>
+    </details>
+</section>
+
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <section class="footer-logo">
+            <img src="img/logo skillup blanco.png" alt="Logo Skillup">
+        </section>
+
+        <section class="footer-datos">
+            <h3>Datos del grupo</h3>
+            <p>Alegre Melisa - DNI 42.094.003</p>
+            <p>Cali Francisco - DNI 00.000.000</p>
+            <p>Leonardi Mayra - DNI 00.000.000</p>
+            <p>Mercado Sofía Victoria - DNI 00.000.000</p>
+            <p>Possentini Rafael - DNI 00.000.000</p>
+        </section>
+
+        <section class="footer-menu">
+            <h3>Acerca de</h3>
+            <ul>
+                <li><a href="#">¿Quienés somos?</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+        </section>
+
+        <section class="footer-redes">
+            <h3>Siguenos</h3>
+            <a href="#"><img src="img/facebook.png" alt="Facebook">Facebook</a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram">Instagram</a>
+            <a href="#"><img src="img/linkedin.png" alt="LinkedIn">LinkedIn</a>
+        </section>
+    </div>
+    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
