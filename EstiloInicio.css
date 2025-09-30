@@ -372,7 +372,7 @@ nav {
     margin: 0.2em 0;
 }
 
-.box button {
+.box.button {
     margin-top: 1em;
     padding: 0.5em 1.5em;
     font-size: 1rem;
