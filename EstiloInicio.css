@@ -340,7 +340,7 @@ nav {
     flex-wrap: wrap;
     gap: 1.5em;
     justify-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -372,7 +372,7 @@ nav {
     margin: 0.2em 0;
 }
 
-.box.button {
+.button {
     margin-top: 1em;
     padding: 0.5em 1.5em;
     font-size: 1rem;
@@ -385,7 +385,7 @@ nav {
     transition: background 0.3s;
 }
 
-.box button:hover {
+.button:hover {
     background-color: rgb(3, 93, 138);
     color: #fff;
 }
