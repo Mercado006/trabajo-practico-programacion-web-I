@@ -77,8 +77,9 @@
 
             <label for="consulta">Consulta*:</label>
             <textarea name="consulta" id="consulta" rows="5" required></textarea>
-            
-            <button type="submit">Enviar</button>
+
+        <!-- "Boton que activa el checkbox" -->
+        <label for="show-success" class="btn-enviar">Enviar</label>
         </form>
     </div>
 
@@ -114,11 +115,20 @@
         <img src="img/horario.png" alt="Horario" class="icono">
         <div class="dato-texto">
             <span class="dato-titulo">Horario de atención:</span>
-            <span class="dato-contenido">Lunes a Viernes, 9:00 a 18:00</span>
+            <span class="dato-contenido">Lunes a Viernes, 9:00 a 18:00hs</span>
         </div>
     </div>
 </div>
     </section>
+
+    <input type="checkbox" id="show-success" hidden>
+
+    <div class="success-overlay">
+        <div class="success-message">
+            <p>¡Formulario enviado con éxito!</p>
+            <label for="show-success" class="close-btn">Cerrar</label>
+        </div>
+    </div>
 
     <!-- Ubicación -->
 
@@ -137,9 +147,9 @@
 <!-- Footer -->
 <footer>
     <div class="footer-container">
-         <section class="footer-logo">
+        <section class="footer-logo">
             <img src="img/logo skillup blanco.png" alt="Logo Skillup">
-         </section>
+        </section>
 
         <section class="footer-datos">
             <h3>Datos del grupo</h3>
