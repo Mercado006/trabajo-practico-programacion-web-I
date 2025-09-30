@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 
-
+.login-header{
+    background-color: transparent;
+    box-shadow: none;
+}
 
 /*fondo degradado*/
 
@@ -266,4 +269,39 @@ footer h3 {
     margin-top: 2em;
     font-size: 0.875em;
     color: rgb(255,255,255,0.7);
+}
+
+/* --- 1. RESPONSIVE (max-width: 30em) --- */
+@media (max-width: 30em) {
+
+    .login-header {
+        padding: 1.5em 1.5em; 
+    }
+    .login-page {
+        padding: 1em; 
+        align-items: flex-start;
+    }
+    
+    /* TARJETA DE REGISTRO */
+    .login-card {
+        padding: 2em 1.5em; 
+        margin-bottom: 1em; 
+    }
+    
+    /* TÍTULOS Y TEXTO */
+    .card-content h1 {
+        font-size: 1.5em;
+    }
+
+    /* Reducción de inputs y botones */
+    .login-form input[type="email"],
+    .login-form input[type="password"],
+    .login-form input[type="text"] {
+        padding: 0.7em; 
+    }
+    .btn-primary, .btn-google {
+        padding: 0.8em;
+        font-size: 0.9em;
+        min-height: 3em;
+    }
 }

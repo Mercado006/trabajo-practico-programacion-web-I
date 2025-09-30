@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 
-
+.login-header{
+    background-color: transparent;
+    box-shadow: none;
+}
 
 /*fondo degradado*/
 
@@ -177,104 +180,46 @@ body {
     font-weight: 600;
 }
 
+/* --- RESPONSIVE(max-width: 30em) --- */
+@media (max-width: 30em) {
+    
+    /* ENLACE DE VOLVER */
+    .login-header {
+        padding: 1.5em 1.5em; 
+    }
+    
+    /*CONTENEDOR PRINCIPAL */
+    .login-page {
+        padding: 1em; 
+        align-items: flex-start; 
+    }
+    
+    /* TARJETA DE LOGIN */
+    .login-card {
+        padding: 2em 1.5em; 
+        margin-bottom: 1em; 
+    }
+    
+    /* TÍTULOS */
+    .card-content h1 {
+        font-size: 1.5em; 
+    }
+    .subtitule {
+        margin-bottom: 1.5em;
+    }
 
+    /* OPCIONES DEL FORMULARIO */
+    .form-options {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 0.5em;
+        margin-bottom: 1.5em;
+    }
 
-
-
-
-/*Footer*/
-
-footer {
-    background-color: rgb(2, 48, 71);
-    color: rgb(255, 255, 255);
-    padding: 2em 1em;
-    font-size: 0.813em;
-    font-weight: 400;
-}
-/*Contenedor de las 3 columnas*/
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2em;
-    padding: 0 1em;
-}
-
-/*por columna*/
-
-.footer-logo {
-    display: flex;
-    align-items:start;
-    justify-content:left;
-    flex: 1;
-    min-width: 10em;
-}
-
-.footer-logo img{
-    height: 5em;
-    width: auto;
-    margin-top: -1em;
-}
-
-
-.footer-datos,.footer-menu, .footer-redes {
-    flex: 1;
-    min-width: 15em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-/*Títulos de cada columna*/
-footer h3 {
-    margin-bottom: 0.5em;
-    font-size: 1.1em;
-    font-weight: 600;
-}
-
-/*Lista del menú*/
-
-.footer-menu ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-.footer-menu a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-.footer-menu a:hover{
-    color: rgb(255,183,3);
-}
-
-/*Redes sociales*/
-.footer-redes a{
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin-bottom: 0.5em;
-}
-
-.footer-redes a:hover{
-    color: rgb(255,183,3);
-}
-
-.footer-redes img {
-    width: 1.2em;
-    height: 1.2em;
-}
-
-.footer-copy {
-    text-align: center;
-    margin-top: 2em;
-    font-size: 0.875em;
-    color: rgb(255,255,255,0.7);
+    /* BOTONES */
+    .btn-primary, .btn-google {
+        padding: 0.8em;
+        font-size: 0.9em;
+        min-height: 3em;
+    }
 }
