@@ -173,6 +173,8 @@ nav {
     gap: 10em;
 }
 
+
+
 /* Vista previa */
 .giftcard-preview {
     display: flex;
@@ -218,6 +220,7 @@ nav {
     padding: 2em;
     border-radius: 1em;
 }
+
 
 .giftcard-form h2 {
     font-size: 1.5rem;
@@ -485,6 +488,7 @@ textarea#mensaje {
     font-size: 1em;
     color: rgb(51, 51, 51);
 }
+
 
 
 /*Footer*/
