@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./detalles-del-curso-estilo-python.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <title>Detalles del curso</title>
+</head>
+<body>
+     <header>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="../detalles-del-curso-img/logo skillup.png" alt="Logo de SkillUp">
+        </a>
+
+        <!-- Buscador -->
+
+        <form class= "search-form" action="#" method="get">
+            <div class="search-wrapper">
+                <img src="../detalles-del-curso-img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
+            </div>
+        </form>
+
+        <!-- Menú -->
+
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="../detalles-del-curso-img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
+        </nav>
+        </div>
+    </header>
+
+   <main>        
+        <section class="curso-section">
+            <figure class="curso-python-img">
+                <img src="../detalles-del-curso-img/curso-aprende-python.jpg">
+            </figure>
+            <div class="curso-info">
+                <h1>Introducción a Python</h1>
+                <ul class="curso-detalles">
+                    <li><strong>Valor:</strong> $30.000 ARS.</li>
+                    <li><strong>Tiempo de dedicación necesario:</strong> 45 horas.</li>
+                </ul>
+                <details>
+                    <summary><strong>Descripción del curso:</strong></summary>
+                    <p>Este curso ofrece una introducción completa al lenguaje de programación Python, enfocándose en los conceptos esenciales para comenzar a programar.</p>
+                    <p>Aprenderás la sintaxis básica, trabajar con variables, tipos de datos, estructuras de control y funciones, y desarrollar pequeños programas prácticos.</p>
+                    <p>Ideal para principiantes sin experiencia previa en programación que quieran iniciarse en Python.</p>
+                </details>
+                <details>
+                    <summary><strong>Requisitos previos:</strong></summary>
+                    <ul>
+                        <li>Conocimientos básicos de uso de computadora e internet.</li>
+                        <li>Familiaridad con conceptos elementales de informática.</li>
+                        <li>Ganas de aprender programación desde cero.</li>
+                        <li>Instalación previa de Python y un editor de código (por ejemplo, VS Code o PyCharm).</li>
+                    </ul>
+                </details>
+                <button class="curso-boton-inscripcion">Inscribirse</button>
+                <div class="curso-contenidos">
+                    <h2>Contenidos por clase</h2>
+                    <details>
+                        <summary>Introducción</summary>
+                        <ol>
+                            <li>Presentación de Python: características, historia y aplicaciones.</li>
+                            <li>Instalación y configuración del entorno (Python + IDE).</li>
+                            <li>Primer programa: estructura básica y ejecución.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°1</summary>
+                        <ol>
+                            <li>Variables, tipos de datos y constantes.</li>
+                            <li>Operadores aritméticos, lógicos y relacionales.</li>
+                            <li>Entrada y salida de datos.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°2</summary>
+                        <ol>
+                            <li>Sentencias condicionales (if, else, elif).</li>
+                            <li>Bucles (for, while).</li>
+                            <li>Control de flujo: break, continue y pass.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°3</summary>
+                        <ol>
+                            <li>Definición y uso de funciones.</li>
+                            <li>Parámetros, argumentos y valores de retorno.</li>
+                            <li>Importación y uso de módulos estándar.</li>
+                        </ol>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="docente-section">
+            <h3>Docente</h3>
+            <div class="docente-info">
+                <figure class="docente-img">
+                    <img src="../detalles-del-curso-img/docente-python-foto.png" alt="Foto del docente">
+                </figure>
+                <div class="docente-desc">
+                    <h4>Guido van Rossum</h4>
+                    <img class="docente-califiacion-img" src="../detalles-del-curso-img/docente-calificacion-cinco-estrellas.png" alt="Califación del docente">
+                    <p>Conocido como el “Padre de Python”, Guido van Rossum es el creador de este lenguaje y un referente mundial en programación. Con más de 35 años de experiencia, ha trabajado en proyectos clave de Google, Dropbox y Microsoft.</p>
+                    <p>Su claridad para explicar conceptos complejos y su pasión por la enseñanza lo convierten en un docente excepcional para este curso.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="cursos-relacionados">
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-java-1.png" alt="Curso de Java">
+                <span class="curso-precio-python">$25.000 ARS</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Introducción a Java</h5>
+                    <a href="../detalles-de-curso-java/detalles-del-curso-java.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">40 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-sql-avanzado.png" alt="Curso de SQL">
+                <span class="curso-precio-sql">$45.000 ARS</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>SQL Avanzado</h5>
+                    <a href="../detalles-de-curso-sql/detalles-del-curso-sql.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">60 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-intensivo-js.jpg" alt="Curso de JavaScript">
+                <span class="curso-precio-fundamentos-de-js">$40.000</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Fundamentos de JS</h5>
+                    <a href="../detalles-de-curso-javascript/detalles-del-curso-javascript.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">50 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-testing.png" alt="Curso de testing">
+                <span class="curso-precio-testing">$20.000</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Testing básico</h5>
+                    <a href="../detalles-de-curso-testing/detalles-del-curso-testing.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">35 hs</p>
+            </div>
+        </article>
+    </aside>
+</body>
+</html>

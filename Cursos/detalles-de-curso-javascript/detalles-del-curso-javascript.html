@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./detalles-del-curso-estilo-javascript.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <title>Detalles del curso</title>
+</head>
+<body>
+     <header>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="../detalles-del-curso-img/logo skillup.png" alt="Logo de SkillUp">
+        </a>
+
+        <!-- Buscador -->
+
+        <form class= "search-form" action="#" method="get">
+            <div class="search-wrapper">
+                <img src="../detalles-del-curso-img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
+            </div>
+        </form>
+
+        <!-- Menú -->
+
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="../detalles-del-curso-img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
+        </nav>
+        </div>
+    </header>
+
+   <main>        
+        <section class="curso-section">
+            <figure class="curso-python-img">
+                <img src="../detalles-del-curso-img/curso-intensivo-js.jpg">
+            </figure>
+            <div class="curso-info">
+                <h1>Fundamentos de JS</h1>
+                <ul class="curso-detalles">
+                    <li><strong>Valor:</strong> $40.000 ARS.</li>
+                    <li><strong>Tiempo de dedicación necesario:</strong> 50 horas.</li>
+                </ul>
+                <details>
+                    <summary><strong>Descripción del curso:</strong></summary>
+                    <p>Este curso brinda una introducción completa al lenguaje de programación JavaScript, cubriendo los fundamentos esenciales para el desarrollo web.</p>
+                    <p>Aprenderás a crear aplicaciones simples, comprender la estructura de un programa Java, y trabajar con variables, tipos de datos, control de flujo y métodos.</p>
+                    <p>Ideal para principiantes que quieran iniciarse en la programación y el desarrollo web.</p>
+                </details>
+                <details>
+                    <summary><strong>Requisitos previos:</strong></summary>
+                    <ul>
+                        <li>Conocimientos básicos de navegación web y uso de un navegador.</li>
+                        <li>Familiaridad con conceptos básicos de programación (variables, condicionales, bucles).</li>
+                        <li>Conocimientos elementales de HTML y CSS.</li>
+                        <li>Manejo básico de un editor de código (por ejemplo, VS Code).</li>
+                    </ul>
+                </details>
+                <button class="curso-boton-inscripcion">Inscribirse</button>
+                <div class="curso-contenidos">
+                    <h2>Contenidos por clase</h2>
+                    <details>
+                        <summary>Introducción</summary>
+                        <ol>
+                            <li>Presentación de JavaScript: historia, características y ámbitos de uso (web, backend con Node.js, aplicaciones híbridas, etc.).</li>
+                            <li>Instalación y configuración del entorno de desarrollo (navegador, Node.js, editor de código).</li>
+                            <li>Primer programa en JavaScript: estructura básica, ejecución en consola y en navegador.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°1</summary>
+                        <ol>
+                            <li>Variables y constantes: var, let, const y su alcance (scope).</li>
+                            <li>Tipos de datos primitivos y no primitivos: string, number, boolean, null, undefined, object, array.</li>
+                            <li>Operadores: aritméticos, lógicos, relacionales, ternario y operadores especiales (typeof, instanceof).</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°2</summary>
+                        <ol>
+                            <li>Estructuras condicionales: if, else, switch.</li>
+                            <li>Bucles: for, while, do-while, for...in, for...of.</li>
+                            <li>Funciones: declaración, expresión, arrow functions, parámetros y valores por defecto.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°3</summary>
+                        <ol>
+                            <li>Objetos: creación, acceso a propiedades, métodos y destructuring.</li>
+                            <li>Arrays: métodos comunes (map, filter, reduce, find, forEach), spread operator y destructuring.</li>
+                            <li>Manejo de errores: try, catch, finally, y buenas prácticas de depuración.</li>
+                        </ol>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="docente-section">
+            <h3>Docente</h3>
+            <div class="docente-info">
+                <figure class="docente-img">
+                    <img src="../detalles-del-curso-img/docente-javascript-foto.jpg" alt="Foto del docente">
+                </figure>
+                <div class="docente-desc">
+                    <h4>Brendan Eich</h4>
+                    <img class="docente-califiacion-img" src="../detalles-del-curso-img/docente-calificacion-cinco-estrellas.png" alt="Califación del docente">
+                    <p>Conocido como el creador de JavaScript, Brendan Eich es un referente mundial en desarrollo web y estándares de programación. Con más de 30 años de experiencia, ha trabajado en Mozilla y ha influido profundamente en la evolución del lenguaje.</p>
+                    <p>Su claridad para explicar conceptos y su pasión por la enseñanza lo convierten en un docente excepcional para este curso de JavaScript.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="cursos-relacionados">
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-java-1.png" alt="Curso de Java">
+                <span class="curso-precio-java-1">$25.000 ARS</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Introducción a Java</h5>
+                    <a href="../detalles-de-curso-java/detalles-del-curso-java.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">40 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-aprende-python.jpg" alt="Curso de Python">
+                <span class="curso-precio-python">$30.000 ARS</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Introducción a Python</h5>
+                    <a href="../detalles-de-curso-python/detalles-del-curso-python.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">45 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-sql-avanzado.png" alt="Curso de SQL">
+                <span class="curso-precio-sql">$45.000</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>SQL Avanzado</h5>
+                    <a href="../detalles-de-curso-sql/detalles-del-curso-sql.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">60 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-testing.png" alt="Curso de testing">
+                <span class="curso-precio-testing">$20.000</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Testing básico</h5>
+                    <a href="../detalles-de-curso-testing/detalles-del-curso-testing.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">35 hs</p>
+            </div>
+        </article>
+    </aside>
+</body>
+</html>
