@@ -12,6 +12,7 @@ body {
 /* header*/
 header {
     width: 100%;
+    position: fixed;
     height: 4.5em;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -60,7 +61,6 @@ nav {
     box-shadow: none;
 }
 
-
 .search-icon {
     position: absolute;
     left: 0.6em;
@@ -69,6 +69,7 @@ nav {
     padding-left: 0.2em;
     pointer-events: none;
 }
+
 
 /*Menu principal*/
 
@@ -339,6 +340,8 @@ nav {
     flex-wrap: wrap;
     gap: 1.5em;
     justify-items: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .box {
@@ -399,6 +402,71 @@ nav {
     }
 }
 
+/*Sección Gift Card*/
+.gift-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-inline-size: 134em;
+    padding: 2.4em;
+    background-color: rgb(2, 48, 71);
+    border-radius: 2.4em;
+    color: rgb(255, 255, 255);
+    margin: 4.8rem;
+    gap: 2em;
+}
+
+.gift-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    max-width: 50%;
+}
+
+.gift-card img {
+    max-inline-size: 40%;
+    height: auto;
+    display: block;
+}
+
+.gift-card h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.gift-card p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.gift-card-button {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background-color: #ffb703;
+    color: #023047;
+    border-radius: 0.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 48em) {
+    .gift-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gift-card-wrapper {
+        max-width: 100%;
+    }
+
+    .gift-card-img {
+        max-inline-size: 70%;
+        margin-top: 1em;
+    }
+}
 
 
 /*Footer*/
