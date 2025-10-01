@@ -9,50 +9,45 @@
 
 <body>
     <header>
+    <nav>
 
-        <nav>
-            <!-- Logo -->
-            <a href="/" class="logo">
-                <img src="./Imagenes header y footer/logo skillup.png" alt="SkillUp">
-            </a>
+      <a href="/" class="logo">
+        <img src="img/logo skillup.png" alt="SkillUp">
+      </a>
 
-            <!-- Buscador -->
 
-            <form class="search-form" action="#" method="get">
-                <div class="search-wrapper">
-                    <img src="./Imagenes header y footer/lupa.png" alt="Buscar" class="search-icon">
-                    <input type="search" list="cursos" name="q" placeholder="¿Qué cursos quieres buscar?"
-                        autocomplete="off">
-                    <datalist id="cursos">
-                        <option value="UX/UI"></option>
-                        <option value="JavaScript"></option>
-                        <option value="Python"></option>
-                        <option value="Marketing digital"></option>
-                    </datalist>
-                </div>
-            </form>
 
-            <!-- Menú -->
+      <form class="search-form" action="#" method="get">
+        <div class="search-wrapper">
+          <img src="img/lupa.png" alt="Buscar" class="search-icon">
+          <input type="search" list="cursos" name="q" placeholder="Buscar cursos" autocomplete="off">
+          <datalist id="cursos">
+            <option value="UX/UI"></option>
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="Marketing digital"></option>
+          </datalist>
+        </div>
+      </form>
 
-            <ul class="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Cursos</a></li>
-                <li><a href="#">Empresas</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
 
-            <!-- Acceso / CTA y carrito-->
-            <div class="nav-actions">
-                <a href="#" class="login">Acceder</a>
-                <a href="#" class="cart">
-                    <img src="./Imagenes header y footer/carrito.png"
-                        alt="Shopping cart icon representing selected courses in the website navigation bar">
-                    <span class="cart-count">3</span> <!-- por ahora número fijo -->
-                </a>
-            </div>
-        </nav>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Empresas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
 
-    </header>
+
+      <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+          <img src="img/carrito.png" alt="Carrito de cursos">
+          <span class="cart-count">3</span>
+        </a>
+      </div>
+    </nav>
+  </header>
 
     <main>
         <!-- Slider-Cursos-Recomendados -->
