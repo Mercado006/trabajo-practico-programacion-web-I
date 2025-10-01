@@ -8,47 +8,43 @@
     <title>Detalles del curso</title>
 </head>
 <body>
-     <header>
-        <nav>
-            <!-- Logo -->
-        <a href="/" class="logo">
-            <img src="../detalles-del-curso-img/logo skillup.png" alt="Logo de SkillUp">
-        </a>
+    <header>
+    <nav>
 
-        <!-- Buscador -->
+      <a href="/" class="logo">
+        <img src="/img/logo skillup.png" alt="SkillUp">
+      </a>
+      <form class="search-form" action="#" method="get">
+        <div class="search-wrapper">
+          <img src="/img/lupa.png" alt="Buscar" class="search-icon">
+          <input type="search" list="cursos" name="q" placeholder="Buscar cursos" autocomplete="off">
+          <datalist id="cursos">
+            <option value="UX/UI"></option>
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="Marketing digital"></option>
+          </datalist>
+        </div>
+      </form>
 
-        <form class= "search-form" action="#" method="get">
-            <div class="search-wrapper">
-                <img src="../detalles-del-curso-img/lupa.png" alt="Buscar" class="search-icon">
-                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
-                <datalist id="cursos">
-                    <option value="UX/UI"></option>
-                    <option value="JavaScript"></option>
-                    <option value="Python"></option>
-                    <option value="Marketing digital"></option>
-                </datalist>
-            </div>
-        </form>
-
-        <!-- Menú -->
 
         <ul class="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Cursos</a></li>
-            <li><a href="#">Empresas</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/Inicio/Inicio.html">Inicio</a></li>
+            <li><a href="/Calendario/Calendario.html">Cursos</a></li>
+            <li><a href="/formulario/formulario-inscripcion.html">Empresas</a></li>
+            <li><a href="/Página de contacto/PaginaContacto.html">Contacto</a></li>
         </ul>
 
-        <!-- Acceso / CTA y carrito-->
-    <div class="nav-actions">
-        <a href="#" class="login">Acceder</a>
-        <a href="#" class="cart">
-        <img src="../detalles-del-curso-img/carrito.png" alt="Carrito de cursos">
-        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+
+      <div class="nav-actions">
+        <a href="/Login y registro/login.html" class="login">Acceder</a>
+        <a href="/formulario/formulario-inscripcion.html" class="cart">
+          <img src="/img/carrito.png" alt="Carrito de cursos">
+          <span class="cart-count">3</span>
         </a>
-        </nav>
-        </div>
-    </header>
+      </div>
+    </nav>
+  </header>
 
    <main>        
         <section class="curso-section">
@@ -208,7 +204,7 @@
         <section class="footer-menu">
             <h3>Acerca de</h3>
             <ul>
-                <li><a href="#">¿Quienés somos?</a></li>
+                <li><a href="/sobre-nosotros/sobre-nosotros.html">¿Quienés somos?</a></li>
                 <li><a href="#">Preguntas frecuentes</a></li>
                 <li><a href="#">Privacidad</a></li>
                 <li><a href="#">Términos y condiciones</a></li>
