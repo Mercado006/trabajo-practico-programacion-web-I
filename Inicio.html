@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="EstiloInicio.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header>
+    <nav>
+
+      <a href="/" class="logo">
+        <img src="./Imagenes header y footer/logo skillup.png" alt="SkillUp">
+      </a>
+
+
+
+      <form class="search-form" action="#" method="get">
+        <div class="search-wrapper">
+          <img src="./Imagenes header y footer/lupa.png" alt="Buscar" class="search-icon">
+          <input type="search" list="cursos" name="q" placeholder="Buscar cursos" autocomplete="off">
+          <datalist id="cursos">
+            <option value="UX/UI"></option>
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="Marketing digital"></option>
+          </datalist>
+        </div>
+      </form>
+
+
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Empresas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+
+
+      <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+          <img src="./Imagenes header y footer/carrito.png" alt="Carrito de cursos">
+          <span class="cart-count">3</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+    <main>
+        <!-- Slider-Cursos-Recomendados -->
+
+        <section class="suggested-courses">
+            <div class="first-info">
+                <h2>Cursos recomendados</h2>
+                <p>Nuestra plataforma te ayuda a desarrollar competencias demandadas rápidamente y a crecer
+                    profesionalmente en un mercado laboral en constante cambio.</p>
+            </div>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <article class="slider-card">
+                        <img src="./Img Main/CursoRecomendado-Programacion.jpg" alt="Curso Recomendado Programación Web" class="curso-recomendado">
+                        <div class="course-info">
+                            <div class="students">
+                                <img src="./Img Main/groups_100dp_023047_FILL0_wght400_GRAD0_opsz48.png"
+                                    alt="students-icon" class="students-icon">
+                                <span class="students-text">Más de 1 millón de estudiantes</span>
+                            </div>
+                            <h3>Programación Web</h3>
+                        </div>
+                    </article>
+                    <article class="slider-card">
+                        <img src="./Img Main/CursoRecomendado-DiseñoGrafico 2.jpg" alt="Diseño Gráfico" class="curso-recomendado">
+                        <div class="course-info">
+                            <div class="students">
+                                <img src="./Img Main/groups_100dp_023047_FILL0_wght400_GRAD0_opsz48.png"
+                                    alt="students-icon" class="students-icon">
+                                <span class="students-text">Más de 200 mil de estudiantes</span>
+                            </div>
+                            <h3>Diseño Gráfico</h3>
+                        </div>
+                    </article>
+                    <article class="slider-card">
+                        <img src="./Img Main/CursoRecomendado-BasedeDatos.jpg" alt="Base de Datos" class="curso-recomendado">
+                        <div class="course-info">
+                            <div class="students">
+                                <img src="./Img Main/groups_100dp_023047_FILL0_wght400_GRAD0_opsz48.png"
+                                    alt="students-icon" class="students-icon">
+                                <span class="students-text">Más de 20 millones de estudiantes</span>
+                            </div>
+                            <h3>Base de datos</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="slider-arrows">
+                    <button class="left-arrow-btn">
+                        <img src="./Img Main/arrow_left.png"
+                            alt="left-arrow-icon" class="left-arrow-icon">
+                    </button>
+                    <button class="right-arrow-btn">
+                        <img src="./Img Main/arrow_right.png"
+                            alt="right-arrow-icon" class="right-arrow-icon">
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Sección Pasos -->
+        <section class="steps-to-enroll">
+            <h2>Seguí los pasos para inscribirte a nuestros cursos</h2>
+            <ol class="steps-wrapper">
+                <li class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <h3>Elegí el curso</h3>
+                        <p>Buscá en la plataforma el curso que más te interese.</p>
+                    </div>
+                </li>
+                <li class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <h3>Completá el formulario</h3>
+                        <p>Ingresa tus datos y envíalos.</p>
+                    </div>
+                </li>
+                <li class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <h3>Realizá el pago</h3>
+                        <p>Elegí el mejor método de pago.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <!--Cursos-Destacados -->
+        <section class="highlighted-courses">
+            <h2>Te presentamos nuestros cursos destacados</h2>
+            <div class="wrapper-courses">
+                <article class="box">
+                    <img src="./Img Main/curso-java-1.png" alt="Curso Java 1"
+                        class="curso-java-1">
+                    <h3>Introducción a Java</h3>
+                    <p>Duración: 40 horas</p>
+                    <p>Precio: $25.000 ARS</p>
+                    <a href="./-del-curso" class="button">Ver detalle</a>
+                </article>
+                <article class="box">
+                    <img src="./Img Main/curso-fundamentos-de-Js.jpg" alt="Fundamentos de JS"
+                        class="fundamentos-de-JS">
+                    <h3>Fundamentos de JS</h3>
+                    <p>Duración: 50 horas</p>
+                    <p>Precio: $40.000 ARS</p>
+                    <a href="#" class="button">Ver detalle</a>
+                </article>
+                <article class="box">
+                    <img src="./Img Main/curso-introduccion-python.jpg" alt="Introducción a Python"
+                        class="introducción-a-python">
+                    <h3>Introducción a Python</h3>
+                    <p>Duración: 45 horas</p>
+                    <p>Precio: $30.000 ARS</p>
+                    <a href="#" class="button">Ver detalle</a>
+                </article>
+                <article class="box">
+                    <img src="./Img Main/curso-sql-avanzado.png" alt="SQL Avanzado"
+                        class="SQL-avanzado">
+                    <h3>SQL Avanzado</h3>
+                    <p>Duración: 60 horas</p>
+                    <p>Precio: $45.000 ARS</p>
+                    <a href="#" class="button">Ver detalle</a>
+                </article>
+                <article class="box">
+                    <img src="./Img Main/curso-testing.png" alt="Testing básico"
+                        class="testing-básico">
+                    <h3>Testing básico</h3>
+                    <p>Duración: 35 horas</p>
+                    <p>Precio: $20.000 ARS</p>
+                    <a href="#" class="button">Ver detalle</a>
+                </article>
+            </div>
+        </section>
+
+        <!--Sección Gift Card-->
+        <section class="gift-card">
+            <div class="gift-card-wrapper">
+                <article class="gift-card-info">
+                    <h2>Regalá conocimiento con nuestras Gift Cards</h2>
+                    <p>Elegí el monto, personalizá el diseño y sorprende a quien quieras.</p>
+                    <a href="#" class="gift-card-button" data-testid="cta-button">Comprar Gift Card</a>
+                </article>
+            </div>
+            <img src="./Img Main/ilustracion_gift_card-01.png" alt="gift-card" class="gift-card-img">
+
+        </section>
+
+    </main>
+<footer>
+    <div class="footer-container">
+      <section class="footer-logo">
+        <img src="./Imagenes header y footer/logo skillup blanco.png" alt="Logo Skillup">
+      </section>
+
+      <section class="footer-datos">
+        <h3>Datos del grupo</h3>
+        <p>Alegre Melisa - DNI 42.094.003</p>
+        <p>Cali Francisco - DNI 00.000.000</p>
+        <p>Leonardi Mayra - DNI 44.360.732</p>
+        <p>Mercado Sofía Victoria - DNI 47.410.999</p>
+        <p>Possentini Rafael - DNI 95.969.407</p>
+      </section>
+
+      <section class="footer-menu">
+        <h3>Acerca de</h3>
+        <ul>
+          <li><a href="#">¿Quienés somos?</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-redes">
+        <h3>Siguenos</h3>
+        <a href="#"><img src="./Imagenes header y footer/facebook.png" alt="Facebook">Facebook</a>
+        <a href="#"><img src="./Imagenes header y footer/instagram.png" alt="Instagram">Instagram</a>
+        <a href="#"><img src="./Imagenes header y footer/linkedin.png" alt="LinkedIn">LinkedIn</a>
+      </section>
+    </div>
+    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+
+
+
+
+
+
+
+</html>
