@@ -127,9 +127,10 @@
     }
 
     .slider-card {
-        max-width: 16em;
-        min-width: 18em;
-    }
+    width: 18em;
+    min-width: 16em;
+    max-width: 20em;
+}
 }
 
 /* RESPONSIVE DEL SLIDER (Moviles: max-width: 48em / 768px)  */
