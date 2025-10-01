@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-header{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*fondo degradado*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(150deg, rgb(100, 144, 165) 0%, rgb(231, 224, 250) 10%, rgb(196, 215, 223) 25%, rgb(167, 202, 219) 50%, rgb(231, 224, 250) 75%,rgb(250, 240, 250) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*enlace de volver*/
+
+.login-header {
+    padding: 1.5em 3em;
+}
+
+.back-link {
+    color: rgb(2, 48, 71);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.back-arrow-icon {
+    height: 1.3em;
+    width: auto;
+    vertical-align: middle;
+}
+
+/*Contenedor principal y centrado de la tarjeta*/
+
+.login-page {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+/*Tarjeta de login*/
+
+.login-card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.5em;
+    box-shadow: 0 1em 3em rgba(0,0,0,0.1);
+    padding: 3em 4em;
+    width: 100%;
+    max-width: 35em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.logo-login img {
+    height: 3em;
+    margin-bottom: 1em;
+}
+
+/* Títulos y subtítulos*/
+
+.card-content h1 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    color: rgb(2, 48, 71);
+}
+
+.subtitule {
+    font-size: 0.9em;
+    color: rgb(136, 136, 136);
+    margin-bottom: 2em;
+}
+
+/* Formulario y campos*/
+.login-form {
+    width: 100%;
+}
+
+
+.login-form label {
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"]{
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 0.5em;
+    font-family: inherit;
+}
+
+#confirm_password {
+    margin-bottom: 2em; 
+}
+/* Botones CTA*/
+
+.btn-primary, .btn-google {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border-radius: 0.5em;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 0 1em 0;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 0.9em;
+    border: none;
+    line-height: normal;
+    min-height: 3.5em;
+}
+
+.btn-primary {
+    /* Color principal (el azul/morado del ejemplo) */
+    background-color: rgb(2, 48, 71); 
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: rgb(255,183,3);
+    color: rgb(0, 0 , 0);
+}
+
+
+.btn-google {
+    background-color: white;
+    color: #333;
+    border: 0.063em solid rgb(221, 221, 221);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.btn-google img {
+    width: 1.4em;
+    height: 1.4em;
+}
+
+/*Enlace de registro*/
+
+.signup-prompt {
+    font-size: 0.9em;
+    margin-top: 1.5em;
+}
+
+.signup-prompt a {
+    color: rgb(6, 119, 175);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+
+
+
+
+/*Footer*/
+
+footer {
+    background-color: rgb(2, 48, 71);
+    color: rgb(255, 255, 255);
+    padding: 2em 1em;
+    font-size: 0.813em;
+    font-weight: 400;
+}
+/*Contenedor de las 3 columnas*/
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 0 1em;
+}
+
+/*por columna*/
+
+.footer-logo {
+    display: flex;
+    align-items:start;
+    justify-content:left;
+    flex: 1;
+    min-width: 10em;
+}
+
+.footer-logo img{
+    height: 5em;
+    width: auto;
+    margin-top: -1em;
+}
+
+
+.footer-datos,.footer-menu, .footer-redes {
+    flex: 1;
+    min-width: 15em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+/*Títulos de cada columna*/
+footer h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/*Lista del menú*/
+
+.footer-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.footer-menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-menu a:hover{
+    color: rgb(255,183,3);
+}
+
+/*Redes sociales*/
+.footer-redes a{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-bottom: 0.5em;
+}
+
+.footer-redes a:hover{
+    color: rgb(255,183,3);
+}
+
+.footer-redes img {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.875em;
+    color: rgb(255,255,255,0.7);
+}
+
+/* --- 1. RESPONSIVE (max-width: 30em) --- */
+@media (max-width: 30em) {
+
+    .login-header {
+        padding: 1.5em 1.5em; 
+    }
+    .login-page {
+        padding: 1em; 
+        align-items: flex-start;
+    }
+    
+    /* TARJETA DE REGISTRO */
+    .login-card {
+        padding: 2em 1.5em; 
+        margin-bottom: 1em; 
+    }
+    
+    /* TÍTULOS Y TEXTO */
+    .card-content h1 {
+        font-size: 1.5em;
+    }
+
+    /* Reducción de inputs y botones */
+    .login-form input[type="email"],
+    .login-form input[type="password"],
+    .login-form input[type="text"] {
+        padding: 0.7em; 
+    }
+    .btn-primary, .btn-google {
+        padding: 0.8em;
+        font-size: 0.9em;
+        min-height: 3em;
+    }
+}

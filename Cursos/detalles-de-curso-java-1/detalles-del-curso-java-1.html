@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./detalles-del-curso-estilo-java-1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <title>Detalles del curso</title>
+</head>
+<body>
+     <header>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="../detalles-del-curso-img/logo skillup.png" alt="Logo de SkillUp">
+        </a>
+
+        <!-- Buscador -->
+
+        <form class= "search-form" action="#" method="get">
+            <div class="search-wrapper">
+                <img src="../detalles-del-curso-img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
+            </div>
+        </form>
+
+        <!-- Menú -->
+
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="../detalles-del-curso-img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
+        </nav>
+        </div>
+    </header>
+
+   <main>        
+        <section class="curso-section">
+            <figure class="curso-java-1-img">
+                <img src="../detalles-del-curso-img/curso-java-1.png">
+            </figure>
+            <div class="curso-info">
+                <h1>Introducción a Java</h1>
+                <ul class="curso-detalles">
+                    <li><strong>Valor:</strong> $25.000 ARS.</li>
+                    <li><strong>Tiempo de dedicación necesario:</strong> 40 horas.</li>
+                </ul>
+                <details>
+                    <summary><strong>Descripción del curso:</strong></summary>
+                    <p>Este curso ofrece una introducción completa al lenguaje de programación Java, enfocándose en los conceptos básicos de la programación orientada a objetos.</p>
+                    <p>Aprenderás a crear aplicaciones simples, comprender la estructura de un programa Java, y trabajar con variables, tipos de datos, control de flujo y métodos.</p>
+                    <p>Ideal para principiantes sin experiencia previa en programación.</p>
+                </details>
+                <details>
+                    <summary><strong>Requisitos previos:</strong></summary>
+                    <ul>
+                        <li>Conocimientos básicos de computación.</li>
+                        <li>Tener instalado Java Development Kit (JDK).</li>
+                        <li>Instalar un IDE como IntelliJ IDEA o Eclipse.</li>
+                        <li>Ganas de aprender programación.</li>
+                    </ul>
+                </details>
+                <button class="curso-boton-inscripcion">Inscribirse</button>
+                <div class="curso-contenidos">
+                    <h2>Contenidos por clase</h2>
+                    <details>
+                        <summary>Introducción</summary>
+                        <ol>
+                            <li>Presentación del lenguaje Java y sus principales usos.</li>
+                            <li>Instalación y configuración del entorno de desarrollo (JDK e IDE).</li>
+                            <li>Primer programa en Java: estructura básica y ejecución.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°1</summary>
+                        <ol>
+                            <li>Variables, constantes y tipos de datos primitivos.</li>
+                            <li>Operadores aritméticos, lógicos y relacionales.</li>
+                            <li>Entrada y salida de datos en consola.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°2</summary>
+                        <ol>
+                            <li>Estructuras condicionales: if, else, switch.</li>
+                            <li>Bucles e iteraciones: for, while, do-while.</li>
+                            <li>Uso de sentencias de control: break y continue.</li>
+                        </ol>
+                    </details>
+                    <details>
+                        <summary>Unidad N°3</summary>
+                        <ol>
+                            <li>Clases, objetos y métodos en Java.</li>
+                            <li>Encapsulamiento: atributos privados y métodos públicos.</li>
+                            <li>Constructores y sobrecarga de métodos.</li>
+                        </ol>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="docente-section">
+            <h3>Docente</h3>
+            <div class="docente-info">
+                <figure class="docente-img">
+                    <img src="../detalles-del-curso-img/docente-java-foto.jpg" alt="Foto del docente">
+                </figure>
+                <div class="docente-desc">
+                    <h4>James Gosling</h4>
+                    <img class="docente-califiacion-img" src="../detalles-del-curso-img/docente-calificacion-cuatro-estrellas.png" alt="Califación del docente">
+                    <p>Conocido como el “Padre de Java”, James Gosling es el creador del lenguaje y un referente mundial en programación orientada a objetos. Con más de 30 años de experiencia, ha trabajado en proyectos clave de Sun Microsystems, Google y Amazon.</p>
+                    <p> Su dominio de Java y su habilidad para explicar conceptos complejos lo convierten en el docente ideal para este curso.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="cursos-relacionados">
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-aprende-python.jpg" alt="Curso de Python">
+                <span class="curso-precio-java">$30.000 ARS</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Introducción a Python</h5>
+                    <a href="../detalles-de-curso-python/detalles-del-curso-python.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">45 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-sql-avanzado.png" alt="Curso de SQL">
+                <span class="curso-precio-sql">$45.000 ARS</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>SQL Avanzado</h5>
+                    <a href="../detalles-de-curso-sql/detalles-del-curso-sql.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">60 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-intensivo-js.jpg" alt="Curso de JavaScript">
+                <span class="curso-precio-fundamentos-de-js">$40.000</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Fundamentos de JS</h5>
+                    <a href="../detalles-de-curso-javascript/detalles-del-curso-javascript.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">50 hs</p>
+            </div>
+        </article>
+        <article class="curso-tarjeta">
+            <figure class="curso-img">
+                <img src="../detalles-del-curso-img/curso-testing.png" alt="Curso de testing">
+                <span class="curso-precio-testing">$20.000</span>
+            </figure>
+            <div class="curso-tarjeta-info">
+                <div class="curso-info-contenido">
+                    <h5>Testing básico</h5>
+                    <a href="../detalles-de-curso-testing/detalles-del-curso-testing.html">Ver Detalle</a>
+                    <button>Comprar</button>
+                </div>
+                <p class="curso-horas">35 hs</p>
+            </div>
+        </article>
+    </aside>
+
+    <footer>
+    <div class="footer-container">
+        <section class="footer-logo">
+            <img src="../detalles-del-curso-img/logo skillup blanco.png" alt="Logo Skillup">
+        </section>
+
+        <section class="footer-datos">
+            <h3>Datos del grupo</h3>
+            <p>Alegre Melisa - DNI 42.094.003</p>
+            <p>Cali Francisco - DNI 47.166.154</p>
+            <p>Leonardi Mayra - DNI 44.360.732</p>
+            <p>Mercado Sofía Victoria - DNI 47.410.999</p>
+            <p>Possentini Rafael - DNI 00.000.000</p>
+        </section>
+
+        <section class="footer-menu">
+            <h3>Acerca de</h3>
+            <ul>
+                <li><a href="#">¿Quienés somos?</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+        </section>
+
+        <section class="footer-redes">
+            <h3>Siguenos</h3>
+            <a href="#"><img src="../detalles-del-curso-img/facebook.png" alt="Facebook">Facebook</a>
+            <a href="#"><img src="../detalles-del-curso-img/instagram.png" alt="Instagram">Instagram</a>
+            <a href="#"><img src="../detalles-del-curso-img/linkedin.png" alt="LinkedIn">LinkedIn</a>
+        </section>
+    </div>
+    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
