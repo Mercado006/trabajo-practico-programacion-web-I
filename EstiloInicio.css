@@ -196,7 +196,8 @@ nav {
 
 /*Tarjeta individual*/
 .slider-card {
-    min-width: 15.625em;
+    min-width: 24em;
+    max-width: 18em;
     display: flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
@@ -204,10 +205,18 @@ nav {
     box-shadow: 0 0.125em 0.5em rgb(2 48 71);
 }
 
-.slider-card img {
+.curso-recomendado {
     width: 100%;
+    height: 12em;
+    object-fit: cover;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
+}
+
+.students-icon{
+    width: 3em !important;
+    height: auto;
+    margin: 0.5em
 }
 
 .students {
@@ -358,7 +367,8 @@ nav {
 
 .box img {
     width: 100%;
-    height: 10em;
+    height: 14em;
+    border-radius:1.4em;
     object-fit: cover;
 }
 
