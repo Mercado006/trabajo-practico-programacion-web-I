@@ -10,28 +10,24 @@ body {
     padding-top: 4.5em;
 }
 
-/* header*/
+/*desktop*/
+
 header {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 4.5em;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     box-shadow: 0 0.125em 0.313em rgba(0, 0, 0, 0.1);
 }
 
-/*navegación*/
-
 nav {
     width: 100%;
     display: flex;
+    padding: 0 2em;
     align-items: center;
     justify-content: space-between;
 }
-
-/*logo*/
 
 .logo img {
     height: 4em;
@@ -39,18 +35,18 @@ nav {
     margin-left: 0.5em;
 }
 
-/*buscador con lupa*/
-
+/* Buscador */
 .search-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    flex: 1;
+    flex-grow: 1;
+    /* Permite que crezca */
 }
 
 .search-wrapper input {
-    width: 100%;
-    min-width: 40em;
+    flex-grow: 1;
+    min-width: 45ch;
     height: 2.5em;
     padding: 0.5em 0.6em 0.5em 2.2em;
     border-radius: 0.75em;
@@ -72,9 +68,7 @@ nav {
     pointer-events: none;
 }
 
-
-/*Menu principal*/
-
+/* Menu Principal */
 .menu {
     list-style: none;
     display: flex;
@@ -82,6 +76,7 @@ nav {
     margin: 0;
 }
 
+/* ... otros estilos del menú ... */
 .menu li {
     background-color: rgb(255, 255, 255);
     border-radius: 0.75em;
@@ -100,7 +95,7 @@ nav {
     background-color: rgb(181, 210, 224);
 }
 
-/*Botón login*/
+/* Botón Login y Carrito */
 .login {
     font-weight: 400;
     font-size: 0.875em;
@@ -154,10 +149,217 @@ nav {
     border-radius: 50%;
 }
 
+
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 1em;
+}
+
+
+/* RESPONSIVE DEL HEADER (Tablets: max-width: 64em / 1024px)  */
+@media (max-width: 64em) {
+
+    .menu {
+        display: none;
+        /* Oculto por defecto */
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .search-wrapper {
+        min-width: unset;
+        max-width: 20em;
+        margin: 0 0.5em;
+    }
+
+    .search-wrapper input {
+        min-width: unset;
+    }
+
+    .cart {
+        margin-right: 1em;
+    }
+}
+
+/* --- RESPONSIVE DEL HEADER (Móviles: max-width: 48em / 768px) --- */
+@media (max-width: 48em) {
+
+    header {
+        height: auto;
+        /* Permite que el header crezca si los elementos saltan de línea */
+        padding: 0.5em 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Mover el buscador a una línea separada y que ocupe más ancho */
+    .search-wrapper {
+        order: 3;
+        width: 95%;
+        margin: 0.5em 0;
+    }
+
+    /*Ocultar elementos menos esenciales */
+    .login {
+        display: none;
+    }
+
+    /* 3. Ajustar el espaciado del logo y acciones */
+    .logo img {
+        height: 3.5em;
+    }
+
+    .nav-actions {
+        order: 2;
+        gap: 0.5em;
+    }
+
+}
+
+
+/* --- FOOTER (Desktop) --- */
+
+footer {
+    background-color: rgb(2, 48, 71);
+    color: rgb(255, 255, 255);
+    padding: 2em 1em;
+    font-size: 0.813em;
+    font-weight: 400;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 0 1em;
+    max-width: 75em;
+    margin: 0 auto;
+}
+
+/*por columna*/
+
+.footer-logo {
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    flex: 1;
+    min-width: 10em;
+}
+
+.footer-logo img {
+    height: 5em;
+    width: auto;
+    margin-top: -1em;
+}
+
+
+.footer-datos,
+.footer-menu,
+.footer-redes {
+    flex: 1;
+    min-width: 15em;
+    max-width: 20em;
+    /*para evitar que se estiren demasiado en pantallas muy grandes */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+/*Títulos de cada columna*/
+footer h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/*Lista del menú*/
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.footer-menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: rgb(255, 183, 3);
+}
+
+/*Redes sociales*/
+.footer-redes a {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-bottom: 0.5em;
+}
+
+.footer-redes a:hover {
+    color: rgb(255, 183, 3);
+}
+
+.footer-redes img {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.875em;
+    color: rgb(255, 255, 255, 0.7);
+}
+
+
+/* --- RESPONSIVE DEL FOOTER (Móviles: max-width: 48em / 768px) --- */
+@media (max-width: 48em) {
+
+    /* El contenedor cambia de fila a columna y se centra */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2em;
+        /* Más espacio entre las secciones */
+    }
+
+    /* Asegurar que las secciones internas se centren */
+    .footer-datos,
+    .footer-menu,
+    .footer-redes {
+        min-width: 90%;
+        /* Ocupa casi todo el ancho */
+        align-items: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-menu ul {
+        align-items: center;
+    }
+
+    /* Centrar los iconos de redes sociales */
+    .footer-redes a {
+        justify-content: center;
+    }
 }
 
 /*Main*/
@@ -479,121 +681,5 @@ nav {
     .gift-card-img {
         max-inline-size: 70%;
         margin-top: 1em;
-    }
-}
-
-
-/*Footer*/
-
-footer {
-    background-color: rgb(2, 48, 71);
-    color: rgb(255, 255, 255);
-    padding: 2em 1em;
-    font-size: 0.813em;
-    font-weight: 400;
-}
-
-/*Contenedor de las 3 columnas*/
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2em;
-    padding: 0 1em;
-}
-
-/*por columna*/
-
-.footer-logo {
-    display: flex;
-    align-items: start;
-    justify-content: left;
-    flex: 1;
-    min-width: 10em;
-}
-
-.footer-logo img {
-    height: 5em;
-    width: auto;
-    margin-top: -1em;
-}
-
-
-.footer-datos,
-.footer-menu,
-.footer-redes {
-    flex: 1;
-    min-width: 15em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-/*Títulos de cada columna*/
-footer h3 {
-    margin-bottom: 0.5em;
-    font-size: 1.1em;
-    font-weight: 600;
-}
-
-/*Lista del menú*/
-
-.footer-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-.footer-menu a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-.footer-menu a:hover {
-    color: rgb(255, 183, 3);
-}
-
-/*Redes sociales*/
-.footer-redes a {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin-bottom: 0.5em;
-}
-
-.footer-redes a:hover {
-    color: rgb(255, 183, 3);
-}
-
-.footer-redes img {
-    width: 1.2em;
-    height: 1.2em;
-}
-
-.footer-copy {
-    text-align: center;
-    margin-top: 2em;
-    font-size: 0.875em;
-    color: rgb(255, 255, 255, 0.7);
-}
-
-/*Responsive */
-
-@media (max-width: 48em) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1.5em;
-    }
-
-    .footer-redes a {
-        justify-content: center;
     }
 }
