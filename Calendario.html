@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Calendario</title>
   <link rel="stylesheet" href="EstiloCalendario.css">
 </head>
@@ -11,17 +12,17 @@
 
   <header>
     <nav>
-      <!-- Logo -->
+
       <a href="/" class="logo">
         <img src="img/logo skillup.png" alt="SkillUp">
       </a>
 
-      <!-- Buscador -->
+
 
       <form class="search-form" action="#" method="get">
         <div class="search-wrapper">
           <img src="img/lupa.png" alt="Buscar" class="search-icon">
-          <input type="search" list="cursos" name="q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+          <input type="search" list="cursos" name="q" placeholder="Buscar cursos" autocomplete="off">
           <datalist id="cursos">
             <option value="UX/UI"></option>
             <option value="JavaScript"></option>
@@ -31,7 +32,6 @@
         </div>
       </form>
 
-      <!-- Menú -->
 
       <ul class="menu">
         <li><a href="#">Inicio</a></li>
@@ -40,18 +40,18 @@
         <li><a href="#">Contacto</a></li>
       </ul>
 
-      <!-- Acceso / CTA y carrito-->
+
       <div class="nav-actions">
         <a href="#" class="login">Acceder</a>
         <a href="#" class="cart">
           <img src="img/carrito.png" alt="Carrito de cursos">
-          <span class="cart-count">3</span> <!-- por ahora número fijo -->
+          <span class="cart-count">3</span>
         </a>
+      </div>
     </nav>
-    </div>
   </header>
 
-  <main>
+  <main>  
     <div class="calendar">
       <div class="titulo"> Calendario de Cursos 📅 </div>
       <div class="calendar-header">
@@ -61,6 +61,7 @@
 
       </div>
       <p class="descripcion"> Haga click sobre el curso deseado para obtener mas detalles</p>
+     <div class="calendar-wrapper">
       <div class="calendar-grid">
         <div class="day-name">D</div>
         <div class="day-name">L</div>
@@ -80,21 +81,23 @@
         <div class="calendar-day">5</div>
         <div class="calendar-day con-cursos">6
           <div class="curso-tarjeta">
-            <a href="#" class="curso">JAVA 1</a>
+            <a href="#" class="curso">Testing Básico</a>
             <div class="curso-detalle">
-              <img src="img/JAVA.jpg" alt="JAVA 1">
-              <h4>JAVA 1</h4>
-              <p class="duracion">Duración: 2 semanas.</p>
-              <p class="descripcion">Descubre los principios de lógica. Ideal para principiantes en programación.</p>
+              <img src="img/curso-testing.png" alt="TESTING BÁSICO">
+              <h4>Testing Básico</h4>
+              <p class="duracion">Duración: 35 Horas.</p>
+              <p class="descripcion">Introducción al testing de software, brindando los fundamentos esenciales para
+                garantizar la calidad de aplicaciones y sistemas.</p>
             </div>
           </div>
           <div class="curso-tarjeta">
-            <a href="#" class="curso">PHYTON 2</a>
+            <a href="./Calendario.html" class="curso">Introducción a Phyton</a>
             <div class="curso-detalle">
-              <img src="img/Phyton.jpg" alt="PHYTON 2">
-              <h4>PHYTON 2</h4>
-              <p class="duracion">Duración: 4 semanas.</p>
-              <p class="descripcion">Introducción y desarrollo de la producción orientada a objetos.</p>
+              <img src="img/Phyton.jpg" alt="Introducción a PHYTON">
+              <h4>Introducción a Phyton</h4>
+              <p class="duracion">Duración: 45 horas.</p>
+              <p class="descripcion">Descubre la sintaxis básica, trabajo con variables, tipos de datos, estructuras de
+                control y funciones. Ideal para principiantes sin experiencia previa en programación</p>
             </div>
           </div>
         </div>
@@ -112,12 +115,13 @@
         <div class="calendar-day">16</div>
         <div class="calendar-day">17
           <div class="curso-tarjeta">
-            <a href="#" class="curso">CCS 1</a>
+            <a href="#" class="curso">SQL Avanzado</a>
             <div class="curso-detalle">
-              <img src="img/ccs.jpg" alt="CCS 1">
-              <h4>CCS 1</h4>
-              <p class="duracion">Duración: 1 semana.</p>
-              <p class="descripcion">Aprendé los principios básicos de estilos y el código en cascada.</p>
+              <img src="img/curso-sql-avanzado.png" alt="SQL Avanzado">
+              <h4>SQL Avanzado</h4>
+              <p class="duracion">Duración: 60 horas.</p>
+              <p class="descripcion">Formación avanzada en SQL, enfocándose en técnicas y herramientas para trabajar con
+                bases de datos complejas.</p>
             </div>
           </div>
         </div>
@@ -128,12 +132,13 @@
         <div class="calendar-day">21</div>
         <div class="calendar-day">22
           <div class="curso-tarjeta">
-            <a href="#" class="curso">HTML 1A</a>
+            <a href="#" class="curso">Fundamentos JavaScript</a>
             <div class="curso-detalle">
-              <img src="img/html.jpg" alt="HTML 1A">
-              <h4>HTML 1A</h4>
-              <p class="duracion">Duración: 2 semanas.</p>
-              <p class="descripcion">Aprendé la estructura básica de una página web con etiquetas HTML.</p>
+              <img src="img/curso-intensivo-js.jpg" alt="JavaScript">
+              <h4>Fundamentos JavaScript</h4>
+              <p class="duracion">Duración: 50 horas.</p>
+              <p class="descripcion">Introducción completa al lenguaje de programación JavaScript, cubriendo los
+                fundamentos esenciales para el desarrollo web..</p>
             </div>
           </div>
         </div>
@@ -150,6 +155,7 @@
         <div class="calendar-day empty"></div>
       </div>
     </div>
+    </div>
   </main>
 
   <footer>
@@ -162,15 +168,15 @@
         <h3>Datos del grupo</h3>
         <p>Alegre Melisa - DNI 42.094.003</p>
         <p>Cali Francisco - DNI 00.000.000</p>
-        <p>Leonardi Mayra - DNI 00.000.000</p>
-        <p>Mercado Sofía Victoria - DNI 00.000.000</p>
+        <p>Leonardi Mayra - DNI 44.360.732</p>
+        <p>Mercado Sofía Victoria - DNI 47.410.999</p>
         <p>Possentini Rafael - DNI 00.000.000</p>
       </section>
 
       <section class="footer-menu">
         <h3>Acerca de</h3>
         <ul>
-          <li><a href="#">¿Quiénes somos?</a></li>
+          <li><a href="#">¿Quienés somos?</a></li>
           <li><a href="#">Preguntas frecuentes</a></li>
           <li><a href="#">Privacidad</a></li>
           <li><a href="#">Términos y condiciones</a></li>
