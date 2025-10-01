@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.938em;
+    overflow-x: hidden;
+}
+
+/*Personalización de GiftCard*/
+
+
+.giftcard-main {
+    width: 100%;
+}
+
+.giftcard-content {
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10em;
+}
+
+
+
+/* Vista previa */
+.giftcard-preview {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: 10em;
+}
+
+.card {
+    width: 100%;
+    max-width: 25em;   
+    height: 15.6em;    
+    border-radius: 1em;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1em;
+    box-shadow: 0 0.4em 1em rgba(0,0,0,0.15);
+    color: white;
+    position: relative;
+}
+
+.card-amount {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0.125em 0.25em rgba(0,0,0,0.6);
+}
+
+.preview-note {
+    font-size: 0.875em;
+    opacity: 0.8;
+    margin-top: 0.5em;
+    color: rgb(0, 0, 0);
+}
+
+/* Formulario */
+.giftcard-form {
+    background: white;
+    margin-top: 2em;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+
+.giftcard-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+.giftcard-form label {
+    display: block;
+    margin-top: 1em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+.giftcard-form input[type="text"],
+.giftcard-form input[type="number"],
+.giftcard-form select {
+    width: 100%;
+    padding: 0.6em;
+    border: 0.0625em solid rgb(216, 214, 214);
+    border-radius: 0.5em;
+    font-size: 0.9rem;
+}
+
+/* Opciones */
+.options {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+/* radio oculto */
+
+input[type="radio"]{
+    display: none;
+}
+
+
+/* Colores */
+.color-swatch {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s;
+}
+
+.color-swatch.black { background-color: rgb(0, 0, 0); }
+.color-swatch.pink  { background-color: rgb(241, 130, 164); }
+.color-swatch.green  { background-color: rgb(120, 150, 87); }
+.color-swatch.violet  { background-color: rgb(204, 168, 233); }
+.color-swatch.red  { background-color: rgb(216, 94, 94); }
+
+/* Monto */
+
+/* Contenedor de opciones */
+.amount-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+/* Labels generales */
+.amount-options label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1em;
+    border: 0.0625em solid rgb(216,214,214);
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-size: 0.875em;
+    transition: border 0.2s, background 0.2s;
+    gap: 0.5em;
+}
+
+/* Span que contiene el texto */
+.amount-options label span {
+    display: inline-block;
+    padding: 0.25em 0.5em; /* espacio interno */
+}
+
+/* Radio oculto */
+.amount-options label input[type="radio"] {
+    display: none;
+}
+
+/* Borde al seleccionar */
+.amount-options label input[type="radio"]:checked + span {
+    border: 0.188em solid rgb(255,183,3);
+    border-radius: 0.5em;
+}
+
+/* Opción “Otro” */
+.amount-options label.other-swatch {
+    flex-direction: row;
+    align-items: center;
+}
+
+.amount-options label.other-swatch .other-input {
+    display: none;
+    width: 5em;
+    padding: 0.25em 0.5em;
+    font-size: 0.875em;
+    border: 0.0625em solid rgb(216,214,214);
+    border-radius: 0.25em;
+}
+
+/* Mostrar input al seleccionar “Otro” */
+.amount-options label.other-swatch input[type="radio"]:checked ~ .other-input {
+    display: inline-block;
+    font-size: 1em;
+    height: 100%;
+    width: 16em;
+}
+
+/* Fondos */
+.bg-swatch {
+    display: flex;
+    flex-direction: column;
+    width: 3.8em;
+    height: 2.5em;
+    border-radius: 0.5em;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 0;
+    transition: border 0.2s;
+
+}
+
+
+/* Ubicación */
+
+.loc-swatch {
+    width: 4em;
+    height: 3em;
+    border: 1px solid rgb(216, 214, 214);
+    border-radius: 0.5em;
+    position: relative;
+    cursor: pointer;
+    transition: border 0.2s;
+    background: #fff;
+}
+
+.loc-swatch::after {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    background: rgb(141, 141, 141); /* esto es el puntito indicador */
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Posiciones */
+.top-left::after { top: 0.4em; left: 0.4em; }
+.top-right::after { top: 0.4em; right: 0.4em; }
+.bottom-left::after { bottom: 0.4em; left: 0.4em; }
+.bottom-right::after { bottom: 0.4em; right: 0.4em; }
+
+/* Estado seleccionado */
+input[type="radio"]:checked + .color-swatch,
+input[type="radio"]:checked + .bg-swatch,
+input[type="radio"]:checked + .loc-swatch {
+    border: 0.188em solid rgb(255,183,3);
+}
+
+/* Botón */
+.btn-añadircarrito, .btn-comprar {
+    display: block;
+    font-family: 'Poppins';
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 1em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-añadircarrito {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 0.180em solid rgb(2, 48, 71);
+}
+
+.btn-comprar {
+    background-color: rgb(2, 48, 71);
+    color: rgb(255, 255, 255);
+}
+
+.btn-añadircarrito:hover {
+    background: rgb(181, 210, 224);
+    color: rgb(0, 0, 0);
+}
+
+.btn-comprar:hover {
+    background: rgb(255,183,3);
+    color: rgb(0, 0, 0);
+}
+
+.background-options label, .color-options label, .location-options label, .amount-options label{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Mensaje */
+textarea#mensaje {
+    width: 100%;
+    padding: 0.5em;
+    border: 0.0625em solid rgb(216, 214, 214);
+    font-family: 'Poppins';
+    border-radius: 0.5em;
+    font-size: 0.875em;
+    margin-top: 0.5em;
+    resize: vertical;
+    resize: none;
+}
+
+.faq {
+    max-width: 100%;
+    margin: 3em auto auto auto;
+    padding: 3em 1em;
+    border-radius: 1em;
+    background: rgb(245, 244, 244);
+}
+
+.faq h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: rgb(2, 48, 71);
+    text-align: center;
+}
+
+.faq details {
+    margin: 1em 2em;
+    border: 0.063em solid rgb(221, 221, 221);
+    border-radius: 0.5em;
+    background: rgb(255, 255, 255);
+    padding: 0.8em 1em;
+    transition: 0.3s;
+}
+
+.faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.faq details[open] {
+    background: rgb(238, 246, 250);
+    border-color: rgb(2, 48, 71);
+}
+
+.faq p {
+    margin-top: 0.5em;
+    font-size: 1em;
+    color: rgb(51, 51, 51);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 48em) {
+    
+    /*CONTENIDO */
+    .giftcard-content {
+        grid-template-columns: 1fr; 
+        gap: 2em; 
+        width: 100%;
+        padding: 0 1em;
+        margin: 0;
+    }
+    
+    /* VISTA PREVIA */
+    .giftcard-preview {
+        margin-top: 2em; 
+        justify-content: center; 
+        width: 100%;
+    }
+    
+    /* TARJETA (PREVIEW) */
+    .card {
+        max-width: 100%; 
+        width: 90vw; 
+        height: 14em; 
+    }
+    
+    /* FORMULARIO */
+    .giftcard-form {
+        padding: 1.5em; 
+    }
+    
+    /* OPCIONES DE MONTO  */
+    .amount-options label.other-swatch input[type="radio"]:checked ~ .other-input {
+        width: 10em; 
+        font-size: 0.9em;
+    }
+    
+    /* FAQ */
+    .faq {
+        padding: 3em 0.5em;
+        margin: 3em 0;
+        width: 100%;
+        max-width: 100vh;
+    }
+    .faq details {
+        margin: 1em 0.5em;
+    }
+    .faq summary {
+        font-size: 1em;
+    }
+}

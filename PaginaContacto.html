@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="EstiloPaginaContacto.css">
+    <title>Página de contacto</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Logo -->
+        <a href="/" class="logo">
+            <img src="img/logo skillup.png" alt="SkillUp">
+        </a>
+
+        <!-- Buscador -->
+
+        <form class= "search-form" action="#" method="get">
+            <div class="search-wrapper">
+                <img src="img/lupa.png" alt="Buscar" class="search-icon">
+                <input type="search" list="cursos" name= "q" placeholder="Buscar cursos" autocomplete="off">
+                <datalist id="cursos">
+                    <option value="UX/UI"></option>
+                    <option value="JavaScript"></option>
+                    <option value="Python"></option>
+                    <option value="Marketing digital"></option>
+                </datalist>
+            </div>
+        </form>
+
+        <!-- Menú -->
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <!-- Acceso / CTA y carrito-->
+    <div class="nav-actions">
+        <a href="#" class="login">Acceder</a>
+        <a href="#" class="cart">
+        <img src="img/carrito.png" alt="Carrito de cursos">
+        <span class="cart-count">3</span> <!-- por ahora número fijo -->
+        </a>
+        </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Banner contacto  -->
+    <section class="banner-contacto">
+        <div class="banner-text">
+            <h1>Contáctanos</h1>
+                <p>Te ayudamos a elegir el curso perfecto para alcanzar tus metas</p>
+        </div>
+    </section>
+
+    <!-- Sección contacto -->
+    <section id="contacto" class="contacto">
+
+    <!-- Formulario -->
+        <div class="formulario">
+        <h2>Escribinos tu consulta</h2>
+        <form action="mailto:empresa@ejemplo.com" method="get" enctype="text/plain">
+            <label for="nombre">Nombre y Apellido*:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico*:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono (opcional):</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="consulta">Consulta*:</label>
+            <textarea name="consulta" id="consulta" rows="5" required></textarea>
+
+        <!-- "Boton que activa el checkbox" -->
+        <label for="show-success" class="btn-enviar">Enviar</label>
+        </form>
+    </div>
+
+    <!-- Datos de la empresa -->
+<div class="datos-empresa">
+    <h2>Datos de la empresa</h2>
+
+    <div class="dato">
+        <img src="img/ubicacion.png" alt="Dirección" class="icono">
+        <div class="dato-texto">
+            <span class="dato-titulo">Dirección:</span>
+            <span class="dato-contenido">Av. Corrientes 1234, Buenos Aires, Argentina</span>
+        </div>
+    </div>
+
+    <div class="dato">
+        <img src="img/telefono.png" alt="Teléfono" class="icono">
+        <div class="dato-texto">
+            <span class="dato-titulo">Teléfono:</span>
+            <span class="dato-contenido">+54 11 4321 8765</span>
+        </div>
+    </div>
+
+    <div class="dato">
+        <img src="img/email.png" alt="Email" class="icono">
+        <div class="dato-texto">
+            <span class="dato-titulo">Email:</span>
+            <span class="dato-contenido">contacto@skillup.com</span>
+        </div>
+    </div>
+
+    <div class="dato">
+        <img src="img/horario.png" alt="Horario" class="icono">
+        <div class="dato-texto">
+            <span class="dato-titulo">Horario de atención:</span>
+            <span class="dato-contenido">Lunes a Viernes, 9:00 a 18:00hs</span>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <input type="checkbox" id="show-success" hidden>
+
+    <div class="success-overlay">
+        <div class="success-message">
+            <p>¡Formulario enviado con éxito!</p>
+            <label for="show-success" class="close-btn">Cerrar</label>
+        </div>
+    </div>
+
+    <!-- Ubicación -->
+
+    <section id="ubicacion">
+        <h2>Ubicación</h2>
+        <p>Acercate a una de nuestras oficinas</p>
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7498891068265!2d-58.38159268417565!3d-34.60368498045964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac7d8b6a2ff%3A0x6e92b9d42bdfcba!2sObelisco!5e0!3m2!1ses!2sar!4v1614996400000!5m2!1ses!2sar"
+        allowfullscreen=""
+        loading="lazy"
+        title="Mapa de la ubicación de la oficina central">
+        </iframe>
+    </section>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <section class="footer-logo">
+            <img src="img/logo skillup blanco.png" alt="Logo Skillup">
+        </section>
+
+        <section class="footer-datos">
+            <h3>Datos del grupo</h3>
+            <p>Alegre Melisa - DNI 42.094.003</p>
+            <p>Cali Francisco - DNI 00.000.000</p>
+            <p>Leonardi Mayra - DNI 44.360.732</p>
+            <p>Mercado Sofía Victoria - DNI 47.410.999</p>
+            <p>Possentini Rafael - DNI 00.000.000</p>
+        </section>
+
+        <section class="footer-menu">
+            <h3>Acerca de</h3>
+            <ul>
+                <li><a href="#">¿Quienés somos?</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+        </section>
+
+        <section class="footer-redes">
+            <h3>Siguenos</h3>
+            <a href="#"><img src="img/facebook.png" alt="Facebook">Facebook</a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram">Instagram</a>
+            <a href="#"><img src="img/linkedin.png" alt="LinkedIn">LinkedIn</a>
+        </section>
+    </div>
+    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
