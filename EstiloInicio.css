@@ -10,15 +10,16 @@ body {
     padding-top: 4.5em;
 }
 
-/*desktop*/
-
+/* --- HEADER (Desktop) --- */
 header {
     width: 100%;
-    height: 4.5em;
+    top: 0;
+    left: 0;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     box-shadow: 0 0.125em 0.313em rgba(0, 0, 0, 0.1);
+    position: fixed;
 }
 
 nav {
@@ -41,7 +42,6 @@ nav {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    /* Permite que crezca */
 }
 
 .search-wrapper input {
@@ -105,7 +105,6 @@ nav {
     background: rgb(2, 48, 71);
     border-radius: 0.75em;
     transition: 0.3s;
-
 }
 
 .login:hover {
@@ -114,7 +113,6 @@ nav {
 }
 
 /*carrito con contador*/
-
 .cart {
     position: relative;
     display: flex;
@@ -149,13 +147,11 @@ nav {
     border-radius: 50%;
 }
 
-
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 1em;
 }
-
 
 /* RESPONSIVE DEL HEADER (Tablets: max-width: 64em / 1024px)  */
 @media (max-width: 64em) {
@@ -222,6 +218,451 @@ nav {
 
 }
 
+/*Main*/
+/*Slider-Cursos-Recomendados*/
+
+.suggested-courses {
+    margin-top: 1.5em;
+    display: flex;
+    gap: 3.5em;
+    padding: 2.25em;
+    align-items: center;
+}
+
+/*info inicial*/
+.first-info {
+    flex: 1;
+}
+
+.first-info h2 {
+    margin-bottom: 0.625em;
+    font-size: 2em;
+    color: rgb(2 48 71)
+}
+
+.first-info p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: rgb(2 48 71);
+}
+
+/*contenedor slider*/
+.slider {
+    display: flex;
+    gap: 1.25em;
+    flex: 2;
+}
+
+/*Tarjeta individual*/
+.slider-card {
+    min-width: 24em;
+    max-width: 18em;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.5em rgb(2 48 71);
+}
+
+.curso-recomendado {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+.students-icon {
+    width: 3em !important;
+    height: auto;
+    margin: 0.5em
+}
+
+.students {
+    display: flex;
+    align-items: center;
+    gap: 0.3125em;
+    margin-bottom: 0.3125em;
+}
+
+.students-icon {
+    width: 3em !important;
+    height: auto;
+    margin: 0.5em
+}
+
+.students-text {
+    font-size: 0.875em;
+    color: rgb(2 48 71);
+}
+
+.slider-card h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(2 48 71);
+    margin-bottom: 0.625em;
+    padding: 0.625em;
+    line-height: 1.3em;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.slider-arrows {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    margin-top: 3em;
+}
+
+.slider-arrows button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.slider-arrows img {
+    width: 2.5em;
+    height: auto;
+}
+
+.slider-arrows button:hover img {
+    opacity: 0.7;
+}
+
+/* RESPONSIVE DEL SLIDER (Tablets: max-width: 64em / 1024px)  */
+@media (max-width:64em) {
+    .suggested-courses {
+        flex-direction: column;
+        gap: 2em;
+        padding: 0em 4em 4em 4em;
+    }
+
+    .slider {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .slider-card {
+        max-width: 16em;
+        min-width: 18em;
+    }
+}
+
+/* RESPONSIVE DEL SLIDER (Moviles: max-width: 48em / 768px)  */
+@media (max-width:48em) {
+    .first-info h2 {
+        font-size: 1.5em;
+    }
+
+    .first-info p {
+        font-size: 0.875em;
+    }
+
+    .slider-card {
+        width: 100%;
+        max-width: 20em;
+    }
+}
+
+
+/*Seccion-Pasos*/
+.steps-to-enroll {
+    margin: 2em;
+    padding: 3em 0em 3em 0em;
+    color: rgb(2, 48, 71);
+    background-color: #e3f2f8;
+    border-radius: 7em;
+}
+
+.steps-to-enroll h2 {
+    font-size: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.steps-wrapper {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.step-card {
+    background-color: white;
+    border-radius: 0.75em;
+    box-shadow: 0 0.25em 0.5em rgba(2, 48, 71, 0.2);
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15em;
+    text-align: center;
+}
+
+.step-number {
+    width: 3em;
+    height: 3em;
+    background-color: rgb(2, 48, 71);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.step-text h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.2em;
+}
+
+.step-text p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+/* RESPONSIVE DEL PASOS (Tablets: max-width: 64em / 1024px)  */
+@media (max-width: 64em) {
+    .steps-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5em;
+    }
+}
+
+/* RESPONSIVE DEL PASOS (Móviles: max-width: 48em / 768px)  */
+@media (max-width: 48em) {
+    .steps-to-enroll h2 {
+        font-size: 1.6em;
+    }
+
+    .step-card {
+        width: 100%;
+        max-width: 18em;
+    }
+}
+
+/* Sección Cursos Destacados */
+.highlighted-courses {
+    padding: 2em;
+    background-color: rgb(255, 255, 255);
+    color: rgb(2, 48, 71);
+}
+
+.highlighted-courses h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2em;
+    color: rgb(2, 48, 71);
+}
+
+.wrapper-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    border-radius: 1.5em;
+    max-width: 23em;
+    flex: 1 1 23em;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to top, rgb(2, 48, 71), rgb(33, 158, 188));
+    align-items: center;
+}
+
+.box img {
+    width: 100%;
+    height: 14em;
+    border-radius: 1.4em;
+    object-fit: cover;
+}
+
+.box h3 {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.25em 0;
+}
+
+.box p {
+    font-size: 1em;
+    margin: 0.2em 0;
+}
+
+.button,
+.box a {
+    text-decoration: none;
+}
+
+.button {
+    margin-top: 1em;
+    padding: 0.5em 1.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.75em;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255, 183, 3);
+    color: rgb(2, 48, 71);
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: rgb(3, 93, 138);
+    color: #fff;
+}
+
+/*RESPONSIVE CURSOS DESTACADOS(Tablets: max-width: 64em / 1024px)*/
+@media (max-width: 64em) {
+    .wrapper-courses {
+        justify-content: center;
+    }
+
+    .box {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+/*RESPONSIVE CURSOS DESTACADOS(Móviles: max-width: 48em / 768x)*/
+@media (max-width: 48em) {
+    .highlighted-courses h2 {
+        font-size: 1.6em;
+    }
+
+    .box {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .box img {
+        height: auto;
+        max-height: 12em;
+    }
+}
+
+/*Sección Gift Card*/
+.gift-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-inline-size: 134em;
+    padding: 2.4em;
+    background-color: rgb(2, 48, 71);
+    border-radius: 2.4em;
+    color: rgb(255, 255, 255);
+    margin: 4.8rem;
+    gap: 2em;
+}
+
+.gift-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    max-width: 50%;
+}
+
+.gift-card img {
+    max-inline-size: 40%;
+    height: auto;
+    display: block;
+}
+
+.gift-card h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.gift-card p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.gift-card-button {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background-color: rgb(255 255 255);
+    color: rgb(2, 48, 71);
+    border-radius: 0.75em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.gift-card-button:hover {
+    background-color: rgb(181 210 224);
+    color: #fff;
+}
+
+/*RESPONSIVE GIFT CARD (TABLETS: 64em / 1024px)*/
+@media (max-width:64em) {
+    .gift-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 2.5em;
+    }
+
+    .gift-card-wrapper {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .gift-card-img {
+        max-inline-size: 60%;
+        margin-top: 1em;
+    }
+}
+
+/*RESPONSIVE GIFT CARD (Móviles: 48em / 768px)*/
+@media (max-width: 48em) {
+
+    .gift-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 2.5em;
+    }
+
+    .gift-card-wrapper {
+        max-width: 100%;
+    }
+
+    .gift-card-img {
+        max-inline-size: 70%;
+        margin-top: 1em;
+    }
+
+    .gift-card h2 {
+        font-size: 1.6em;
+    }
+
+    .gift-card p {
+        font-size: 0.9em;
+    }
+
+    .gift-card img {
+        max-inline-size: 80%;
+    }
+}
+
 
 /* --- FOOTER (Desktop) --- */
 
@@ -244,7 +685,6 @@ footer {
 }
 
 /*por columna*/
-
 .footer-logo {
     display: flex;
     align-items: start;
@@ -258,7 +698,6 @@ footer {
     width: auto;
     margin-top: -1em;
 }
-
 
 .footer-datos,
 .footer-menu,
@@ -359,327 +798,5 @@ footer h3 {
     /* Centrar los iconos de redes sociales */
     .footer-redes a {
         justify-content: center;
-    }
-}
-
-/*Main*/
-
-
-/*Slider-Cursos-Recomendados*/
-
-.suggested-courses {
-    margin-top: 4.5em;
-    display: flex;
-    gap: 3.5em;
-    padding: 2.25em;
-    align-items: center;
-}
-
-/*info inicial*/
-.first-info {
-    flex: 1;
-}
-
-.first-info h2 {
-    margin-bottom: 0.625em;
-    font-size: 2em;
-    color: rgb(2 48 71)
-}
-
-.first-info p {
-    font-size: 1em;
-    line-height: 1.5;
-    color: rgb(2 48 71);
-
-}
-
-/*contenedor slider*/
-.slider {
-    display: flex;
-    gap: 1.25em;
-    flex: 2;
-}
-
-/*Tarjeta individual*/
-.slider-card {
-    min-width: 24em;
-    max-width: 18em;
-    display: flex;
-    flex-direction: column;
-    background: rgb(255, 255, 255);
-    border-radius: 0.5em;
-    box-shadow: 0 0.125em 0.5em rgb(2 48 71);
-}
-
-.curso-recomendado {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-}
-
-.students-icon {
-    width: 3em !important;
-    height: auto;
-    margin: 0.5em
-}
-
-.students {
-    display: flex;
-    align-items: center;
-    gap: 0.3125em;
-    margin-bottom: 0.3125em;
-}
-
-.students-icon {
-    width: 3em !important;
-    height: auto;
-    margin: 0.5em
-}
-
-.students-text {
-    font-size: 0.875em;
-    color: rgb(2 48 71);
-}
-
-.slider-card h3 {
-    font-size: 1.5em;
-    font-weight: 600;
-    color: rgb(2 48 71);
-    margin-bottom: 0.625em;
-    padding: 0.625em;
-    line-height: 1.3em;
-}
-
-.slider-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-}
-
-.slider-arrows {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-top: 1em;
-}
-
-.slider-arrows button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.slider-arrows img {
-    width: 2.5em;
-    height: auto;
-}
-
-/*Seccion-Pasos*/
-.steps-to-enroll {
-    padding: 2em;
-    color: rgb(2, 48, 71);
-    background-color: #e3f2f8;
-}
-
-.steps-to-enroll h2 {
-    font-size: 2em;
-    margin-bottom: 2em;
-    text-align: center;
-}
-
-.steps-wrapper {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2em;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.step-card {
-    background-color: white;
-    border-radius: 0.75em;
-    box-shadow: 0 0.25em 0.5em rgba(2, 48, 71, 0.2);
-    padding: 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 15em;
-    text-align: center;
-}
-
-.step-number {
-    width: 3em;
-    height: 3em;
-    background-color: rgb(2, 48, 71);
-    color: white;
-    font-weight: bold;
-    font-size: 1.5em;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-}
-
-.step-text h3 {
-    margin: 0 0 0.5em 0;
-    font-size: 1.2em;
-}
-
-.step-text p {
-    margin: 0;
-    font-size: 1em;
-    line-height: 1.4em;
-}
-
-/* Sección Cursos Destacados */
-.highlighted-courses {
-    padding: 2em;
-    background-color: rgb(255, 255, 255);
-    color: rgb(2, 48, 71);
-}
-
-.highlighted-courses h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 2em;
-    color: rgb(2, 48, 71);
-}
-
-.wrapper-courses {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5em;
-    justify-items: center;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1em;
-    border-radius: 1.5em;
-    max-width: 23em;
-    color: rgb(255, 255, 255);
-    background: linear-gradient(to top, rgb(2, 48, 71), rgb(33, 158, 188));
-    align-items: center;
-}
-
-.box img {
-    width: 100%;
-    height: 14em;
-    border-radius: 1.4em;
-    object-fit: cover;
-}
-
-.box h3 {
-    font-size: 1.5em;
-    margin: 0.5em 0 0.25em 0;
-}
-
-.box p {
-    font-size: 1em;
-    margin: 0.2em 0;
-}
-
-.button {
-    margin-top: 1em;
-    padding: 0.5em 1.5em;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 0.75em;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(255, 183, 3);
-    color: rgb(2, 48, 71);
-    transition: background 0.3s;
-}
-
-.button:hover {
-    background-color: rgb(3, 93, 138);
-    color: #fff;
-}
-
-@media screen and (min-width: 48em) {
-    .box {
-        flex: 1 1 calc(50% - 2em);
-    }
-}
-
-@media screen and (min-width: 60em) {
-    .box {
-        flex: 1 1 calc(33.3% - 2em);
-    }
-}
-
-/*Sección Gift Card*/
-.gift-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    max-inline-size: 134em;
-    padding: 2.4em;
-    background-color: rgb(2, 48, 71);
-    border-radius: 2.4em;
-    color: rgb(255, 255, 255);
-    margin: 4.8rem;
-    gap: 2em;
-}
-
-.gift-card-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    max-width: 50%;
-}
-
-.gift-card img {
-    max-inline-size: 40%;
-    height: auto;
-    display: block;
-}
-
-.gift-card h2 {
-    font-size: 2em;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-}
-
-.gift-card p {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 1em;
-}
-
-.gift-card-button {
-    display: inline-block;
-    padding: 0.8em 1.5em;
-    background-color: #ffb703;
-    color: #023047;
-    border-radius: 0.5em;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-@media (max-width: 48em) {
-    .gift-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .gift-card-wrapper {
-        max-width: 100%;
-    }
-
-    .gift-card-img {
-        max-inline-size: 70%;
-        margin-top: 1em;
     }
 }
