@@ -1,0 +1,967 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.938em; 
+}
+
+/*desktop*/
+
+header {
+    width: 100%;
+    height: 4.5em;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0.125em 0.313em rgba(0,0,0,0.1);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    padding: 0 2em;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 4em;
+    width: auto;
+    margin-left:0.5em;
+}
+
+/* Buscador */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que crezca */
+}
+
+.search-wrapper input {
+    flex-grow: 1;
+    min-width: 45ch;
+    height: 2.5em;
+    padding: 0.5em 0.6em 0.5em 2.2em;
+    border-radius: 0.75em;
+    border: 0.125em solid rgb(232,230,230);
+    font-size: 1em;
+}
+
+.search-wrapper input:focus {
+    outline: 0.125em solid rgb(2, 48, 71); 
+    box-shadow: none; 
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.6em;
+    height: 1.2em;
+    width: auto;
+    padding-left: 0.2em;
+    pointer-events: none;
+}
+
+/* Menu Principal */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin:0;
+}
+/* ... otros estilos del menú ... */
+.menu li{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.75em;
+}
+
+.menu a{
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 0.875em;
+}
+
+.menu li:hover {
+    background-color: rgb(181, 210, 224);
+}
+
+/* Botón Login y Carrito */
+.login {
+    font-weight: 400;
+    font-size: 0.875em;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    background: rgb(2, 48, 71);
+    border-radius: 0.75em;
+    transition: 0.3s;
+
+}
+
+.login:hover{
+    background: rgb(255,183,3);
+    color: rgb(0, 0, 0);
+}
+
+/*carrito con contador*/
+
+.cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.6em;
+    border-radius: 0.75em;
+    color: rgb(255, 255, 255);
+    font-size: 0.875em;
+    transition: 0.3s;
+    margin-right: 2.5em;
+}
+
+.cart:hover {
+    background: rgb(255,183,3);
+}
+
+.cart img{
+    height: 1.5em;
+    width: auto;
+}
+
+.cart-count {
+    position: absolute;
+    top: -0.3em;
+    right: -0.6em;
+    background: rgb(2, 48, 71);
+    color: rgb(255, 255, 255);
+    font-size: 0.75em;
+    font-weight: 600;
+    padding: 0.15em 0.5em;
+    border-radius: 50%;
+}
+
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap:1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 4.2em 0em 2em 0em;
+    flex: 1;
+}
+
+.curso-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em; 
+    width: 100%;
+    align-items: start; 
+    padding: 0 19%;
+}
+
+.curso-java-1-img {
+    width: 95%;
+    margin-top: 1em;
+}
+
+.curso-java-1-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block; 
+    box-shadow: -10px 10px 0px -4px rgba(0,0,0,0.2); 
+}
+
+.curso-info {
+    margin: 0;
+    padding: 0;
+}
+
+.curso-section h1, h2, h3 {
+    font-size: 2.3em;
+    font-weight: normal;
+    margin-top: 0; 
+}
+
+.curso-detalles {
+    list-style: none;
+    padding: 0;
+    font-size: 1em;
+    margin-top: 2em;
+}
+
+.curso-detalles li {
+    margin-top: 1.1em;
+}
+
+.curso-info details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.1em;
+}
+
+.curso-detalles li strong {
+    font-size: 1.1em;
+}
+
+.curso-info details summary strong {
+    font-size: 1.1em;
+}
+
+.curso-info details p {
+    margin: 1.2em 5em 1em 0;
+}
+
+.curso-info details ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1.2em 5em 1em 1em;
+}
+
+.curso-info details summary::after {
+    content: url('../detalles-del-curso-img/flecha-abajo-icono.svg');
+    width: 1em;
+    height: 1em;
+    margin-right: 3.3em;
+}
+
+.curso-info details[open] summary::after {
+    content: url('../detalles-del-curso-img/flecha-arriba-icono.svg');
+    width: 1em;
+    height: 1em;
+    margin-right: 3.3em;
+}
+
+.curso-boton-inscripcion {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5em 1.2em;
+    font-size: 1.1em;
+    margin: 2.2em 0 3.8em 0;
+    background-color: rgb(2 48 71);
+    color: rgb(255 255 255);
+    box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 0.75em;
+    width: 7.5em;
+    height: 2.5em;
+}
+
+.curso-boton-inscripcion:hover {
+    background-color: rgb(3 93 138);
+}
+
+.curso-contenidos h2 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.curso-contenidos details {
+    padding: 0.5em 1em 0.5em 1.5em;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+
+.curso-contenidos summary {
+    font-size: 1.1em;
+}
+
+.curso-contenidos ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 1em 1em 1.2em;
+}
+
+.curso-contenidos ol li::marker {
+  font-weight: bold;
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.curso-contenidos details summary::-webkit-details-marker {
+    display: none;
+}
+
+.curso-contenidos details summary::marker {
+    content: none;
+}
+
+.curso-contenidos details summary::after {
+    content: url('../detalles-del-curso-img/flecha-abajo-icono.svg');
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+.curso-contenidos details[open] summary::after {
+    content: url('../detalles-del-curso-img/flecha-arriba-icono.svg');
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+.docente-section {
+    margin-top: 2.5em;
+}
+
+.docente-section h3 {
+    margin: 0 5em;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.docente-info {
+    background-color: rgb(232 230 230);
+    width: 100%;
+    padding: 2em 10em;
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 15% 1fr; 
+    gap: 5em;
+}
+
+.docente-info h4 {
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+.docente-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.docente-img img {
+    height: 75%;
+    border-radius: 50%;
+    box-shadow: -2px 4px 0px 2px rgba(0,0,0,0.1);
+}
+
+.docente-califiacion-img {
+    width: 20%;
+    margin: 0.5em -0.5em;
+    filter: drop-shadow(0px 2px 0.5px rgba(0,0,0,0.2));
+}
+
+.docente-desc p {
+    margin-top: 0.8em;
+}
+
+.cursos-relacionados {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2em; 
+    padding: 4em 5em;
+}
+
+.curso-tarjeta {
+    background: white;
+    border: 1px solid rgb(207, 207, 207);
+    padding: 1.5em 1.5em 0em 1.5em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.curso-tarjeta-info {
+    display: flex;
+    align-items: flex-start;
+}
+
+.curso-tarjeta-info .curso-horas {
+    font-size: 1.1em;
+    order: 1;
+    margin-top: 1em;
+}
+
+.curso-info-contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    order: 2;
+    margin-top: 1em;
+    gap: 0.5em;
+}
+
+.curso-img {
+    position: relative;
+}
+
+.curso-img img {
+    width: 100%;
+    height: 12em; 
+    object-fit: cover;
+}
+
+.curso-precio-java, .curso-precio-sql, .curso-precio-fundamentos-de-js, .curso-precio-testing {
+    position: absolute;
+    top: 1.2em;
+    right: 0em;
+    background: black;
+    color: white;
+    padding: 0.3em 0.5em;
+    font-size: 0.9rem;
+}
+
+.curso-precio-fundamentos-de-js {
+    position: absolute;
+    top: 9em;
+    right: 11.05em;
+    background: black;
+    color: white;
+    padding: 0.3em 0.5em;
+    font-size: 0.9rem;
+}
+
+.curso-precio-sql {
+    position: absolute;
+    top: 3em;
+    right: 0em;
+    background: black;
+    color: white;
+    padding: 0.3em 0.5em;
+    font-size: 0.9rem;
+}
+
+.curso-tarjeta button {
+    cursor: pointer;
+    align-self: flex-end;
+    margin: 0.8em 0em 1.5em 0;
+    font-size: 1.1em;
+    background-color: rgb(2 48 71);
+    color: rgb(255 255 255);
+    box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 0.75em;
+    width: 6.5em;
+    height: 2.5em;
+}
+
+.curso-tarjeta button:hover {
+    background-color: rgb(3 93 138);
+}
+
+.curso-tarjeta button:hover {
+    background-color: rgb(3 93 138);
+}
+
+.curso-tarjeta h5 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.curso-tarjeta a {
+    cursor: pointer;
+    align-self: flex-end;
+    color: black;
+    text-decoration: none;
+}
+
+.curso-tarjeta a:hover {
+    text-decoration: underline;
+}
+
+/* --- FOOTER (Desktop) --- */
+
+footer {
+    background-color: rgb(2, 48, 71);
+    color: rgb(255, 255, 255);
+    padding: 2em 1em;
+    font-size: 0.813em;
+    font-weight: 400;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 0 1em;
+    max-width: 75em; 
+    margin: 0 auto; 
+}
+
+/*por columna*/
+
+.footer-logo {
+    display: flex;
+    align-items:start;
+    justify-content:left;
+    flex: 1;
+    min-width: 10em;
+}
+
+.footer-logo img{
+    height: 5em;
+    width: auto;
+    margin-top: -1em;
+}
+
+
+.footer-datos,.footer-menu, .footer-redes {
+    flex: 1;
+    min-width: 15em;
+    max-width: 20em; /*para evitar que se estiren demasiado en pantallas muy grandes */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+footer h3 {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.footer-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.footer-menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-menu a:hover{
+    color: rgb(255,183,3);
+}
+
+/*Redes sociales*/
+.footer-redes a{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-bottom: 0.5em;
+}
+
+.footer-redes a:hover{
+    color: rgb(255,183,3);
+}
+
+.footer-redes img {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.875em;
+    color: rgb(255,255,255,0.7);
+}
+
+
+/* --- RESPONSIVE DEL FOOTER (Móviles: max-width: 48em / 768px) --- */
+@media (max-width: 48em){
+    .footer-container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2em; 
+    }
+    
+    .footer-datos, .footer-menu, .footer-redes {
+        min-width: 90%; 
+        align-items: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-menu ul{
+        align-items: center;
+    }
+
+    .footer-redes a {
+        justify-content: center;
+    }
+}
+
+/* RESPONSIVE DEL HEADER (Tablets: max-width: 64em / 1024px)  */
+@media (max-width: 64em) {
+
+    .menu {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: none; 
+    }
+
+    .search-wrapper {
+        min-width: unset; 
+        max-width: 20em; 
+        margin: 0 0.5em;
+    }
+
+    .search-wrapper input {
+        min-width: unset;
+    }
+    
+    .cart {
+        margin-right: 1em; 
+    }
+}
+
+/* --- RESPONSIVE DEL HEADER (Móviles: max-width: 48em / 768px) --- */
+@media (max-width: 48em) {
+
+    header {
+        height: auto; 
+        padding: 0.5em 0;
+    }
+    
+    nav {
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+    
+    .search-wrapper {
+        order: 3; 
+        width: 95%; 
+        margin: 0.5em 0; 
+    }
+    
+    .login {
+        display: none; 
+    }
+    
+    .logo img {
+        height: 3.5em;
+    }
+    
+    .nav-actions {
+        order: 2; 
+        gap: 0.5em;
+    }
+}
+
+/* Responsive del contenido principal */
+@media (max-width: 64em) {
+    
+    main {
+        padding: 3em 0 2em 0;
+    }
+    
+    .curso-section {
+        grid-template-columns: 1fr;
+        gap: 2.5em;
+        padding: 0 8%;
+    }
+    
+    .curso-java-1-img {
+        width: 100%;
+        margin-top: 0;
+    }
+    
+    .curso-section h1, h2, h3 {
+        font-size: 2em;
+    }
+    
+    .curso-detalles {
+        margin-top: 1.5em;
+    }
+    
+    .curso-detalles li {
+        margin-top: 1em;
+    }
+    
+    .curso-info details {
+        margin-top: 1em;
+    }
+    
+    .curso-info details p {
+        margin: 1em 2em 1em 0;
+    }
+    
+    .curso-info details ul {
+        margin: 1em 2em 1em 1em;
+    }
+    
+    .curso-info details summary::after {
+        margin-right: 1em;
+    }
+    
+    .curso-info details[open] summary::after {
+        margin-right: 1em;
+    }
+    
+    .curso-boton-inscripcion {
+        margin: 2em 0 3em 0;
+    }
+    
+    .curso-contenidos h2 {
+        margin-bottom: 0.8em;
+    }
+    
+    .curso-contenidos details {
+        padding: 0.5em 1em;
+    }
+    
+    .curso-contenidos summary {
+        font-size: 1em;
+    }
+    
+    .curso-contenidos ol {
+        padding: 1em 1em 1em 1em;
+    }
+    
+    .docente-section {
+        margin-top: 2em;
+    }
+    
+    .docente-section h3 {
+        margin: 0 3em;
+        font-size: 1.8em;
+    }
+    
+    .docente-info {
+        padding: 2em 5em;
+        grid-template-columns: 20% 1fr;
+        gap: 3em;
+    }
+    
+    .docente-info h4 {
+        font-size: 1.2em;
+    }
+    
+    .docente-califiacion-img {
+        width: 25%;
+    }
+    
+    .cursos-relacionados {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        padding: 3em 4em;
+    }
+    
+    .curso-tarjeta {
+        padding: 1.2em 1.2em 0 1.2em;
+    }
+    
+    .curso-img img {
+        height: 11em;
+    }
+}
+
+/* Responsive del contenido principal */
+@media (max-width: 48em) {
+    
+    main {
+        padding: 2em 0 1.5em 0;
+    }
+    
+    .curso-section {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        padding: 0 5%;
+    }
+    
+    .curso-java-1-img {
+        width: 100%;
+        margin-top: 0;
+    }
+    
+    .curso-java-1-img img {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    
+    .curso-section h1, h2, h3 {
+        font-size: 1.6em;
+    }
+    
+    .curso-detalles {
+        font-size: 0.95em;
+        margin-top: 1.2em;
+    }
+    
+    .curso-detalles li {
+        margin-top: 0.8em;
+    }
+    
+    .curso-detalles li strong {
+        font-size: 1em;
+    }
+    
+    .curso-info details {
+        margin-top: 0.8em;
+    }
+    
+    .curso-info details summary strong {
+        font-size: 1em;
+    }
+    
+    .curso-info details p {
+        margin: 1em 0.5em 1em 0;
+        font-size: 0.95em;
+    }
+    
+    .curso-info details ul {
+        margin: 1em 0.5em 1em 0.5em;
+        gap: 0.8em;
+        font-size: 0.95em;
+    }
+    
+    .curso-info details summary::after,
+    .curso-info details[open] summary::after {
+        margin-right: 0;
+    }
+    
+    .curso-boton-inscripcion {
+        width: 100%;
+        height: 2.8em;
+        margin: 1.5em 0 2.5em 0;
+        font-size: 1em;
+    }
+    
+    .curso-contenidos h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.8em;
+    }
+    
+    .curso-contenidos details {
+        padding: 0.6em 0.8em;
+        margin-bottom: 0.6em;
+    }
+    
+    .curso-contenidos summary {
+        font-size: 1em;
+    }
+    
+    .curso-contenidos ol {
+        gap: 0.8em;
+        padding: 0.8em 0.8em 0.8em 1em;
+        font-size: 0.95em;
+    }
+    
+    .curso-contenidos details summary::after,
+    .curso-contenidos details[open] summary::after {
+        margin-right: 0;
+    }
+    
+    .docente-section {
+        margin-top: 2em;
+    }
+    
+    .docente-section h3 {
+        margin: 0 1.5em;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    
+    .docente-info {
+        padding: 1.5em 1.5em;
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        text-align: center;
+    }
+    
+    .docente-img {
+        justify-content: center;
+    }
+    
+    .docente-img img {
+        height: 8em;
+        width: 8em;
+    }
+    
+    .docente-info h4 {
+        font-size: 1.2em;
+    }
+    
+    .docente-califiacion-img {
+        width: 35%;
+        margin: 0.5em auto;
+        display: block;
+    }
+    
+    .docente-desc p {
+        margin-top: 0.8em;
+        font-size: 0.95em;
+        text-align: left;
+    }
+    
+    .cursos-relacionados {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        padding: 2em 1.5em;
+    }
+    
+    .curso-tarjeta {
+        padding: 1em 1em 0 1em;
+    }
+    
+    .curso-tarjeta-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .curso-tarjeta-info .curso-horas {
+        order: 0;
+        margin-top: 0.8em;
+        text-align: left;
+        font-size: 1em;
+    }
+    
+    .curso-info-contenido {
+        order: 1;
+        text-align: left;
+        margin-top: 0.5em;
+    }
+    
+    .curso-img img {
+        height: 10em;
+    }
+    
+    .curso-precio-java, 
+    .curso-precio-sql, 
+    .curso-precio-testing {
+        top: 0.8em;
+        right: 0;
+        padding: 0.3em 0.5em;
+        font-size: 0.85rem;
+    }
+    
+    .curso-precio-fundamentos-de-js {
+        top: 0.8em;
+        right: 0;
+        padding: 0.3em 0.5em;
+        font-size: 0.85rem;
+    }
+    
+    .curso-tarjeta h5 {
+        font-size: 1.1rem;
+    }
+    
+    .curso-tarjeta button {
+        width: 100%;
+        margin: 1em 0 1.2em 0;
+        font-size: 1em;
+    }
+}
