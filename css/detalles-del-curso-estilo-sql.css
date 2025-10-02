@@ -169,12 +169,12 @@ main {
     padding: 0 19%;
 }
 
-.curso-java-1-img {
+.curso-python-img {
     width: 95%;
     margin-top: 1em;
 }
 
-.curso-java-1-img img {
+.curso-python-img img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -229,18 +229,18 @@ main {
     margin: 1.2em 5em 1em 1em;
 }
 
-.curso-info details summary::after {
-    content: url('../detalles-del-curso-img/flecha-abajo-icono.svg');
+.curso-contenidos details summary::after {
+    content: url('/img/flecha-abajo-icono.svg');
     width: 1em;
     height: 1em;
-    margin-right: 3.3em;
+    margin-right: 0.5em;
 }
 
-.curso-info details[open] summary::after {
-    content: url('../detalles-del-curso-img/flecha-arriba-icono.svg');
+.curso-contenidos details[open] summary::after {
+    content: url('/img/flecha-arriba-icono.svg');
     width: 1em;
     height: 1em;
-    margin-right: 3.3em;
+    margin-right: 0.5em;
 }
 
 .curso-boton-inscripcion {
@@ -304,14 +304,14 @@ summary {
 }
 
 .curso-contenidos details summary::after {
-    content: url('../detalles-del-curso-img/flecha-abajo-icono.svg');
+    content: url('/img/flecha-abajo-icono.svg');
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
 }
 
 .curso-contenidos details[open] summary::after {
-    content: url('../detalles-del-curso-img/flecha-arriba-icono.svg');
+    content: url('/img/flecha-arriba-icono.svg');
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
@@ -346,6 +346,7 @@ summary {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 15em;
 }
 
 .docente-img img {
@@ -410,7 +411,7 @@ summary {
     object-fit: cover;
 }
 
-.curso-precio-java, .curso-precio-sql, .curso-precio-fundamentos-de-js, .curso-precio-testing {
+.curso-precio-python, .curso-precio-sql, .curso-precio-fundamentos-de-js, .curso-precio-testing {
     position: absolute;
     top: 1.2em;
     right: 0em;
@@ -675,7 +676,7 @@ footer h3 {
         padding: 0 8%;
     }
     
-    .curso-java-1-img {
+    .curso-python-img {
         width: 100%;
         margin-top: 0;
     }
@@ -747,6 +748,10 @@ footer h3 {
         gap: 3em;
     }
     
+    .docente-img {
+        height: 12em;
+    }
+    
     .docente-info h4 {
         font-size: 1.2em;
     }
@@ -783,12 +788,12 @@ footer h3 {
         padding: 0 5%;
     }
     
-    .curso-java-1-img {
+    .curso-python-img {
         width: 100%;
         margin-top: 0;
     }
     
-    .curso-java-1-img img {
+    .curso-python-img img {
         box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
     
@@ -883,6 +888,7 @@ footer h3 {
     }
     
     .docente-img {
+        height: auto;
         justify-content: center;
     }
     
@@ -939,7 +945,7 @@ footer h3 {
         height: 10em;
     }
     
-    .curso-precio-java, 
+    .curso-precio-python, 
     .curso-precio-sql, 
     .curso-precio-testing {
         top: 0.8em;

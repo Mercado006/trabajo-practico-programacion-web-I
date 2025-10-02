@@ -304,14 +304,14 @@ summary {
 }
 
 .curso-contenidos details summary::after {
-    content: url('../detalles-del-curso-img/flecha-abajo-icono.svg');
+    content: url('/img/flecha-abajo-icono.svg');
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
 }
 
 .curso-contenidos details[open] summary::after {
-    content: url('../detalles-del-curso-img/flecha-arriba-icono.svg');
+    content: url('/img/flecha-arriba-icono.svg');
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
