@@ -115,7 +115,7 @@ span {
     text-align: center;
 }
 
-.add-btn {
+.dlt-btn {
   background-color: rgba(2, 48, 71, 0.85);
   margin-top: 0.688em; /* 11px */
   color: #fff;
@@ -129,12 +129,12 @@ span {
   transition: background 0.3s;
 }
 
-.add-btn:hover {
+.dlt-btn:hover {
   background-color: rgb(255, 183, 3);
   color: #000;
 }
 
-.add-btn:active {
+.dlt-btn:active {
   transform: scale(0.9);
 }
 
