@@ -67,8 +67,8 @@
         <section class="giftcard-form">
             <h2>Personalizá tu Gift Card</h2>
             <form>
-                <label for="nombre">Nombre del destinatario</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej:Ana Gómez">
+                <label for="nombre">Nombre del destinatario <span class="required">*</span> </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej:Ana Gómez" required>
 
         <!-- Color -->
         <div class="form-columns">
@@ -95,14 +95,14 @@
             
 
         <!-- Monto -->
-        <label>Monto</label>
+        <label>Monto <span class="required">*</span> </label>
         <div class="options amount-options">
     <label>
-        <input type="radio" name="monto" value="100">
+        <input type="radio" name="monto" value="100" required>
         <span>$5.000</span>
     </label>
     <label>
-        <input type="radio" name="monto" value="200">
+        <input type="radio" name="monto" value="200"> 
         <span>$10.000</span>
     </label>
     <label>
