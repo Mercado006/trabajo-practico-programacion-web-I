@@ -452,3 +452,38 @@ body {
         max-inline-size: 80%;
     }
 }
+
+/*Sección Medios de Pago*/
+.payment-methods{
+    text-align: center; 
+    background-color:grey;
+    padding: 2em;
+    border-radius: 1em; 
+    margin: 2em auto; 
+    max-width: 20em;
+}
+
+.payment-methods h2{
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+.wrapper-payment{
+    display: flex;
+    justify-content: center; 
+    gap: 1.5em; 
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.wrapper-payment img{
+    width:10em;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.wrapper-payment{
+    transform: scale(1.1);
+}
+
+
