@@ -5,7 +5,7 @@
 } 
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 0.938em;
     overflow-x: hidden;
 }
@@ -56,13 +56,12 @@ body {
 }
 
 /*Formulario*/
-.formulario form {
+
+.campo {
     display: flex;
     flex-direction: column;
     gap: 1em;
-}
-
-.formulario label {
+    margin-bottom: 1em;
     font-weight: 500;
     font-size: 1em;
 }
@@ -82,6 +81,12 @@ body {
     outline: 0.188em solid rgb(2, 48, 71);
 }
 
+.boton-enviar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
 .btn-enviar {
     display: inline-block;
     margin-top: 1em;
@@ -93,7 +98,6 @@ body {
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
-    text-align: center;
     transition: 0.3s;
 }
 
@@ -174,16 +178,14 @@ body {
 
 /* Capa overlay */
 .success-overlay {
-    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0,0,0,0.5);
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+
 }
 
 /* Mensaje */
@@ -192,29 +194,25 @@ body {
     padding: 2em;
     border-radius: 1em;
     text-align: center;
-    font-size: 1em;
 }
 
 /* Botón cerrar */
 .close-btn {
     display: inline-block;
     margin-top: 1em;
-    background-color: rgb(255, 255, 255);
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    background-color: rgb(2, 48, 71);
     cursor: pointer;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    border-radius: 0.5em;
-}
-
-/* Mostrar overlay al hacer click en el checkbox */
-#show-success:checked +.success-overlay {
-    display: flex;
+    color: rgb(255, 255, 255);
+    font-family: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
 }
 
 .close-btn:hover {
     background-color: rgb(255,183,3);
-    padding: 0.5em 1em;
-    border-radius: 2em;
     color: #000;
 }
 
