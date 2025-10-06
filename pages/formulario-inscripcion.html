@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form</title>
-  <link rel="stylesheet" href="formulario-inscripcion.css">
-  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="../css/formulario-inscripcion.css">
+  <link rel="stylesheet" href="../header-footer.css">
 </head>
 <body>
     <header>
       <nav>
         <!-- Logo -->
         <a href="/" class="logo">
-          <img src="img/logo skillup.png" alt="Logo de SkillUp">
+          <img src="../img/logo skillup.png" alt="Logo de SkillUp">
         </a>
 
         <!-- Buscador -->
         <form class="search-form" action="#" method="get">
           <div class="search-wrapper">
-            <img src="img/lupa.png" alt="Buscar" class="search-icon">
+            <img src="../img/lupa.png" alt="Buscar" class="search-icon">
             <input type="search" list="cursos" name="q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
             <datalist id="cursos">
               <option value="UX/UI"></option>
@@ -30,18 +30,18 @@
         </form>
 
         <!-- Menú -->
-        <ul class="menu">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Cursos</a></li>
-          <li><a href="#">Empresas</a></li>
-          <li><a href="#">Contacto</a></li>
+       <ul class="menu">
+            <li><a href="../Inicio/Inicio.html">Inicio</a></li>
+            <li><a href="../pages/Calendario.html">Cursos</a></li>
+            <li><a href="../pages/formulario-inscripcion.html">Empresas</a></li>
+            <li><a href="../pages/PaginaContacto.html">Contacto</a></li>
         </ul>
 
         <!-- Acceso / CTA y carrito -->
         <div class="nav-actions">
-          <a href="#" class="login">Acceder</a>
+          <a href="../pages/login.html" class="login">Acceder</a>
           <a href="#" class="cart">
-            <img src="img/carrito.png" alt="Carrito de cursos">
+            <img src="../img/carrito.png" alt="Carrito de cursos">
             <span class="cart-count">3</span>
           </a>
         </div>
@@ -69,7 +69,7 @@
       <input type="number" name="dni1" required >
       <input type="text" name="nombre1" required>
       <input type="text" name="apellido1" required>
-      <button type="button" class="add-btn">+</button>
+      <button type="button" class="add-btn">-</button>
     </div>
 
     <!-- Fila 2 -->
@@ -77,7 +77,7 @@
       <input type="number" name="dni2" required>
       <input type="text" name="nombre2" required>
       <input type="text" name="apellido2" required>
-      <button type="button" class="add-btn">+</button>
+      <button type="button" class="add-btn">-</button>
     </div>
 
     <!-- Fila 3 -->
@@ -85,11 +85,11 @@
       <input type="number" name="dni3" required>
       <input type="text" name="nombre3" required>
       <input type="text" name="apellido3" required>
-      <button type="button" class="add-btn">+</button>
+      <button type="button" class="add-btn">-</button>
     </div>
 
     <div class="agregar__persona">
-      <button type="submit" class="boton"></button>
+      <button type="submit" class="boton">+</button>
       <h3 class="agregar">AGREGAR PERSONA</h3>
     </div>
 
@@ -104,7 +104,7 @@
       <footer>
         <div class="footer-container">
           <section class="footer-logo">
-            <img src="img/logo skillup blanco (1).png" alt="Logo Skillup">
+            <img src="../img/logo skillup blanco.png" alt="Logo Skillup">
           </section>
 
           <section class="footer-datos">
@@ -119,7 +119,7 @@
           <section class="footer-menu">
             <h3>Acerca de</h3>
             <ul>
-              <li><a href="#">¿Quiénes somos?</a></li>
+              <li><a href="../pages/sobre-nosotros.html">¿Quiénes somos?</a></li>
               <li><a href="#">Preguntas frecuentes</a></li>
               <li><a href="#">Privacidad</a></li>
               <li><a href="#">Términos y condiciones</a></li>
@@ -128,9 +128,9 @@
 
           <section class="footer-redes">
             <h3>Síguenos</h3>
-            <a href="#"><img src="img/facebook.png" alt="Facebook">Facebook</a>
-            <a href="#"><img src="img/instagram.png" alt="Instagram">Instagram</a>
-            <a href="#"><img src="img/linkedin.png" alt="LinkedIn">LinkedIn</a>
+            <a href="#"><img src="../img/facebook.png" alt="Facebook">Facebook</a>
+            <a href="#"><img src="../img/instagram.png" alt="Instagram">Instagram</a>
+            <a href="#"><img src="../img/linkedin.png" alt="LinkedIn">LinkedIn</a>
           </section>
         </div>
         <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>

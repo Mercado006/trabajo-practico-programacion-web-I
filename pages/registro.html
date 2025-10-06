@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo-registro.css">
     <link rel="stylesheet" href="../header-footer.css">
-    <link rel="stylesheet" href="estilo-login.css">
-    <title>Acceder a Skillup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse a Skillup</title>
 </head>
 <body>
     <header class="login-header">
@@ -20,11 +20,14 @@
             </div>
 
             <div class="card-content">
-                <h1>¡Bienvenido  de vuelta!</h1>
-                <p class="subtitle">Ingresá  tus  datos para acceder a tus cursos</p>
+                <h1>¡Hola!</h1>
+                <p class="subtitle">Registrate para empezar a aprender</p>
 
                 <form action="#" method="get" class="login-form">
-                    
+
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="nombre" placeholder="Ingresa tu nombre completo" required>
+
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="correo@gmail.com" required>
                     
@@ -33,23 +36,21 @@
                         <input type="password" id="password" placeholder="Contraseña" required>
                         </div>
 
-                    <div class="form-options">
-                        <label>
-                            <input type="checkbox" name="remember"> Recuerdame
-                        </label>
-                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <label for="confirm_password">Confirmar Contraseña</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirm_password" placeholder="Repite tu contraseña" required>
                     </div>
                     
-                    <button type="submit" class="btn-primary">Iniciar sesión</button>
+                    <button type="submit" class="btn-primary">Registrarse</button>
                     
                     <a href="#" class="btn-google">
                         <img src="../img/google.png" alt="Google icon">
-                        Ingresar con google
+                        Registrarse con google
                     </a>
                 </form>
 
                 <p class="signup-prompt">
-                    ¿No tienes una cuenta? <a href="registro.html">Registrate aquí</a>
+                    ¿No tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
                 </p>
 
             </div>
@@ -77,7 +78,7 @@
         <section class="footer-menu">
             <h3>Acerca de</h3>
             <ul>
-                <li><a href="../sobre-nosotros/sobre-nosotros.html">¿Quienés somos?</a></li>
+                <li><a href="../pages/sobre-nosotros.html">¿Quienés somos?</a></li>
                 <li><a href="#">Preguntas frecuentes</a></li>
                 <li><a href="#">Privacidad</a></li>
                 <li><a href="#">Términos y condiciones</a></li>
