@@ -491,9 +491,10 @@ body {
 
 .right-arrow img,
 .left-arrow img {
-width: 5em;
-height: auto;
+    width: 5em;
+    height: auto;
 }
+
 .right-arrow,
 .left-arrow {
     display: flex;
@@ -503,4 +504,40 @@ height: auto;
 
 .wrapper-payment button:hover img {
     opacity: 0.7;
+}
+
+/*RESPONSIVE MEDIOS DE PAGO TABLETS (64em / 1024px)*/
+@media (max-width:64em) {
+
+    .wrapper-payment img {
+        width: 5em;
+        height: auto;
+    }
+
+    .right-arrow img,
+    .left-arrow img {
+        width: 2.5em;
+        height: auto;
+    }
+}
+
+/*RESPONSIVE MEDIOS DE PAGO (Móviles: 48em / 768px)*/
+@media (max-width: 48em) {
+
+    .payment-methods h2 {
+        font-size: 1.6em;
+
+    }
+
+    .wrapper-payment img {
+        max-inline-size: 60%;
+    }
+
+    .right-arrow img,
+    .left-arrow img {
+        max-inline-size: 20%;
+
+    }
+
+
 }
