@@ -1,8 +1,0 @@
-[build]
-  publish = "."      # "." indica que el contenido está en la raíz
-  command = ""       # sin comando de build
-
-[[redirects]]
-  from = "/"
-  to = "/Inicio/inicio.html"
-  status = 200
