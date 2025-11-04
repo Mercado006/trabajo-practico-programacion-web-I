@@ -1,0 +1,9 @@
+{
+    "editor.inlineSuggest.edits.showCollapsed": true,
+    "editor.inlineSuggest.experimental.showOnSuggestConflict": "always",
+    "editor.suggest.preview": true,
+    "inlineChat.enableV2": true,
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.insertSpaceAfterTypeAssertion": true
+}
