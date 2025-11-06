@@ -22,7 +22,22 @@ export function inicializadorContador() {
             window.scrollTo({ top: 0, behavior: "smooth" });
             animarCarrito(contadorCursos);
 
-
         });
     });
+}
+
+function mostrarMensaje(texto) {
+    const mensaje = document.createElement("div");
+    mensaje.textContent = texto;
+    mensaje.classList.add("mensaje-carrito");
+    document.body.appendChild(mensaje);
+
+    setTimeout(() => {
+        mensaje.remove();
+    }, 2000);
+}
+
+function animarCarrito(elemento) {
+    elemento.classList.add("animar");
+    setTimeout(() => elemento.classList.remove("animar"), 500);
 }
