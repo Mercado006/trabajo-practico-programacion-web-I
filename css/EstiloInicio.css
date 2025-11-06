@@ -260,21 +260,23 @@ body {
 }
 
 .wrapper-courses {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5em;
     justify-items: center;
-    justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    padding: 2em 0;
+
 }
 
 .box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 30em;
     padding: 1em;
     border-radius: 1.5em;
-    max-width: 23em;
+    max-width: 35em;
     flex: 1 1 23em;
     color: rgb(255, 255, 255);
     background: linear-gradient(to top, rgb(2, 48, 71), rgb(33, 158, 188));
@@ -298,12 +300,21 @@ body {
     margin: 0.2em 0;
 }
 
+.wrap-button {
+    display: flex;
+    gap: 5em;
+    justify-content: center;
+    margin-top: 1em;
+}
+
 .button,
-.box a {
+.box a,
+.buy-course {
     text-decoration: none;
 }
 
-.button {
+.button,
+.buy-course {
     margin-top: 1em;
     padding: 0.5em 1.5em;
     font-size: 1rem;
@@ -316,7 +327,8 @@ body {
     transition: background 0.3s;
 }
 
-.button:hover {
+.button:hover, 
+.buy-course {
     background-color: rgb(3, 93, 138);
     color: #fff;
 }
@@ -325,11 +337,11 @@ body {
 @media (max-width: 64em) {
     .wrapper-courses {
         justify-content: center;
+        grid-template-columns: 1fr 1fr;
     }
 
     .box {
-        flex: 1 1 45%;
-        max-width: 45%;
+        width: 25em;
     }
 }
 
@@ -338,10 +350,12 @@ body {
     .highlighted-courses h2 {
         font-size: 1.6em;
     }
-
+    .wrapper-courses {
+        justify-content: center;
+        grid-template-columns: 1fr;
+    }
     .box {
-        flex: 1 1 100%;
-        max-width: 100%;
+        width: 25em;
     }
 
     .box img {

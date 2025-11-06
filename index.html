@@ -12,8 +12,8 @@
     <header>
         <nav>
 
-      <a href="./index.html" class="logo"><img src="./img/logo skillup.png" alt="SkillUp">
-      </a>
+            <a href="./index.html" class="logo"><img src="./img/logo skillup.png" alt="SkillUp">
+            </a>
             <form class="search-form" action="#" method="get">
                 <div class="search-wrapper">
                     <img src="./img/lupa.png" alt="Buscar" class="search-icon">
@@ -40,7 +40,7 @@
                 <a href="./pages/login.html" class="login">Acceder</a>
                 <a href="#" class="cart">
                     <img src="./img/carrito.png" alt="Carrito de cursos">
-                    <span class="cart-count">3</span>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
         </nav>
@@ -142,14 +142,20 @@
                     <h3>Introducción a Java</h3>
                     <p>Duración: 40 horas</p>
                     <p>Precio: $25.000 ARS</p>
-                    <a href="../pages/detalles-del-curso-java-1.html" class="button">Ver detalle</a>
+                    <div class="wrap-button">
+                        <a href="./pages/detalles-del-curso-java-1.html" class="button">Ver detalle</a>
+                        <button class="buy-course">Comprar</button>
+                    </div>
                 </article>
                 <article class="box">
                     <img src="./img/curso-fundamentos-de-Js.jpg" alt="Fundamentos de JS" class="fundamentos-de-JS">
                     <h3>Fundamentos de JS</h3>
                     <p>Duración: 50 horas</p>
                     <p>Precio: $40.000 ARS</p>
-                    <a href="../pages/detalles-del-curso-javascript.html" class="button">Ver detalle</a>
+                    <div class="wrap-button">
+                        <a href="./pages/detalles-del-curso-javascript.html" class="button">Ver detalle</a>
+                        <button class="buy-course">Comprar</button>
+                    </div>
                 </article>
                 <article class="box">
                     <img src="./img/curso-introduccion-python.jpg" alt="Introducción a Python"
@@ -157,21 +163,31 @@
                     <h3>Introducción a Python</h3>
                     <p>Duración: 45 horas</p>
                     <p>Precio: $30.000 ARS</p>
-                    <a href="../pages/detalles-del-curso-python.html" class="button">Ver detalle</a>
+                    <div class="wrap-button">
+                        <a href="./pages/detalles-del-curso-python.html" class="button">Ver detalle</a>
+                        <button class="buy-course">Comprar</button>
+                    </div>
                 </article>
                 <article class="box">
                     <img src="./img/curso-sql-avanzado.png" alt="SQL Avanzado" class="SQL-avanzado">
                     <h3>SQL Avanzado</h3>
                     <p>Duración: 60 horas</p>
                     <p>Precio: $45.000 ARS</p>
-                    <a href="../pages/detalles-del-curso-sql.html" class="button">Ver detalle</a>
+                    <div class="wrap-button">
+                        <a href="./pages/detalles-del-curso-sql.html" class="button">Ver detalle</a>
+                        <button class="buy-course">Comprar</button>
+                    </div>
+
                 </article>
                 <article class="box">
                     <img src="./img/curso-testing.png" alt="Testing básico" class="testing-básico">
                     <h3>Testing básico</h3>
                     <p>Duración: 35 horas</p>
                     <p>Precio: $20.000 ARS</p>
-                    <a href="../pages/detalles-del-curso-testing.html" class="button">Ver detalle</a>
+                    <div class="wrap-button">
+                        <a href="./pages/detalles-del-curso-testing.html" class="button">Ver detalle</a>
+                        <button class="buy-course">Comprar</button>
+                    </div>
                 </article>
             </div>
         </section>
@@ -250,6 +266,7 @@
         <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
     </footer>
 
+    <script type="module" src="./js/index.js"></script>
 </body>
 
 
