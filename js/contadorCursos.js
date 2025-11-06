@@ -17,6 +17,12 @@ export function inicializadorContador() {
 
             // Guardamos en sessionStorage
             sessionStorage.setItem("contadorCursos", cantidad);
+
+            mostrarMensaje("Curso agregado al carrito");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            animarCarrito(contadorCursos);
+
+
         });
     });
 }

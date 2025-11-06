@@ -328,7 +328,7 @@ body {
 }
 
 .button:hover, 
-.buy-course {
+.buy-course:hover {
     background-color: rgb(3, 93, 138);
     color: #fff;
 }
