@@ -25,7 +25,7 @@ header {
     height: 4.5em; /* 72px */
     background-color: rgb(255, 255, 255);
     display: flex;
-    /* align-items: center;  */
+     align-items: center;  
     box-shadow: 0 0.125em 0.313em rgba(0,0,0,0.1);
 }
 
