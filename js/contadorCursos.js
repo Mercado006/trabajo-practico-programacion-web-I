@@ -1,6 +1,10 @@
+import { BuscadorElementos } from "./BuscadorELementos.js";
+const DOM = new BuscadorElementos();
+
+
 export function inicializadorContador() {
-    const contadorCursos = document.querySelector(".cart-count");
-    const botones = document.querySelectorAll(".buy-course");
+    const contadorCursos = DOM.unElemento(".cart-count");
+    const botones = DOM.mElementos(".buy-course");
     let cantidad = sessionStorage.getItem("contadorCursos");
     if (cantidad) {
         cantidad = parseInt(cantidad);
@@ -16,28 +20,7 @@ export function inicializadorContador() {
             contadorCursos.textContent = cantidad;
 
             // Guardamos en sessionStorage
-            sessionStorage.setItem("contadorCursos", cantidad);
-
-            mostrarMensaje("Curso agregado al carrito");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            animarCarrito(contadorCursos);
-
+            sessionStorage.setItem("contadorCursos", cantidad)
         });
     });
-}
-
-function mostrarMensaje(texto) {
-    const mensaje = document.createElement("div");
-    mensaje.textContent = texto;
-    mensaje.classList.add("mensaje-carrito");
-    document.body.appendChild(mensaje);
-
-    setTimeout(() => {
-        mensaje.remove();
-    }, 2000);
-}
-
-function animarCarrito(elemento) {
-    elemento.classList.add("animar");
-    setTimeout(() => elemento.classList.remove("animar"), 500);
 }
