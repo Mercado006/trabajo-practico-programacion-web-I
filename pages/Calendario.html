@@ -15,7 +15,7 @@
     <nav>
 
       <a href="/index.html" class="logo">
-        <img src="/img/logo skillup.png" alt="SkillUp">
+        <img src="../img/logo skillup.png" alt="SkillUp">
       </a>
 
 
@@ -52,110 +52,32 @@
     </nav>
   </header>
 
-  <main>  
+  <main>
     <div class="calendar">
+      <!-- Eliminados los <br> innecesarios, usar margin-top en CSS si hace falta espacio -->
       <div class="titulo"> Calendario de Cursos 📅 </div>
+      
       <div class="calendar-header">
-        <button class="prev" aria-label="Mes anterior">&lt;</button>
-        <h1> Octubre 2025 </h1>
-        <button class="next" aria-label="Mes siguiente">&gt;</button>
-
+        <button id="prevMonth" aria-label="Mes anterior">&lt;</button>
+        <h1 id="currentMonthDisplay">Octubre 2025</h1>
+        <button id="nextMonth" aria-label="Mes siguiente">&gt;</button>
       </div>
-      <p class="descripcion"> Haga click sobre el curso deseado para obtener mas detalles</p>
-     <div class="calendar-wrapper">
-      <div class="calendar-grid">
-        <div class="day-name">D</div>
-        <div class="day-name">L</div>
-        <div class="day-name">M</div>
-        <div class="day-name">X</div>
-        <div class="day-name">J</div>
-        <div class="day-name">V</div>
-        <div class="day-name">S</div>
 
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day today"><span>1</span></div>
-        <div class="calendar-day">2</div>
-        <div class="calendar-day">3</div>
-        <div class="calendar-day">4</div>
-        <div class="calendar-day">5</div>
-        <div class="calendar-day con-cursos">6
-          <div class="curso-tarjeta">
-            <a href="../pages/detalles-del-curso-testing.html" class="curso">Testing Básico</a>
-            <div class="curso-detalle">
-              <img src="../img/curso-testing.png" alt="TESTING BÁSICO">
-              <h4>Testing Básico</h4>
-              <p class="duracion">Duración: 35 Horas.</p>
-              <p class="descripcion">Introducción al testing de software, brindando los fundamentos esenciales para
-                garantizar la calidad de aplicaciones y sistemas.</p>
-            </div>
-          </div>
-          <div class="curso-tarjeta">
-            <a href="../pages/detalles-del-curso-python.html" class="curso">Introducción a Phyton</a>
-            <div class="curso-detalle">
-              <img src="../img/Phyton.jpg" alt="Introducción a PHYTON">
-              <h4>Introducción a Phyton</h4>
-              <p class="duracion">Duración: 45 horas.</p>
-              <p class="descripcion">Descubre la sintaxis básica, trabajo con variables, tipos de datos, estructuras de
-                control y funciones. Ideal para principiantes sin experiencia previa en programación</p>
-            </div>
-          </div>
+      <p class="descripcion">Haga click sobre el curso deseado para obtener más detalles</p>
+
+      <div class="calendar-wrapper">
+        <div class="calendar-grid" id="calendarGrid">
+          <!-- Los encabezados de días se mantienen fijos -->
+          <div class="day-name">D</div>
+          <div class="day-name">L</div>
+          <div class="day-name">M</div>
+          <div class="day-name">X</div>
+          <div class="day-name">J</div>
+          <div class="day-name">V</div>
+          <div class="day-name">S</div>
+          <!-- Las celdas de los días se generarán dinámicamente aquí con JS -->
         </div>
-
-        <div class="calendar-day">7</div>
-        <div class="calendar-day">8</div>
-        <div class="calendar-day">9</div>
-        <div class="calendar-day">10</div>
-        <div class="calendar-day">11</div>
-
-        <div class="calendar-day">12</div>
-        <div class="calendar-day">13</div>
-        <div class="calendar-day">14</div>
-        <div class="calendar-day">15</div>
-        <div class="calendar-day">16</div>
-        <div class="calendar-day">17
-          <div class="curso-tarjeta">
-            <a href="../pages/detalles-del-curso-sql.html" class="curso">SQL Avanzado</a>
-            <div class="curso-detalle">
-              <img src="../img/curso-sql-avanzado.png" alt="SQL Avanzado">
-              <h4>SQL Avanzado</h4>
-              <p class="duracion">Duración: 60 horas.</p>
-              <p class="descripcion">Formación avanzada en SQL, enfocándose en técnicas y herramientas para trabajar con
-                bases de datos complejas.</p>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-day">18</div>
-
-        <div class="calendar-day">19</div>
-        <div class="calendar-day">20</div>
-        <div class="calendar-day">21</div>
-        <div class="calendar-day">22
-          <div class="curso-tarjeta">
-            <a href="../pages/detalles-del-curso-javascript.html" class="curso">Fundamentos JavaScript</a>
-            <div class="curso-detalle">
-              <img src="../img/curso-intensivo-js.jpg" alt="JavaScript">
-              <h4>Fundamentos JavaScript</h4>
-              <p class="duracion">Duración: 50 horas.</p>
-              <p class="descripcion">Introducción completa al lenguaje de programación JavaScript, cubriendo los
-                fundamentos esenciales para el desarrollo web..</p>
-            </div>
-          </div>
-        </div>
-        <div class="calendar-day">23</div>
-        <div class="calendar-day">24</div>
-        <div class="calendar-day">25</div>
-
-        <div class="calendar-day">26</div>
-        <div class="calendar-day">27</div>
-        <div class="calendar-day">28</div>
-        <div class="calendar-day">29</div>
-        <div class="calendar-day">30</div>
-        <div class="calendar-day">31</div>
-        <div class="calendar-day empty"></div>
       </div>
-    </div>
     </div>
   </main>
 
@@ -193,7 +115,7 @@
     </div>
     <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
   </footer>
-
+    <script type = "module" src = "../js/Calendario.js"></script>
 </body>
 
 </html>

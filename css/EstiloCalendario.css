@@ -5,6 +5,7 @@
 }
 
 body {
+    margin-top: 3%;
     font-family: 'Poppins';
     font-size: 0.938em;
 }
@@ -22,7 +23,7 @@ main {
     margin: 0 auto;
 }
 
-.prev {
+#prevMonth {
     background-color: rgb(255, 255, 255);
     border-radius: 0.75em;
     font-size: 2.0em;
@@ -32,12 +33,12 @@ main {
     padding: 0.1em 0.4em 0.1em 0.4em;
 }
 
-.prev:hover {
+#prevMonth:hover {
     background-color: rgb(181, 210, 224);
     color: rgb(0, 0, 0);
 }
 
-.next {
+#nextMonth {
     background-color: rgb(255, 255, 255);
     border-radius: 0.75em;
     font-size: 2.0em;
@@ -47,7 +48,7 @@ main {
     padding: 0.1em 0.4em 0.1em 0.4em;
 }
 
-.next:hover {
+#nextMonth:hover {
     background-color: rgb(181, 210, 224);
     color: rgb(0, 0, 0);
 }
@@ -220,11 +221,27 @@ main {
     margin-right: 0.5rem;
 }
 
+.btn-detalle {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgb(232, 230, 230); /* Color azul ejemplo */
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-detalle:hover {
+  background-color: rgb(181, 210, 224); /* Color más oscuro al pasar el mouse */
+}
+
 @media (max-width: 64em) {
     .calendar-grid {
         padding: 1rem;
         max-width: 100%;
     }
+
 }
 
 /* Celulares */
