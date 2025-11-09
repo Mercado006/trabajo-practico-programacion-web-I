@@ -11,9 +11,9 @@
     <header>
         <nav>
             <!-- Logo -->
-      <a href="/index.html" class="logo">
+    <a href="/index.html" class="logo">
         <img src="/img/logo skillup.png" alt="SkillUp">
-      </a>
+    </a>
 
         <!-- Buscador -->
 
@@ -65,25 +65,32 @@
     <!-- Formulario -->
         <div class="formulario">
         <h2>Escribinos tu consulta</h2>
-        <form action="exito.html" method="get" enctype="text/plain">
+
+        <form id="contact-form">
+
             <div class="campo">
             <label for="nombre">Nombre y Apellido*:</label>
             <input type="text" id="nombre" name="nombre" required>
+            <div class="error-message" id="error-nombre"></div>
             </div>
 
             <div class="campo">
             <label for="email">Correo electrónico*:</label>
             <input type="email" id="email" name="email" required>
+            <div class="error-message" id="error-email"></div>
             </div>
 
             <div class="campo">
             <label for="telefono">Teléfono (opcional):</label>
             <input type="tel" id="telefono" name="telefono">
+            <div class="error-message" id="error-telefono"></div>
             </div>
 
             <div class="campo">
             <label for="consulta">Consulta*:</label>
             <textarea name="consulta" id="consulta" rows="5" required></textarea>
+            <div class="char-counter" id="counter-consulta">1000 caracteres restantes</div>
+            <div class="error-message" id="error-consulta"></div>
             </div>
 
         <!-- "Boton" -->
@@ -180,6 +187,9 @@
     </div>
     <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="/js/contacto.js" defer></script>
+
 
 </body>
 </html>

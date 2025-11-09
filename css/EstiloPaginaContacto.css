@@ -194,6 +194,7 @@ body {
     padding: 2em;
     border-radius: 1em;
     text-align: center;
+    box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.2);
 }
 
 /* Botón cerrar */
@@ -213,8 +214,42 @@ body {
 
 .close-btn:hover {
     background-color: rgb(255,183,3);
-    color: #000;
+    color: rgb(0, 0, 0);
 }
+
+.error-message {
+    color: rgba(241, 69, 69);
+    font-size: 0.85em;
+    font-weight: 500;
+    display: none;
+    margin-top: 0.2em;
+}
+
+.campo.error input, 
+.campo.error textarea {
+    border: 0.0625em solid rgba(241, 69, 69);
+    background-color: rgba(252, 199, 199);
+}
+
+.capo.error input:focus,
+.campo.error textarea:focus{
+    outline: 0.188em solid rgba(241, 69, 69);
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.85em;
+    color: rgb(78, 78, 78);
+    margin-top: 0.2em;
+}
+
+.char-counter.error {
+    color: rgba(241, 69, 69);
+    font-weight: bold;
+}
+
+
+
 
 /* --- RESPONSIVE DEL HEADER Y MAIN (Móviles: max-width: 48em / 768px) --- */
 
