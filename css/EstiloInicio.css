@@ -56,7 +56,7 @@ body {
 
 .slider {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2em;
     transition: transform 0.8s ease;
 }
@@ -65,6 +65,7 @@ body {
 .slider-card {
     padding: 0.5em;
     width: 29em;
+    height: 32em;
     display: flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
@@ -123,6 +124,26 @@ body {
     gap: 1em;
 }
 
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.dot {
+    width: 1em;
+    height: 1em;
+    background-color: rgb(180, 180, 180);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgb(2, 48, 71);
+}
+
 .slider-arrows {
     grid-area: arrows;
     display: flex;
@@ -145,6 +166,7 @@ body {
 .slider-arrows button:hover img {
     opacity: 0.7;
 }
+
 
 /* RESPONSIVE DEL SLIDER (Tablets: max-width: 64em / 1024px)  */
 @media (max-width:64em) {
@@ -389,13 +411,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    max-inline-size: 134em;
-    padding: 2.4em;
+    padding: 3em;
     background-color: rgb(2, 48, 71);
     border-radius: 2.4em;
     color: rgb(255, 255, 255);
-    margin: 4.8rem;
-    gap: 2em;
+    margin:5em;
+    margin-left: 7em;
+    margin-right: 7em;
+    gap: 18em;
 }
 
 .gift-card-wrapper {
