@@ -25,7 +25,7 @@ const maxChars = 1000;
 
 function showError (id, message) {
     const inputElement = document.getElementById(id);
-    const errorElement = document.getElementById('error-${id}');
+    const errorElement = document.getElementById(`error-${id}`);
     const campoElement = inputElement.closest('.campo');
 
     if (errorElement){
@@ -41,7 +41,7 @@ function showError (id, message) {
 
 function clearError(id){
     const inputElement = document.getElementById(id);
-    const errorElement = document.getElementById('error-${id}');
+    const errorElement = document.getElementById(`error-${id}`);
     const campoElement = inputElement.closest ('.campo');
 
     if (errorElement){
@@ -57,6 +57,33 @@ function clearAllError (){
     const ids = ['nombre', 'email', 'telefono', 'consulta'];
     ids.forEach(clearError);
 }
+
+// --- Validar Teléfono ---
+    function validateTelefono() {
+        const phoneValue = telefono.value.trim();
+        
+        // Es un campo opcional, si está vacío, está bien.
+        if (phoneValue === '') {
+            clearError('telefono');
+            return true;
+        }
+
+        // Limpiamos guiones para la validación
+        const cleanedPhoneValue = phoneValue.replace(/-/g, '');
+        const phoneRegex = /^\d{8}$/;
+
+        if (!phoneRegex.test(cleanedPhoneValue)) {
+            // Es inválido
+            showError('telefono', 'El teléfono debe tener 8 dígitos numéricos');
+            return false;
+        } else {
+            // Es válido, lo formateamos y limpiamos error
+            telefono.value = cleanedPhoneValue.substring(0, 4) + '-' + cleanedPhoneValue.substring(4);
+            clearError('telefono');
+            return true;
+        }
+    }
+
 
 // contador de caracteres
 
@@ -79,74 +106,60 @@ if (consulta){
     })
 }
 
+// evento blur
+if (telefono) {
+        telefono.addEventListener('blur', validateTelefono);
+    }
+
 //validacion del formulario
 
-form.addEventListener('submit', (e) =>{
+form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Limpiamos todos los errores antes de re-validar
+        clearAllError();
+        
+        // Usamos variables 'booleanas' para rastrear la validez
+        let isNombreValid = nombre.value.trim() !== '';
+        let isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+        let isConsultaValid = consulta.value.trim() !== '' && consulta.value.length <= maxChars;
+        
+        // Llamamos a nuestra función para validar el teléfono
+        let isTelefonoValid = validateTelefono();
 
-    // prevenir el envío automatico del formulario
-
-    e.preventDefault();
-    
-    // limpiamos errores previos
-    clearAllError();
-
-    let isValid = true;
-
-    // nombre y apellido 
-
-    if (nombre.value.trim() == ''){
-        isValid = false;
-        showError('nombre', 'El nombre y apellido son obligatorios.');
-    }
-
-    //email
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email.value.trim() === ''){
-        isValid = false;
-        showError ('email', 'El correo electrónico es obligatorio.');
-    } else if (!emailRegex.test(email.value.trim())){
-        isValid = false;
-        showError('email', 'Por favor, ingresa un correo electrónico válido.');
-    }
-
-    // telefono
-
-    const phoneValue = telefono.value.trim();
-    if (phoneValue !== '') {
-        const phoneRegex = /^\d{8}$/;
-        if (!phoneRegex.test(phoneValue)){
-            isValid = false;
-            showError ('telefono', 'El teléfono debe tener 8 dígitos numéricos');
-        } else {
-            telefono.value = phoneValue.substring (0,4) + '-' + phoneValue.substring(4);
+        // --- Mostramos errores ---
+        
+        if (!isNombreValid) {
+            showError('nombre', 'El nombre y apellido son obligatorios.');
         }
-    }
 
-    //consulta
-
-    if (consulta.value.trim() === ''){
-        isValid = false;
-        showError ('consulta', 'Por favor, escriba su consulta.');
-    } else if (consulta.value.length > maxChars ) {
-        isValid = false;
-        showError ('consulta', 'La consulta no puede exceder los ${maxChars} caracteres.');
-    }
-
-    // envío exitoso y pop up
-
-    if (isValid) {
-        console.log ('Formulario válido. Mostrando popup...');
-        showSuccessPopup();
-
-        form.reset();
-
-        if (consultaCounter){
-            consultaCounter.innerText = '${maxChars} caracteres restantes';
-            consultaCounter.classList.remove ('error');
+        if (email.value.trim() === '') {
+            showError('email', 'El correo electrónico es obligatorio.');
+            isEmailValid = false;
+        } else if (!isEmailValid) {
+            showError('email', 'Por favor, ingresa un correo electrónico válido.');
         }
-    }
-});
+
+        if (consulta.value.trim() === '') {
+            showError('consulta', 'Por favor, escriba su consulta.');
+            isConsultaValid = false;
+        } else if (consulta.value.length > maxChars) {
+            showError('consulta', `La consulta no puede exceder los ${maxChars} caracteres.`);
+            isConsultaValid = false;
+        }
+
+        // --- Envío final ---
+        if (isNombreValid && isEmailValid && isConsultaValid && isTelefonoValid) {
+            console.log('Formulario válido. Mostrando popup...');
+            showSuccessPopup();
+            form.reset();
+            if (consultaCounter) {
+                consultaCounter.innerText = `${maxChars} caracteres restantes`;
+                consultaCounter.classList.remove('error');
+            }
+        }
+    });
+
 
 
 // muestra el popup
@@ -160,7 +173,7 @@ function showSuccessPopup(){
     // mensaje 
 
     const messageBox = document.createElement('div');
-    messageBox.className = 'sucess-message';
+    messageBox.className = 'success-message';
 
     messageBox.innerHTML = '<h3 style="color: rgb(2, 48, 71); margin-bottom: 0.5em;">Consulta enviada</h3><p>Gracias por contactarnos. Te responderemos a la brevedad.</p><button class="close-btn" id="popup-close-btn">Aceptar</button>';
 
@@ -178,16 +191,14 @@ function showSuccessPopup(){
 
 // limpieza de errores mientras el usuario escribe
 
-[nombre, email, telefono, consulta].forEach(input => {
-    if (input){
-        input.addEventListener('input', () =>{
+    [nombre, email, consulta].forEach(input => {
+        if (input) {
+            input.addEventListener('input', () => {
+                if (input.value.trim() !== '') { 
+                    clearError(input.id);
+                }
+            });
+        }
+    });
 
-            if (input.value.trim() !== '' || input.id == 'telefono'){
-                clearError(input.id);
-            }
-        })
-    }
-})
-
-
-})
+});
