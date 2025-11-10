@@ -11,9 +11,9 @@
     <header>
         <nav>
             <!-- Logo -->
-      <a href="/index.html" class="logo">
+    <a href="/index.html" class="logo">
         <img src="/img/logo skillup.png" alt="SkillUp">
-      </a>
+    </a>
 
         <!-- Buscador -->
 
@@ -52,7 +52,7 @@
     <main>
 
         <!-- Banner contacto  -->
-    <section class="banner-contacto">
+    <br><section class="banner-contacto">
         <div class="banner-text">
             <h1>Contáctanos</h1>
                 <p>Te ayudamos a elegir el curso perfecto para alcanzar tus metas</p>
@@ -65,25 +65,32 @@
     <!-- Formulario -->
         <div class="formulario">
         <h2>Escribinos tu consulta</h2>
-        <form action="exito.html" method="get" enctype="text/plain">
+
+        <form id="contact-form">
+
             <div class="campo">
             <label for="nombre">Nombre y Apellido*:</label>
+            <div class="error-message" id="error-nombre"></div>
             <input type="text" id="nombre" name="nombre" required>
             </div>
 
             <div class="campo">
             <label for="email">Correo electrónico*:</label>
+            <div class="error-message" id="error-email"></div>
             <input type="email" id="email" name="email" required>
             </div>
 
             <div class="campo">
             <label for="telefono">Teléfono (opcional):</label>
+            <div class="error-message" id="error-telefono"></div>
             <input type="tel" id="telefono" name="telefono">
             </div>
 
             <div class="campo">
             <label for="consulta">Consulta*:</label>
+            <div class="error-message" id="error-consulta"></div>
             <textarea name="consulta" id="consulta" rows="5" required></textarea>
+            <div class="char-counter" id="counter-consulta">1000 caracteres restantes</div>
             </div>
 
         <!-- "Boton" -->
@@ -180,6 +187,9 @@
     </div>
     <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="../js/PaginaContacto/contacto.js" type="module" defer></script>
+
 
 </body>
 </html>

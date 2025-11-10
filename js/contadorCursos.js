@@ -1,6 +1,10 @@
+import { BuscadorElementos } from "./BuscadorELementos.js";
+const DOM = new BuscadorElementos();
+
+
 export function inicializadorContador() {
-    const contadorCursos = document.querySelector(".cart-count");
-    const botones = document.querySelectorAll(".buy-course");
+    const contadorCursos = DOM.unElemento(".cart-count");
+    const botones = DOM.mElementos(".buy-course");
     let cantidad = sessionStorage.getItem("contadorCursos");
     if (cantidad) {
         cantidad = parseInt(cantidad);
@@ -16,13 +20,7 @@ export function inicializadorContador() {
             contadorCursos.textContent = cantidad;
 
             // Guardamos en sessionStorage
-            sessionStorage.setItem("contadorCursos", cantidad);
-
-            mostrarMensaje("Curso agregado al carrito");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            animarCarrito(contadorCursos);
-
-
+            sessionStorage.setItem("contadorCursos", cantidad)
         });
     });
 }

@@ -14,7 +14,11 @@ body {
 /*Slider-Cursos-Recomendados*/
 .suggested-courses {
     margin-top: 1.5em;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+     grid-template-areas:
+    "info slider";
     gap: 3.5em;
     padding: 2.25em;
     align-items: center;
@@ -23,6 +27,7 @@ body {
 /*info inicial*/
 .first-info {
     flex: 1;
+    grid-area: info;
 }
 
 .first-info h2 {
@@ -38,26 +43,42 @@ body {
 }
 
 /*contenedor slider*/
+.slider-wrapper {
+    grid-area: slider;
+    padding: 2em;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 70em;
+    margin: auto;
+    
+}
+
 .slider {
-    display: flex;
-    gap: 1.25em;
-    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2em;
+    transition: transform 0.8s ease;
 }
 
 /*Tarjeta individual*/
 .slider-card {
-    min-width: 24em;
-    max-width: 18em;
+    padding: 0.5em;
+    width: 29em;
+    height: 32em;
     display: flex;
     flex-direction: column;
     background: rgb(255, 255, 255);
     border-radius: 0.5em;
     box-shadow: 0 0.125em 0.5em rgb(2 48 71);
 }
+.course-info{
+    padding: 2em;
+}
 
 .curso-recomendado {
     width: 100%;
-    height: 100%;
+    height: 20em;
     object-fit: cover;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
@@ -103,7 +124,28 @@ body {
     gap: 1em;
 }
 
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.dot {
+    width: 1em;
+    height: 1em;
+    background-color: rgb(180, 180, 180);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgb(2, 48, 71);
+}
+
 .slider-arrows {
+    grid-area: arrows;
     display: flex;
     justify-content: space-evenly;
     gap: 1em;
@@ -125,6 +167,7 @@ body {
     opacity: 0.7;
 }
 
+
 /* RESPONSIVE DEL SLIDER (Tablets: max-width: 64em / 1024px)  */
 @media (max-width:64em) {
     .suggested-courses {
@@ -133,10 +176,6 @@ body {
         padding: 0em 4em 4em 4em;
     }
 
-    .slider {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 
     .slider-card {
         width: 18em;
@@ -327,7 +366,7 @@ body {
     transition: background 0.3s;
 }
 
-.button:hover, 
+.button:hover,
 .buy-course:hover {
     background-color: rgb(3, 93, 138);
     color: #fff;
@@ -350,10 +389,12 @@ body {
     .highlighted-courses h2 {
         font-size: 1.6em;
     }
+
     .wrapper-courses {
         justify-content: center;
         grid-template-columns: 1fr;
     }
+
     .box {
         width: 25em;
     }
@@ -370,13 +411,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    max-inline-size: 134em;
-    padding: 2.4em;
+    padding: 3em;
     background-color: rgb(2, 48, 71);
     border-radius: 2.4em;
     color: rgb(255, 255, 255);
-    margin: 4.8rem;
-    gap: 2em;
+    margin:5em;
+    margin-left: 7em;
+    margin-right: 7em;
+    gap: 18em;
 }
 
 .gift-card-wrapper {
