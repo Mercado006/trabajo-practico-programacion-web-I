@@ -5,6 +5,17 @@
     const previewName = document.getElementById('preview-name');
     const previewAmount = document.getElementById('preview-amount');
 
+    const courseCounter = document.querySelector(".cart-count");
+
+        if (courseCounter) {
+        let count = sessionStorage.getItem("courseCounter");
+        if (count) {
+            courseCounter.textContent = parseInt(count);
+        } else {
+            courseCounter.textContent = 0; 
+        }
+    }
+
     const giftForm = document.getElementById('giftcard-form');
     const inputName = document.getElementById('nombre');
     const selectFontSize = document.getElementById('font-size');
@@ -194,8 +205,22 @@
                 e.preventDefault(); 
                 console.log('Formulario inválido, "Comprar" detenido.');
             } else {
-                console.log('Formulario válido, enviando a "comprar"...');
-                
+                console.log('Formulario válido, sumando al carrito...');
+
+                let count = sessionStorage.getItem("courseCounter");
+                if (count) {
+                    count = parseInt(count);
+                } else {
+                    count = 0;
+                }
+                count++;
+
+                if (courseCounter) {
+                    courseCounter.textContent = count;
+                }
+
+                sessionStorage.setItem("courseCounter", count);
+
             }
         });
     } else {
