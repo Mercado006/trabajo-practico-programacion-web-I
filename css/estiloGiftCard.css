@@ -44,13 +44,13 @@ body {
     border-radius: 1em;
     background-size: cover;
     background-position: center;
+    padding: 1.5em;
+    box-shadow: 0 0.4em 1em rgba(0,0,0,0.15);
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 1em;
-    box-shadow: 0 0.4em 1em rgba(0,0,0,0.15);
     color: white;
-    position: relative;
 }
 
 .card-amount {
@@ -60,6 +60,7 @@ body {
     text-shadow: 0 1px 3px rgba(255,255,255,0.7);
     transition: all 0.3s ease;
 }
+
 
 .preview-note {
     font-size: 0.875em;
@@ -252,7 +253,7 @@ input[type="radio"]:checked + .loc-swatch {
 }
 
 /* Botón */
-.btn-añadircarrito, .btn-comprar {
+.btn-comprar {
     display: block;
     font-family: 'Poppins';
     width: 100%;
@@ -266,20 +267,9 @@ input[type="radio"]:checked + .loc-swatch {
     transition: 0.3s;
 }
 
-.btn-añadircarrito {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: 0.180em solid rgb(2, 48, 71);
-}
-
 .btn-comprar {
     background-color: rgb(2, 48, 71);
     color: rgb(255, 255, 255);
-}
-
-.btn-añadircarrito:hover {
-    background: rgb(181, 210, 224);
-    color: rgb(0, 0, 0);
 }
 
 .btn-comprar:hover {
@@ -353,10 +343,7 @@ textarea#mensaje {
 .card-text-container {
     position: absolute; 
     padding: 1.25em;
-    transition: all 0.3s ease;
-    bottom: 0;
-    right: 0;
-    text-align: right;
+    border-radius: 0.5em;
 }
 
 /* nombre del destinatario */
@@ -398,6 +385,19 @@ textarea#mensaje {
     top: auto;
     left: auto;
     text-align: right;
+}
+
+.error-message {
+    color: rgba(241, 69, 69);
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-bottom: 0.3em; 
+    display: none; 
+}
+
+.form-group.error input {
+    border-color: rgba(241, 69, 69);
+    background-color: rgba(252, 199, 199);
 }
 
 

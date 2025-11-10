@@ -1,34 +1,59 @@
-    document.addEventListener('DOMContentLoaded', () => { 
+    document.addEventListener('DOMContentLoaded', () => {
 
     const previewCard = document.getElementById('preview-card');
     const previewTextContainer = document.getElementById('preview-text-container');
     const previewName = document.getElementById('preview-name');
     const previewAmount = document.getElementById('preview-amount');
 
-    const inputName = document.getElementById('destinatario');
+    const giftForm = document.getElementById('giftcard-form');
+    const inputName = document.getElementById('nombre');
     const selectFontSize = document.getElementById('font-size');
     const inputMontoOtro = document.getElementById('monto-otro');
-    
+
     const radioColors = document.querySelectorAll('input[name="color"]');
     const radioMontos = document.querySelectorAll('input[name="monto"]');
     const radioUbicaciones = document.querySelectorAll('input[name="ubicacion"]');
     const radioFondos = document.querySelectorAll('input[name="fondo"]');
 
-    // lógica para el nombre de destinatario
-    if (inputName) {
+    
+    // VALIDACIÓN ---
+    function showError(id, message) {
+        const errorElement = document.getElementById(`error-${id}`);
+        const groupElement = document.getElementById(`group-${id}`);
+        if (errorElement) {
+            errorElement.innerText = message;
+            errorElement.style.display = 'block';
+        }
+        if (groupElement) {
+            groupElement.classList.add('error');
+        }
+    }
+
+    function clearError(id) {
+        const errorElement = document.getElementById(`error-${id}`);
+        const groupElement = document.getElementById(`group-${id}`);
+        if (errorElement) {
+            errorElement.innerText = '';
+            errorElement.style.display = 'none';
+        }
+        if (groupElement) {
+            groupElement.classList.remove('error');
+        }
+    }
+
+    // LÓGICA PARA NOMBRE DEL DESTINATARIO  ---
+    if (inputName && previewName) { 
         inputName.addEventListener('input', () => {
             if (inputName.value.trim() === '') {
-                // Si está vacío, ponemos un texto de ejemplo
-                previewName.innerText = '...';
+                previewName.innerText = 'Para: ...'; // Vuelve al texto por defecto
             } else {
-                // Si tiene texto, lo mostramos
-                previewName.innerText = `${inputName.value}`;
+                previewName.innerText = `Para: ${inputName.value}`; // Muestra el texto con prefijo
             }
+            clearError('nombre'); 
         });
     }
 
-    // lógica para el color de texto
-
+    // --- LÓGICA PARA COLOR DE TEXTO ---
     if (radioColors.length > 0 && previewName && previewAmount) {
         radioColors.forEach(radio => {
             radio.addEventListener('change', () => {
@@ -39,34 +64,35 @@
         });
     }
 
-    // lógica para el tamaño de la fuente
-
-    if (selectFontSize) {
+    // ---  LÓGICA PARA TAMAÑO DE FUENTE  ---
+    if (selectFontSize && previewName && previewAmount) { 
         selectFontSize.addEventListener('change', () => {
-            const newSize = selectFontSize.value;
+            const newSize = selectFontSize.value; 
+            
             if (previewName) {
                 previewName.style.fontSize = newSize;
             }
             
-            const numericSize = parseInt(newSize.replace('px', ''));
+            const numericSize = parseInt(newSize); 
+            
             if (previewAmount) {
                 previewAmount.style.fontSize = `${numericSize * 1.6}px`;
             }
         });
     }
 
-    // lógica para monto
-
+    // --- LÓGICA PARA MONTO ---
     function actualizarMonto() {
         const checkedMonto = document.querySelector('input[name="monto"]:checked');
-        if (!checkedMonto) return; 
-
+        if (!checkedMonto) {
+            if (previewAmount) previewAmount.innerText = '$0';
+            return;
+        }
         const value = checkedMonto.value;
-
         if (value === 'other') {
             const otroMonto = inputMontoOtro ? inputMontoOtro.value : '0';
             if (previewAmount) {
-                previewAmount.innerText = otroMonto ? `$${otroMonto}` : '$0';
+                previewAmount.innerText = (otroMonto && parseFloat(otroMonto) > 0) ? `$${otroMonto}` : '$0';
             }
         } else {
             if (previewAmount) {
@@ -74,36 +100,35 @@
             }
         }
     }
-
+    
     if (radioMontos.length > 0) {
-        radioMontos.forEach(radio => radio.addEventListener('change', actualizarMonto));
+        radioMontos.forEach(radio => {
+            radio.addEventListener('change', actualizarMonto);
+        });
     }
-
     if (inputMontoOtro) {
         inputMontoOtro.addEventListener('input', actualizarMonto);
+        inputMontoOtro.addEventListener('focus', () => {
+            document.querySelector('input[name="monto"][value="other"]').checked = true;
+            actualizarMonto(); 
+        });
     }
 
-    // lógica para ubicación
-
+    // --- LÓGICA PARA UBICACIÓN ---
     if (radioUbicaciones.length > 0 && previewTextContainer) {
         radioUbicaciones.forEach(radio => {
             radio.addEventListener('change', () => {
                 const checkedUbicacion = document.querySelector('input[name="ubicacion"]:checked').value;
-                
                 previewTextContainer.classList.remove(
-                    'position-top-left', 
-                    'position-top-right', 
-                    'position-bottom-left', 
-                    'position-bottom-right'
+                    'position-top-left', 'position-top-right', 
+                    'position-bottom-left', 'position-bottom-right'
                 );
-                
                 previewTextContainer.classList.add(checkedUbicacion);
             });
         });
     }
 
-    // lógica para el fondo
-
+    // --- LÓGICA PARA FONDO ---
     if (radioFondos.length > 0 && previewCard) {
         radioFondos.forEach(radio => {
             radio.addEventListener('change', () => {
@@ -112,54 +137,69 @@
             });
         });
     }
-
-    // Inicialización
+    
+    // ---  INICIALIZACIÓN (CORREGIDA) ---
     function initializePreview() {
-
+        // Lógica de nombre unificada
         if (inputName && previewName) {
             if (inputName.value.trim() === '') {
-                previewName.innerText = '...';
+                previewName.innerText = 'Para: ...';
             } else {
-                previewName.innerText = `${inputName.value}`;
+                previewName.innerText = `Para: ${inputName.value}`;
             }
         }
-
         const initColorRadio = document.querySelector('input[name="color"]:checked');
         if (initColorRadio && previewName && previewAmount) {
-            const initColor = initColorRadio.value;
-            previewName.style.color = initColor;
-            previewAmount.style.color = initColor;
+            previewName.style.color = initColorRadio.value;
+            previewAmount.style.color = initColorRadio.value;
         }
 
         if (selectFontSize && previewName && previewAmount) {
-            const initFontSize = selectFontSize.value;
-            previewName.style.fontSize = initFontSize;
-            const initNumericSize = parseInt(initFontSize.replace('px', ''));
+            const initFontSize = selectFontSize.value; 
+            previewName.style.fontSize = initFontSize; 
+            const initNumericSize = parseInt(initFontSize); 
             previewAmount.style.fontSize = `${initNumericSize * 1.6}px`;
         }
 
         actualizarMonto();
-
         const initUbicacionRadio = document.querySelector('input[name="ubicacion"]:checked');
         if (initUbicacionRadio && previewTextContainer) {
-            const initUbicacion = initUbicacionRadio.value;
-
-            previewTextContainer.classList.remove(
-                'position-top-left', 
-                'position-top-right', 
-                'position-bottom-left', 
-                'position-bottom-right'
-            );
-            previewTextContainer.classList.add(initUbicacion);
+            previewTextContainer.classList.add(initUbicacionRadio.value);
         }
-
         const initFondoRadio = document.querySelector('input[name="fondo"]:checked');
         if (initFondoRadio && previewCard) {
-            const initFondo = initFondoRadio.value;
-            previewCard.style.backgroundImage = `url('${initFondo}')`;
+            previewCard.style.backgroundImage = `url('${initFondoRadio.value}')`;
         }
     }
+    
+    initializePreview(); 
 
-    // Ejecutamos la función de inicialización
-    initializePreview();
-});
+    // --- VALIDACIÓN ---
+    function validateForm() {
+        clearError('nombre');
+        let isValid = true;
+        if (!inputName || inputName.value.trim() === '') {
+            isValid = false;
+            showError('nombre', 'Por favor, ingresa el nombre del destinatario.');
+        }
+        return isValid;
+    }
+
+    // botón "Comprar"
+    if (giftForm) {
+        giftForm.setAttribute('novalidate', true);
+
+        giftForm.addEventListener('submit', (e) => {
+            if (!validateForm()) { 
+                e.preventDefault(); 
+                console.log('Formulario inválido, "Comprar" detenido.');
+            } else {
+                console.log('Formulario válido, enviando a "comprar"...');
+                
+            }
+        });
+    } else {
+        console.error("No se pudo encontrar el formulario con id 'giftcard-form'");
+    }
+
+}); 
