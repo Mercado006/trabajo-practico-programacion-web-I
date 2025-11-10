@@ -52,12 +52,16 @@
 
     <main class="giftcard-main">
 
-        <div class="giftcard-content">
+        <br><div class="giftcard-content">
 
         <!-- Vista previa -->
         <section class="giftcard-preview">
             <div class="card" id="preview-card" style="background-image: url('../img/fondo5.jpg');">
-                <div class="card-amount" id="preview-amount">$0</div>
+
+                <div id="preview-text-container" class="card-text-container position-bottom-right">
+                    <div class="card-name" id="preview-name">Nombre</div>
+                    <div class="card-amount" id="preview-amount">$0</div>
+                </div>
                 <p class="preview-note">Vista previa</p>
             </div>
         </section>
@@ -66,27 +70,27 @@
 
         <section class="giftcard-form">
             <h2>Personalizá tu Gift Card</h2>
-            <form>
-                <label for="nombre">Nombre del destinatario <span class="required">*</span> </label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej:Ana Gómez" required>
+            <form id="giftcard-form">
+                <label for="destinatario">Nombre del destinatario <span class="required">*</span> </label>
+                <input type="text" id="destinatario" name="nombre" placeholder="Ej:Ana Gómez" required>
 
         <!-- Color -->
         <div class="form-columns">
         <div class="form-group">
         <label>Color del texto</label>
             <div class="options color-options">
-                <input type="radio" name="color" id="c1"><label for="c1" class="color-swatch black"></label>
-                <input type="radio" name="color" id="c2"><label for="c2" class="color-swatch pink"></label>
-                <input type="radio" name="color" id="c3"><label for="c3" class="color-swatch green"></label>
-                <input type="radio" name="color" id="c4"><label for="c4" class="color-swatch violet"></label>
-                <input type="radio" name="color" id="c5"><label for="c5" class="color-swatch red"></label>
+                <input type="radio" name="color" id="c1" value="rgb(0, 0, 0)" checked><label for="c1" class="color-swatch black"></label>
+                <input type="radio" name="color" id="c2" value="rgb(241, 130, 164)"><label for="c2" class="color-swatch pink"></label>
+                <input type="radio" name="color" id="c3" value="rgb(120, 150, 87)"><label for="c3" class="color-swatch green"></label>
+                <input type="radio" name="color" id="c4" value="rgb(204, 168, 233)"><label for="c4" class="color-swatch violet"></label>
+                <input type="radio" name="color" id="c5" value="rgb(216, 94, 94)"><label for="c5" class="color-swatch red"></label>
             </div>
         </div>
         </div>
         
         <label for="font-size">Tamaño de fuente</label>
             <select name="font-size" id="font-size">
-                <option value="20">20px</option>
+                <option value="20" selected>20px</option>
                 <option value="28">28px</option>
                 <option value="32">32px</option>
                 <option value="48">48px</option>
@@ -98,21 +102,21 @@
         <label>Monto <span class="required">*</span> </label>
         <div class="options amount-options">
     <label>
-        <input type="radio" name="monto" value="100" required>
-        <span>$5.000</span>
-    </label>
-    <label>
-        <input type="radio" name="monto" value="200"> 
-        <span>$10.000</span>
-    </label>
-    <label>
-        <input type="radio" name="monto" value="300">
-        <span>$15.000</span>
-    </label>
-    <label class="other-swatch">
-        <input type="radio" name="monto" value="other">
-        <span>+</span>
-        <input type="number" name="monto-otro" class="other-input" placeholder="$">
+        <input type="radio" name="monto" value="5000" data-amount="$5.000" required checked>
+                            <span>$5.000</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="monto" value="10000" data-amount="$10.000"> 
+                            <span>$10.000</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="monto" value="15000" data-amount="$15.000">
+                            <span>$15.000</span>
+                        </label>
+                        <label class="other-swatch">
+                            <input type="radio" name="monto" value="other" data-amount="other">
+                            <span>+</span>
+        <input type="number" id="monto-otro" name="monto-otro" class="other-input" placeholder="$">
     </label>
 </div>
 
@@ -120,16 +124,16 @@
 
         <label>Ubicación</label>
             <div class="options location-options">
-                <input type="radio" name="ubicacion" id="u1">
+                <input type="radio" name="ubicacion" id="u1" value="position-top-left">
                 <label for="u1" class="loc-swatch top-left"></label>
 
-                <input type="radio" name="ubicacion" id="u2">
+                <input type="radio" name="ubicacion" id="u2" value="position-top-right">
                 <label for="u2" class="loc-swatch top-right"></label>
 
-                <input type="radio" name="ubicacion" id="u3">
+                <input type="radio" name="ubicacion" id="u3" value="position-bottom-left">
                 <label for="u3" class="loc-swatch bottom-left"></label>
 
-                <input type="radio" name="ubicacion" id="u4">
+                <input type="radio" name="ubicacion" id="u4" value="position-bottom-right" checked>
                 <label for="u4" class="loc-swatch bottom-right"></label>
 </div>
 
@@ -138,11 +142,11 @@
         <label>Fondo</label>
             
             <div class="options background-options">
-                <input type="radio" name="fondo" id="f1"><label for="f1" class="bg-swatch" style="background-image:url('../img/fondo1.jpg');"></label>
-                <input type="radio" name="fondo" id="f2"><label for="f2" class="bg-swatch" style="background-image:url('../img/fondo2.jpg');"></label>
-                <input type="radio" name="fondo" id="f3"><label for="f3" class="bg-swatch" style="background-image:url('../img/fondo4.jpg');"></label>
-                <input type="radio" name="fondo" id="f4"><label for="f4" class="bg-swatch" style="background-image:url('../img/fondo3.jpg');"></label>
-                <input type="radio" name="fondo" id="f5"><label for="f5" class="bg-swatch" style="background-image:url('../img/fondo7.jpg');"></label>
+                        <input type="radio" name="fondo" id="f1" value="../img/fondo1.jpg"><label for="f1" class="bg-swatch" style="background-image:url('../img/fondo1.jpg');"></label>
+                        <input type="radio" name="fondo" id="f2" value="../img/fondo2.jpg"><label for="f2" class="bg-swatch" style="background-image:url('../img/fondo2.jpg');"></label>
+                        <input type="radio" name="fondo" id="f3" value="../img/fondo4.jpg"><label for="f3" class="bg-swatch" style="background-image:url('../img/fondo4.jpg');"></label>
+                        <input type="radio" name="fondo" id="f4" value="../img/fondo3.jpg"><label for="f4" class="bg-swatch" style="background-image:url('../img/fondo3.jpg');"></label>
+                <input type="radio" name="fondo" id="f5" value="../img/fondo5.jpg" checked><label for="f5" class="bg-swatch" style="background-image:url('../img/fondo7.jpg');"></label>
             </div>
 
             <!-- Mensaje -->
@@ -225,6 +229,8 @@
     </div>
     <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="../js/giftcard.js" defer></script>
 
 </body>
 </html>
