@@ -2,86 +2,62 @@ import { BuscadorElementos } from "./BuscadorELementos.js";
 const DOM = new BuscadorElementos();
 
 export function InicializadorSlider() {
-    const slider = DOM.unElemento(".slider");
-    const cards = DOM.mElementos(".slider-card");
-    const leftArrow = DOM.unElemento(".left-arrow-btn");
-    const rightArrow = DOM.unElemento(".right-arrow-btn");
-    const dotsContainer = DOM.unElemento(".slider-indicators");
-    const dots = DOM.mElementos(".dot");
+    const sliderWrapper = DOM.oneElement(".slider-wrapper");
+    const slides = DOM.allElement(".slider-card");
+    const dots = DOM.allElement(".dot");
+    const leftArrow = DOM.oneElement(".left-arrow-btn");
+    const rightArrow = DOM.oneElement(".right-arrow-btn");
 
-    if (!slider || cards.length === 0 || !leftArrow || !rightArrow || !dotsContainer) return;
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    const interval = 4000;
+    let autoSlide;
 
-    let index = 0;
-    const totalCards = cards.length;
-    const visibles = 2;
-    const posiciones = Math.max(1, totalCards - visibles + 1); // cantidad de "posiciones" / puntitos
-    let intervalo;
-
-    // Mueve el slider según la posición actual
-    function actualizarSlider() {
-        const desplazamiento = -(index * (cards[0].offsetWidth + 20));
-        slider.style.transform = `translateX(${desplazamiento}px)`;
-        slider.style.transition = "transform 0.8s ease";
-    }
-
-    // Muestra la siguiente tarjeta
-    function siguiente() {
-        if (index < tarjetasNoVisibles) {
-            index++;
+    function showSlide(index) {
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
         } else {
-            index = 0; // vuelve al inicio
+            currentIndex = index;
         }
-        actualizarSlider();
-    }
 
-    // Muestra la siguiente tarjeta
-    function anterior() {
-        if (index > 0) {
-            index--;
-        } else {
-            index = tarjetasNoVisibles;
-        }
-        actualizarSlider();
-    }
+        const offset = -currentIndex * slides[0].offsetWidth;
+        sliderWrapper.style.transform = `translateX(${offset}px)`;
 
-    // 🔹 Al hacer clic en un punto, ir a esa tarjeta
-    rightArrow.addEventListener("click", () => {
-        siguiente();
-        reiniciarIntervalo();
-    });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentIndex);
+        });
+    }
 
     leftArrow.addEventListener("click", () => {
-        anterior();
-        reiniciarIntervalo();
+        showSlide(currentIndex - 1);
+        resetAutoSlide();
     });
 
-    function reiniciarIntervalo() {
-        clearInterval(intervalo);
-        intervalo = setInterval(siguiente, 4000); // 4 segundos
-    }
+    rightArrow.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+        resetAutoSlide();
+    });
 
-    reiniciarIntervalo();
-
-    //dots lpm
-    for (let i = 0; i < totalCards; i++) {
-        const punto = DOM.unElemento("span");
-        punto.classList.add("dot");
-        if (i === 0) punto.classList.add("activo");
-        contenedorPuntos.appendChild(punto);
-        // cuando se hace clic en un puntito
-        punto.addEventListener("click", () => {
-            index = i;
-            actualizarSlider();
-            actualizarPuntos();
-            reiniciarIntervalo();
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            showSlide(i);
+            resetAutoSlide();
         });
+    });
 
+    function startAutoSlide() {
+        autoSlide = setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, interval);
     }
 
-    function actualizarPuntos() {
-        puntos.forEach((p, i) => {
-            p.classList.toggle("activo", i === index);
-        });
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
     }
 
+    showSlide(currentIndex);
+    startAutoSlide();
 }
