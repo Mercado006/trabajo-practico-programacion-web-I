@@ -32,6 +32,7 @@ export const headerHTML = `
           <img src="./img/carrito.png" alt="Carrito de cursos">
           <span class="cart-count">0</span>
         </button>
+        </div>
 
         <!-- Sidebar del carrito -->
         <div id="cart-sidebar" class="cart-sidebar">
