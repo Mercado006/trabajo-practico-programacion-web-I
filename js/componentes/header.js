@@ -29,7 +29,7 @@ export const headerHTML = `
         <a href="./pages/login.html" class="login">Acceder</a>
 
         <button id="cart-button" class="cart">
-          <img src="./img/carrito.png" alt="Carrito de cursos">
+          <img src="../img/carrito.png" alt="Carrito de cursos">
           <span class="cart-count">0</span>
         </button>
 
