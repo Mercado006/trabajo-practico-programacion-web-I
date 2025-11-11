@@ -1,41 +1,12 @@
-const cursosData = {
-  '2025-11-06': [
-    {
-      titulo: 'Testing Básico',
-      link: '../pages/detalles-del-curso-testing.html',
-      img: '../img/curso-testing.png',
-      duracion: '35 Horas',
-      descripcion: 'Introducción al testing de software y fundamentos esenciales.'
-    },
-    {
-      titulo: 'Introducción a Python',
-      link: '../pages/detalles-del-curso-python.html',
-      img: '../img/Phyton.jpg',
-      duracion: '45 horas',
-      descripcion: 'Descubre la sintaxis básica, variables y estructuras de control.'
-    }
-  ],
-  '2025-11-17': [
-    {
-      titulo: 'SQL Avanzado',
-      link: '../pages/detalles-del-curso-sql.html',
-      img: '../img/curso-sql-avanzado.png',
-      duracion: '60 horas',
-      descripcion: 'Técnicas y herramientas para bases de datos complejas.'
-    }
-  ],
-  '2025-11-22': [
-    {
-      titulo: 'Fundamentos JavaScript',
-      link: '../pages/detalles-del-curso-javascript.html',
-      img: '../img/curso-intensivo-js.jpg',
-      duracion: '50 horas',
-      descripcion: 'Introducción completa al lenguaje JavaScript para desarrollo web.'
-    }
-  ],
+import { cursosData } from './cursos-data.js';
+
+const calendarioCursos = {
+  '2025-11-06': ['testing', 'python'],
+  '2025-11-17': ['sql'],
+  '2025-11-22': ['javascript']
 };
 
-let currentDate = new Date(2025, 10, 1);
+let currentDate = new Date(2025, 10, 1); 
 
 document.addEventListener('DOMContentLoaded', () => {
   const calendarGrid = document.getElementById('calendarGrid');
@@ -78,41 +49,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
       
-      if (cursosData[dateString]) {
+      if (calendarioCursos[dateString]) {
         dayCell.classList.add('con-cursos');
         
-        cursosData[dateString].forEach(curso => {
-          const cursoDiv = document.createElement('div');
-          cursoDiv.className = 'curso-tarjeta';
+        calendarioCursos[dateString].forEach(cursoId => {
+          const curso = cursosData[cursoId];
           
-          cursoDiv.innerHTML = `
-            <a href="${curso.link}" class="curso">${curso.titulo}</a>
-            <div class="curso-detalle" style="display: none;"> <!-- Oculto por defecto con estilo inline para que JS tome el control inicial -->
-              <img src="${curso.img}" alt="${curso.titulo}">
-              <h4>${curso.titulo}</h4>
-              <p class="duracion"><strong>Duración:</strong> ${curso.duracion}</p>
-              <p class="descripcion">${curso.descripcion}</p>
-              <a href="${curso.link}" class="btn-detalle">Ir al detalle</a>
-            </div>
-          `;
-          
-          let hideTimeout;
-          const detalleDiv = cursoDiv.querySelector('.curso-detalle');
+          if (curso) {
+            const cursoDiv = document.createElement('div');
+            cursoDiv.className = 'curso-tarjeta';
+            
+            cursoDiv.innerHTML = `
+              <a href="detalle-curso.html?curso=${cursoId}" class="curso">${curso.titulo}</a>
+              <div class="curso-detalle" style="display: none;">
+                <img src="${curso.imagen}" alt="${curso.titulo}">
+                <h4>${curso.titulo}</h4>
+                <p class="duracion"><strong>Duración:</strong> ${curso.horas} horas</p>
+                <p class="descripcion">${curso.descripcion[0]}</p>
+                <a href="detalle-curso.html?curso=${cursoId}" class="btn-detalle">Ir al detalle</a>
+              </div>
+            `;
+            
+            let hideTimeout;
+            const detalleDiv = cursoDiv.querySelector('.curso-detalle');
 
-          cursoDiv.addEventListener('mouseenter', () => {
-            clearTimeout(hideTimeout);
-            detalleDiv.style.display = 'block';
-            detalleDiv.style.zIndex = '100';
-          });
+            cursoDiv.addEventListener('mouseenter', () => {
+              clearTimeout(hideTimeout);
+              detalleDiv.style.display = 'block';
+              detalleDiv.style.zIndex = '100';
+            });
 
-        
-          cursoDiv.addEventListener('mouseleave', () => {
-            hideTimeout = setTimeout(() => {
-              detalleDiv.style.display = 'none';
-            }, 500);
-          });
+            cursoDiv.addEventListener('mouseleave', () => {
+              hideTimeout = setTimeout(() => {
+                detalleDiv.style.display = 'none';
+              }, 500);
+            });
 
-          dayCell.appendChild(cursoDiv);
+            dayCell.appendChild(cursoDiv);
+          }
         });
       }
 
