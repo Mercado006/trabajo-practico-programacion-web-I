@@ -1,4 +1,5 @@
 import { cursosData } from './cursos-data.js';
+import { mostrarModal } from './modal-carrito.js'; // ✅ nuevo import
 
 const urlParams = new URLSearchParams(window.location.search);
 const cursoId = urlParams.get('curso');
@@ -9,6 +10,7 @@ if (!cursoId || !cursosData[cursoId]) {
   const curso = cursosData[cursoId];
   renderizarCurso(curso);
   renderizarCursosRelacionados(curso.cursosRelacionados, cursoId);
+  agregarEventosCompra(curso);
 }
 
 function renderizarCurso(curso) {
@@ -28,21 +30,21 @@ function renderizarCurso(curso) {
         
         ${curso.descripcion ? `
           <details>
-            <summary><strong>Descripción del curso:</strong></summary>
+            <summary><strong>Descripción del curso</strong></summary>
             ${curso.descripcion.map(p => `<p>${p}</p>`).join('')}
           </details>
         ` : ''}
         
         ${curso.requisitos ? `
           <details>
-            <summary><strong>Requisitos previos:</strong></summary>
+            <summary><strong>Requisitos previos</strong></summary>
             <ul>
               ${curso.requisitos.map(req => `<li>${req}</li>`).join('')}
             </ul>
           </details>
         ` : ''}
         
-        <button class="buy-course">Inscribirse</button>
+        <button class="buy-course">Comprar</button>
         
         ${curso.contenidos ? `
           <div class="curso-contenidos">
@@ -97,7 +99,7 @@ function renderizarCursosRelacionados(idsRelacionados, cursoActualId) {
             <div class="curso-info-contenido">
               <h5>${curso.titulo}</h5>
               <a href="detalle-curso.html?curso=${id}">Ver Detalle</a>
-              <button class="buy-course">Comprar</button>
+              <button class="buy-course" data-id="${id}">Comprar</button>
             </div>
             <p class="curso-horas">${curso.horas} hs</p>
           </div>
@@ -107,4 +109,15 @@ function renderizarCursosRelacionados(idsRelacionados, cursoActualId) {
     .join('');
   
   aside.innerHTML = cursosHTML;
+}
+
+function agregarEventosCompra(cursoActual) {
+  const botones = document.querySelectorAll('.buy-course');
+  botones.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id || cursoActual.id;
+      const cursoSeleccionado = cursosData[id] || cursoActual;
+      mostrarModal(cursoSeleccionado);
+    });
+  });
 }
