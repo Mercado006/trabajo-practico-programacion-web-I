@@ -14,6 +14,7 @@ main {
     flex-direction: column;
     padding: 4.2em 0em 2em 0em;
     flex: 1;
+    margin-top: 3.5em;
 }
 
 .curso-section {
@@ -83,20 +84,6 @@ main {
     flex-direction: column;
     gap: 1em;
     margin: 1.2em 5em 1em 1em;
-}
-
-.curso-contenidos details summary::after {
-    content: url('/img/flecha-abajo-icono.svg');
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
-}
-
-.curso-contenidos details[open] summary::after {
-    content: url('/img/flecha-arriba-icono.svg');
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
 }
 
 .buy-course {
@@ -267,7 +254,7 @@ summary {
     object-fit: cover;
 }
 
-.curso-precio-python, .curso-precio-sql, .curso-precio-fundamentos-de-js, .curso-precio-testing {
+.curso-precio-python, .curso-precio-sql, .curso-precio-fundamentos-de-js, .curso-precio-testing, .curso-precio-java{
     position: absolute;
     top: 1.2em;
     right: 0em;
@@ -280,7 +267,7 @@ summary {
 .curso-precio-fundamentos-de-js {
     position: absolute;
     top: 9em;
-    right: 11.05em;
+    right: 10.3em;
     background: black;
     color: white;
     padding: 0.3em 0.5em;
@@ -636,6 +623,7 @@ footer h3 {
     
     main {
         padding: 2em 0 1.5em 0;
+        margin-top: 9em;
     }
     
     .curso-section {
@@ -803,7 +791,8 @@ footer h3 {
     
     .curso-precio-python, 
     .curso-precio-sql, 
-    .curso-precio-testing {
+    .curso-precio-testing,
+    .curso-precio-java {
         top: 0.8em;
         right: 0;
         padding: 0.3em 0.5em;

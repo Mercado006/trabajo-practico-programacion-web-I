@@ -14,6 +14,7 @@ main {
     flex-direction: column;
     padding: 4.2em 0em 2em 0em;
     flex: 1;
+    margin-top: 3.5em;
 }
 
 .curso-section {
@@ -157,20 +158,6 @@ summary {
 
 .curso-contenidos details summary::marker {
     content: none;
-}
-
-.curso-contenidos details summary::after {
-    content: url('/img/flecha-abajo-icono.svg');
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
-}
-
-.curso-contenidos details[open] summary::after {
-    content: url('/img/flecha-arriba-icono.svg');
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
 }
 
 .docente-section {
@@ -524,6 +511,7 @@ footer h3 {
     
     main {
         padding: 3em 0 2em 0;
+        margin-top: 9em;
     }
     
     .curso-section {
