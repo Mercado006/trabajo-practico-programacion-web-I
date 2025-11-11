@@ -1,5 +1,6 @@
 import { headerHTML } from './componentes/header.js';
 import { footerHTML } from './componentes/footer.js';
+import { inicializarSidebar } from './componentes/sidebar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const headerContainer = document.getElementById('header');
@@ -7,4 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (headerContainer) headerContainer.innerHTML = headerHTML;
     if (footerContainer) footerContainer.innerHTML = footerHTML;
+    inicializarSidebar();
 });
+

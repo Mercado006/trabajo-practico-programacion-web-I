@@ -1,4 +1,4 @@
-import { BuscadorElementos } from "./BuscadorELementos.js";
+import { BuscadorElementos } from "../BuscadorELementos.js";
 const DOM = new BuscadorElementos();
 
 export function inicializarSidebar() {
