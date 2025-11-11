@@ -35,13 +35,42 @@
         <li><a href="./pages/formulario-inscripcion.html">Empresas</a></li>
         <li><a href="./pages/PaginaContacto.html">Contacto</a></li>
       </ul>
-
       <div class="nav-actions">
         <a href="./pages/login.html" class="login">Acceder</a>
-        <a href="#" class="cart">
+
+        <button id="cart-button" class="cart">
           <img src="./img/carrito.png" alt="Carrito de cursos">
           <span class="cart-count">0</span>
-        </a>
+        </button>
+
+        <!-- Sidebar del carrito -->
+        <div id="cart-sidebar" class="cart-sidebar">
+          <div id="info-sidebar" class="info-sidebar">
+            <h2>Mi carrito</h2>
+            <div id="cart-count-info" class="cart-count-info">
+              <span class="cart-count-sidebar">0</span>
+              <p> unidades</p>
+            </div>
+          </div>
+          <table id="side-bar" class="side-bar">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+          </table>
+          <div id="sidebar-button" class="sidebar-button">
+            <button id="delete-cart-count" class="delete-cart-count">Vaciar Carrito</button>
+            <button id="close-cart" class="close-cart">Cerrar</button>
+          </div>
+        </div>
+
+
       </div>
     </nav>
   </header>
@@ -73,8 +102,7 @@
           </article>
 
           <article class="slider-card">
-            <img src="./img/CursoRecomendado-DiseñoGrafico 2.jpg" alt="Diseño Gráfico"
-              class="img-curso-recomendado">
+            <img src="./img/CursoRecomendado-DiseñoGrafico 2.jpg" alt="Diseño Gráfico" class="img-curso-recomendado">
             <div class="course-info">
               <div class="students">
                 <img src="./img/groups_100dp_023047_FILL0_wght400_GRAD0_opsz48.png" alt="students-icon"
@@ -98,8 +126,7 @@
           </article>
 
           <article class="slider-card">
-            <img src="./img/Phyton_CursoRecomendado.avif" alt="Introducción a Python"
-              class="img-curso-recomendado">
+            <img src="./img/Phyton_CursoRecomendado.avif" alt="Introducción a Python" class="img-curso-recomendado">
             <div class="course-info">
               <div class="students">
                 <img src="./img/groups_100dp_023047_FILL0_wght400_GRAD0_opsz48.png" alt="students-icon"
