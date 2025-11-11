@@ -1,5 +1,10 @@
 import { cursosData } from './cursos-data.js';
-import { mostrarModal } from './modal-carrito.js'; // ✅ nuevo import
+import { mostrarModal } from './modal-carrito.js';
+import { inicializarCarrito, incrementarCarrito } from './carrito.js'; 
+
+document.addEventListener('DOMContentLoaded', () => {
+  inicializarCarrito();
+});
 
 const urlParams = new URLSearchParams(window.location.search);
 const cursoId = urlParams.get('curso');
@@ -118,6 +123,7 @@ function agregarEventosCompra(cursoActual) {
       const id = btn.dataset.id || cursoActual.id;
       const cursoSeleccionado = cursosData[id] || cursoActual;
       mostrarModal(cursoSeleccionado);
+      incrementarCarrito(); 
     });
   });
 }

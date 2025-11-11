@@ -1,3 +1,5 @@
+import { decrementarCarrito } from './carrito.js'; 
+
 export function mostrarModal(curso) {
   const modalExistente = document.querySelector('.modal');
   if (modalExistente) modalExistente.remove();
@@ -28,8 +30,15 @@ export function mostrarModal(curso) {
   }, 10);
 
   modal.querySelector('.close-modal').onclick = () => modal.remove();
+
   modal.querySelector('.modal-ok').onclick = () => modal.remove();
+
   modal.onclick = e => {
     if (e.target === modal) modal.remove();
+  };
+
+  modal.querySelector('.modal-eliminar-curso').onclick = () => {
+    decrementarCarrito(); 
+    modal.remove();      
   };
 }
