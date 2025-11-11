@@ -1,4 +1,6 @@
 import { cursosData } from './cursos-data.js';
+import { mostrarModal } from './modal-carrito.js';
+import { incrementarCarrito } from './carrito.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const contenedor = document.querySelector('.wrapper-courses');
@@ -21,4 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     .join('');
 
   contenedor.innerHTML = cursosHTML;
+
+  const botonesComprar = document.querySelectorAll('.buy-course');
+
+  botonesComprar.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      const curso = Object.values(cursosData)[index];
+      incrementarCarrito();
+      mostrarModal(curso);
+    });
+  });
 });
