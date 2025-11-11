@@ -10,70 +10,8 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="./index.html" class="logo">
-        <img src="./img/logo skillup.png" alt="SkillUp">
-      </a>
-
-      <form class="search-form" action="#" method="get">
-        <div class="search-wrapper">
-          <img src="./img/lupa.png" alt="Buscar" class="search-icon">
-          <input type="search" list="cursos" name="q" placeholder="Buscar cursos" autocomplete="off">
-          <datalist id="cursos">
-            <option value="UX/UI"></option>
-            <option value="JavaScript"></option>
-            <option value="Python"></option>
-            <option value="Marketing digital"></option>
-          </datalist>
-        </div>
-      </form>
-
-      <ul class="menu">
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./pages/Calendario.html">Cursos</a></li>
-        <li><a href="./pages/formulario-inscripcion.html">Empresas</a></li>
-        <li><a href="./pages/PaginaContacto.html">Contacto</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="./pages/login.html" class="login">Acceder</a>
-
-        <button id="cart-button" class="cart">
-          <img src="./img/carrito.png" alt="Carrito de cursos">
-          <span class="cart-count">0</span>
-        </button>
-
-        <!-- Sidebar del carrito -->
-        <div id="cart-sidebar" class="cart-sidebar">
-          <div id="info-sidebar" class="info-sidebar">
-            <h2>Mi carrito</h2>
-            <div id="cart-count-info" class="cart-count-info">
-              <span class="cart-count-sidebar">0</span>
-              <p> unidades</p>
-            </div>
-          </div>
-          <table id="side-bar" class="side-bar">
-            <thead>
-              <tr>
-                <th>Imagen</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="cart-items"></tbody>
-          </table>
-          <div id="sidebar-button" class="sidebar-button">
-            <button id="delete-cart-count" class="delete-cart-count">Vaciar Carrito</button>
-            <button id="close-cart" class="close-cart">Cerrar</button>
-          </div>
-        </div>
-
-
-      </div>
-    </nav>
-  </header>
+  <!-- Header dinámico -->
+  <div id="header"></div>
 
   <main>
     <!-- Slider-Cursos-Recomendados -->
@@ -227,45 +165,15 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-container">
-      <section class="footer-logo">
-        <img src="./img/logo skillup blanco.png" alt="Logo Skillup">
-      </section>
-
-      <section class="footer-datos">
-        <h3>Datos del grupo</h3>
-        <p>Alegre Melisa - DNI 42.094.003</p>
-        <p>Cali Francisco - DNI 47.166.154</p>
-        <p>Leonardi Mayra - DNI 44.360.732</p>
-        <p>Mercado Sofía Victoria - DNI 47.410.999</p>
-        <p>Possentini Rafael - DNI 95.969.407</p>
-      </section>
-
-      <section class="footer-menu">
-        <h3>Acerca de</h3>
-        <ul>
-          <li><a href="../pages/sobre-nosotros.html">¿Quiénes somos?</a></li>
-          <li><a href="#">Preguntas frecuentes</a></li>
-          <li><a href="#">Privacidad</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-        </ul>
-      </section>
-
-      <section class="footer-redes">
-        <h3>Seguinos</h3>
-        <a href="#"><img src="./img/facebook.png" alt="Facebook">Facebook</a>
-        <a href="#"><img src="./img/instagram.png" alt="Instagram">Instagram</a>
-        <a href="#"><img src="./img/linkedin.png" alt="LinkedIn">LinkedIn</a>
-      </section>
-    </div>
-    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
-  </footer>
+  <!-- Footer dinámico -->
+  <div id="footer"></div>
 
   <!-- Scripts -->
+  <script type="module" src="../js/renderizar-layout.js"></script>
   <script type="module" src="./js/renderizar-index.js"></script>
   <script type="module" src="./js/index.js"></script>
   <script type="module" src="./js/init-carrito.js"></script>
+
 </html>
 </body>
 
