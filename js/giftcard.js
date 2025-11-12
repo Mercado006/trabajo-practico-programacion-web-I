@@ -1,5 +1,6 @@
-import { inicializarCarrito, incrementarCarrito } from './init-carrito.js';
+import { actualizarContadorCarrito } from './init-carrito.js';
 import { mostrarModal } from './modal-carrito.js';
+import { getCurrentUser, addItemToCart } from './almacenamiento.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -7,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewTextContainer = document.getElementById('preview-text-container');
     const previewName = document.getElementById('preview-name');
     const previewAmount = document.getElementById('preview-amount');
-
-    inicializarCarrito();
 
     const giftForm = document.getElementById('giftcard-form');
     const inputName = document.getElementById('nombre');
@@ -184,13 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function validateForm() {
         clearError('nombre');
         clearError('monto');
-        
+        
         let isValid = true;
 
-        if (!inputName || inputName.value.trim() === '') {
-            isValid = false;
-            showError('nombre', 'Por favor, ingresa el nombre del destinatario.');
-        }
+        if (!inputName || inputName.value.trim() === '') {
+            isValid = false;
+            showError('nombre', 'Por favor, ingresa el nombre del destinatario.');
+        }
 
         const montoSeleccionado = document.querySelector('input[name="monto"]:checked');
 
@@ -204,9 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError('monto', 'Por favor, ingresa un monto válido.');
             }
         }
-        
+        
         return isValid;
-    }
+    }
 
     // botón "Comprar"
     if (giftForm) {
@@ -219,8 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Formulario inválido, "Comprar" detenido.');
             } else {
                 console.log('Formulario válido, sumando al carrito...');
-
-                incrementarCarrito();
 
                 const montoElement = document.querySelector('input[name="monto"]:checked');
                 let montoValor;
@@ -236,13 +233,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const fondoElement = document.querySelector('input[name="fondo"]:checked');
 
+                // Crear un ID único para la gift card
+                const giftCardId = `giftcard-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
                 const giftCardInfo = {
+                    id: giftCardId,
                     titulo: `Gift Card para ${inputName.value}`,
                     precio: montoTexto, 
                     imagen: fondoElement.value,
                     horas: 'N/A' 
                 };
 
+                // AGREGAR AL CARRITO
+                const currentUser = getCurrentUser();
+                addItemToCart(currentUser, giftCardInfo);
+
+                // ACTUALIZAR CONTADOR VISUAL
+                actualizarContadorCarrito();
+
+                // MOSTRAR MODAL
                 mostrarModal(giftCardInfo);
             }
         });
