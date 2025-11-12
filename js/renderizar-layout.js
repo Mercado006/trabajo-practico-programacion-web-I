@@ -35,7 +35,7 @@ function actualizarEstadoAutenticacion() {
         });
     } else {
         authButton.textContent = 'Acceder';
-        authButton.href = './pages/login.html';
+        authButton.href = '/pages/login.html';
         
         if (perfilMenuItem) {
             perfilMenuItem.style.display = 'none';

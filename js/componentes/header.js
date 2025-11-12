@@ -27,7 +27,7 @@ export const headerHTML = `
         </ul>
 
          <div class="nav-actions">
-        <a href="./pages/login.html" id="auth-button" class="login">Acceder</a>
+         <a href="/pages/login.html" id="auth-button" class="login">Acceder</a>
 
         <button id="cart-button" class="cart">
           <img src="../img/carrito.png" alt="Carrito de cursos">
