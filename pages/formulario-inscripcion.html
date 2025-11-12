@@ -1,66 +1,108 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de inscripción</title>
+  <title>Form</title>
   <link rel="stylesheet" href="../styles/formulario-inscripcion.css">
   <link rel="stylesheet" href="../styles/header-footer.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+ 
+
 
   <div id="header"></div>
 
   <main class="main">
-    <div class="titulo__contenedor"> 
-      <h1 class="titulo">FORMULARIO DE INSCRIPCIÓN</h1>
+    <div class="titulo__contenedor">
+      <h1 class="titulo js-titulo">FORMULARIO DE INSCRIPCION</h1>
     </div>
 
-    <form class="form" method="get">
-
-      <div class="row encabezados">
-        <span>DNI</span>
-        <span>Nombre</span>
-        <span>Apellido</span>
+    <section class="contenedor-botones">
+      <div class="boton1 botonS">
+        <button type="button" class="js-boton-personal">Personal</button>
       </div>
 
-      <div class="row">
-        <input type="number" name="dni1" required>
-        <input type="text" name="nombre1" required>
-        <input type="text" name="apellido1" required>
-        <button type="button" class="dlt-btn">-</button>
+      <div class="boton2 botonS">
+        <button type="button" class="js-boton-empresa">Empresa</button>
       </div>
+    </section>
 
-      <div class="row">
-        <input type="number" name="dni2" required>
-        <input type="text" name="nombre2" required>
-        <input type="text" name="apellido2" required>
-        <button type="button" class="dlt-btn">-</button>
-      </div>
+    <form class="form__inscripcion js-form-inscripcion" method="get">
+      <!-- ===== EMPRESA ===== -->
+      <section class="sectionEmpresa js-section-empresa">
+        <div class="encabezados__empresa">
+          <span>DNI</span>
+          <span>Nombre</span>
+          <span>Apellido</span>
+          <span>Email</span>
+          <span>Teléfono</span>
+        </div>
 
-      <div class="row">
-        <input type="number" name="dni3" required>
-        <input type="text" name="nombre3" required>
-        <input type="text" name="apellido3" required>
-        <button type="button" class="dlt-btn">-</button>
-      </div>
+        <div class="row-contenedor__empresa js-row-contenedor">
+          <div class="subcontenedor"><input type="number" name="dni1" required></div>
+          <div class="subcontenedor"><input type="text" name="nombre1" required></div>
+          <div class="subcontenedor"><input type="text" name="apellido1" required></div>
+          <div class="subcontenedor"><input type="email" name="email1" required></div>
+          <div class="subcontenedor telefono"><input type="number" name="telefono1" required></div>
+          <div class="subcontenedor-boton">
+            <button class="dlt-btn js-dlt-btn">-</button>
+          </div>
+        </div>
+      </section>
 
-      <div class="agregar__persona">
-        <button type="submit" class="boton">+</button>
+      <!-- ===== PERSONAL ===== -->
+      <section class="sectionPersonal js-section-personal">
+        <h2 class="datosDeContacto">Datos de contacto</h2>
+
+        <div class="contenedor-personal">
+          <div class="encabezados__personal">
+            <span>Email :</span>
+            <span>Teléfono :</span>
+          </div>
+
+          <div class="row-contenedor__personal">
+            <div class="subcontenedor-personal"><input type="email" name="emailPersonal"></div>
+            <div class="subcontenedor-personal"><input type="number" name="telefonoPersonal"></div>
+          </div>
+
+          <div class="subcontenedor-boton__personal">
+            <button type="button">Enviar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== AGREGAR PERSONA ===== -->
+      <div class="agregar__persona js-agregar-persona">
+        <button type="button" class="boton js-boton-agregar">+</button>
         <h3 class="agregar">AGREGAR PERSONA</h3>
       </div>
 
-      <div class="boton__de__inscripcion">
-        <span class="span__000">$000.-</span> 
-        <button type="submit" class="inscribirse">INSCRIBIRSE</button> 
+      <!-- ===== PRECIO Y BOTÓN ===== -->
+      <div class="precioS js-precio">
+        <span class="span_gral">$<span class="span_numero js-monto">20</span></span>
+        <button type="submit" class="inscribirse js-boton-inscribirse">INSCRIBIRSE</button>
       </div>
     </form>
   </main>
 
+  <!-- ===== MODAL ===== -->
+  <section class="mensaje-modal js-modal">
+    <div class="data-content">
+      <h3>¡Gracias por inscribirse!</h3>
+      <p>Personas inscriptas: </p>
+      <ul class="ul-modal js-ul-modal"></ul>
+    </div>
+
+    <button type="button" class="cierreModal js-cierre-modal">Cerrar</button>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <div id="footer"></div>
 
-  <script type="module" src="../js/renderizar-layout.js"></script>
+  <script type="module" src="../js/FormularioInscripcion.js"></script>
+   <script type="module" src="../js/renderizar-layout.js"></script>
   <script type="module" src="../js/init-carrito.js"></script>
 </body>
 </html>
