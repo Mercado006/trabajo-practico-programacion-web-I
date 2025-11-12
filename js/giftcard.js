@@ -184,13 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function validateForm() {
         clearError('nombre');
         clearError('monto');
-        
+
         let isValid = true;
 
-        if (!inputName || inputName.value.trim() === '') {
-            isValid = false;
-            showError('nombre', 'Por favor, ingresa el nombre del destinatario.');
-        }
+        if (!inputName || inputName.value.trim() === '') {
+        isValid = false;
+        showError('nombre', 'Por favor, ingresa el nombre del destinatario.');
+        }
 
         const montoSeleccionado = document.querySelector('input[name="monto"]:checked');
 
@@ -204,9 +204,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError('monto', 'Por favor, ingresa un monto válido.');
             }
         }
-        
+
         return isValid;
-    }
+    }
 
     // botón "Comprar"
     if (giftForm) {
