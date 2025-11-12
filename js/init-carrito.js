@@ -55,9 +55,16 @@ export function decrementarCarrito() {
 }
 
 function actualizarContadorDOM(valor) {
+  //contador para el carriot del header
   const contadorElemento = document.querySelector('.cart-count');
   if (contadorElemento) {
     contadorElemento.textContent = valor;
+  }
+
+  //contador para el sidebar
+  const contadorSidebar = document.querySelector('.cart-count-sidebar');
+  if (contadorSidebar) {
+    contadorSidebar.textContent = valor;
   }
 }
 
