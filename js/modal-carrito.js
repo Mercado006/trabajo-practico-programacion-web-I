@@ -9,7 +9,7 @@ export function mostrarModal(curso) {
   modal.innerHTML = `
     <div class="modal-content">
       <span class="close-modal">&times;</span>
-      <h2>Curso agregado exitosamente</h2>
+      <h2>Compra agregada exitosamente</h2>
       <div class="modal-curso-info">
         <img src="${curso.imagen}" alt="${curso.titulo}">
         <div class="modal-detalles">
@@ -19,7 +19,7 @@ export function mostrarModal(curso) {
         </div>
       </div>
       <button class="modal-ok">Aceptar</button>
-      <button class="modal-eliminar-curso">Eliminar curso</button>
+      <button class="modal-eliminar-curso">Eliminar compra</button>
     </div>
   `;
 
