@@ -1,5 +1,6 @@
 import { cursosData } from './cursos-data.js';
 import { mostrarModal } from './modal-carrito.js';
+import { guardarCarrito, leerCarrito } from './componentes/sidebar.js';
 import { inicializarCarrito, incrementarCarrito } from './init-carrito.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -123,6 +124,26 @@ function agregarEventosCompra(cursoActual) {
       const id = btn.dataset.id || cursoActual.id;
       const cursoSeleccionado = cursosData[id] || cursoActual;
       
+      // Leer el carrito actual
+      let carrito = leerCarrito();
+      const existente = carrito.find(c => c.id === cursoSeleccionado.id);
+
+      if (existente) {
+        existente.cantidad += 1;
+      } else {
+        carrito.push({
+          id: cursoSeleccionado.id,
+          titulo: cursoSeleccionado.titulo,
+          precio: cursoSeleccionado.precio,
+          imagen: cursoSeleccionado.imagen,
+          cantidad: 1
+        });
+      }
+
+      const totalUnidades = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+      guardarCarrito(carrito, totalUnidades);
+
+
       // PRIMERO incrementamos el contador
       incrementarCarrito();
       
