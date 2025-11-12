@@ -4,6 +4,9 @@ import { MODAL } from "./constantesForm.js";
 // ==========================
 // 🔹 VARIABLES Y ELEMENTOS
 // ==========================
+
+
+
 const buscador = new BuscadorElementos();
 
 const form_inscripcion = buscador.oneElement(".js-form-inscripcion");
