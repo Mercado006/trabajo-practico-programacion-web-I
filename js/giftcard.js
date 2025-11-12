@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     montoTexto = montoValor;
                 } else {
                     montoValor = montoElement.value;
-                    montoTexto = montoElement.dataset.amount.replace('$', ''); // Ej: "5.000"
+                    montoTexto = montoElement.dataset.amount.replace('$', ''); 
                 }
                 
                 const fondoElement = document.querySelector('input[name="fondo"]:checked');
