@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const anio = fechaActual.getFullYear();
     const mes = fechaActual.getMonth();
 
-    const nombreDelMes = new Intl.DateTimeFormat('es-ES', { mes: 'long' }).format(fechaActual);
-    nombreDelMes.textContent = `${nombreDelMes.toUpperCase()} ${anio}`;
+    const nombreMesString = new Intl.DateTimeFormat('es-ES', { month: 'long' }).format(fechaActual);
+    nombreDelMes.textContent = `${nombreMesString.toUpperCase()} ${anio}`;
 
     const inicioDelMes = new Date(anio, mes, 1).getDay();
     const diasDelMes = new Date(anio, mes + 1, 0).getDate();
