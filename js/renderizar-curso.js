@@ -1,6 +1,6 @@
 import { cursosData } from './cursos-data.js';
 import { mostrarModal } from './modal-carrito.js';
-import { inicializarCarrito, incrementarCarrito } from './carrito.js'; 
+import { inicializarCarrito, incrementarCarrito } from './init-carrito.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
   inicializarCarrito();
@@ -122,8 +122,12 @@ function agregarEventosCompra(cursoActual) {
     btn.addEventListener('click', () => {
       const id = btn.dataset.id || cursoActual.id;
       const cursoSeleccionado = cursosData[id] || cursoActual;
+      
+      // PRIMERO incrementamos el contador
+      incrementarCarrito();
+      
+      // DESPUÉS mostramos el modal
       mostrarModal(cursoSeleccionado);
-      incrementarCarrito(); 
     });
   });
 }

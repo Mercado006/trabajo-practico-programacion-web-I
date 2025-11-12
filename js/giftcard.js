@@ -1,20 +1,14 @@
-    document.addEventListener('DOMContentLoaded', () => {
+import { inicializarCarrito, incrementarCarrito } from './init-carrito.js';
+import { mostrarModal } from './modal-carrito.js';
+
+document.addEventListener('DOMContentLoaded', () => {
 
     const previewCard = document.getElementById('preview-card');
     const previewTextContainer = document.getElementById('preview-text-container');
     const previewName = document.getElementById('preview-name');
     const previewAmount = document.getElementById('preview-amount');
 
-    const courseCounter = document.querySelector(".cart-count");
-
-        if (courseCounter) {
-        let count = sessionStorage.getItem("courseCounter");
-        if (count) {
-            courseCounter.textContent = parseInt(count);
-        } else {
-            courseCounter.textContent = 0; 
-        }
-    }
+    inicializarCarrito();
 
     const giftForm = document.getElementById('giftcard-form');
     const inputName = document.getElementById('nombre');
@@ -52,7 +46,7 @@
         }
     }
 
-    // LÓGICA PARA NOMBRE DEL DESTINATARIO  ---
+    // DESTINATARIO  ---
     if (inputName && previewName) { 
         inputName.addEventListener('input', () => {
             if (inputName.value.trim() === '') {
@@ -64,7 +58,7 @@
         });
     }
 
-    // --- LÓGICA PARA COLOR DE TEXTO ---
+    // --- COLOR DE TEXTO ---
     if (radioColors.length > 0 && previewName && previewAmount) {
         radioColors.forEach(radio => {
             radio.addEventListener('change', () => {
@@ -75,24 +69,21 @@
         });
     }
 
-    // ---  LÓGICA PARA TAMAÑO DE FUENTE  ---
+    // --- TAMAÑO DE FUENTE  ---
     if (selectFontSize && previewName && previewAmount) { 
         selectFontSize.addEventListener('change', () => {
             const newSize = selectFontSize.value; 
-            
             if (previewName) {
                 previewName.style.fontSize = newSize;
             }
-            
             const numericSize = parseInt(newSize); 
-            
             if (previewAmount) {
                 previewAmount.style.fontSize = `${numericSize * 1.6}px`;
             }
         });
     }
 
-    // --- LÓGICA PARA MONTO ---
+    // --- MONTO ---
     function actualizarMonto() {
         const checkedMonto = document.querySelector('input[name="monto"]:checked');
         if (!checkedMonto) {
@@ -118,14 +109,19 @@
         });
     }
     if (inputMontoOtro) {
-        inputMontoOtro.addEventListener('input', actualizarMonto);
+        inputMontoOtro.addEventListener('input', () => {
+            actualizarMonto();
+            clearError('monto'); 
+        });
+        
         inputMontoOtro.addEventListener('focus', () => {
             document.querySelector('input[name="monto"][value="other"]').checked = true;
-            actualizarMonto(); 
+            actualizarMonto();
+            clearError('monto'); 
         });
     }
 
-    // --- LÓGICA PARA UBICACIÓN ---
+    // --- UBICACIÓN ---
     if (radioUbicaciones.length > 0 && previewTextContainer) {
         radioUbicaciones.forEach(radio => {
             radio.addEventListener('change', () => {
@@ -139,7 +135,7 @@
         });
     }
 
-    // --- LÓGICA PARA FONDO ---
+    // --- FONDO ---
     if (radioFondos.length > 0 && previewCard) {
         radioFondos.forEach(radio => {
             radio.addEventListener('change', () => {
@@ -149,9 +145,8 @@
         });
     }
     
-    // ---  INICIALIZACIÓN (CORREGIDA) ---
+    // ---  INICIALIZACIÓN  ---
     function initializePreview() {
-        // Lógica de nombre unificada
         if (inputName && previewName) {
             if (inputName.value.trim() === '') {
                 previewName.innerText = 'Para: ...';
@@ -188,43 +183,70 @@
     // --- VALIDACIÓN ---
     function validateForm() {
         clearError('nombre');
+        clearError('monto');
+        
         let isValid = true;
-        if (!inputName || inputName.value.trim() === '') {
+
+        if (!inputName || inputName.value.trim() === '') {
+            isValid = false;
+            showError('nombre', 'Por favor, ingresa el nombre del destinatario.');
+        }
+
+        const montoSeleccionado = document.querySelector('input[name="monto"]:checked');
+
+        if (!montoSeleccionado) {
             isValid = false;
-            showError('nombre', 'Por favor, ingresa el nombre del destinatario.');
+            showError('monto', 'Por favor, selecciona un monto.');
+        } else if (montoSeleccionado.value === 'other') {
+            const otroMontoValor = inputMontoOtro ? inputMontoOtro.value : '0';
+            if (!otroMontoValor || parseFloat(otroMontoValor) <= 0) {
+                isValid = false;
+                showError('monto', 'Por favor, ingresa un monto válido.');
+            }
         }
+        
         return isValid;
-    }
+    }
 
     // botón "Comprar"
     if (giftForm) {
         giftForm.setAttribute('novalidate', true);
 
         giftForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            
             if (!validateForm()) { 
-                e.preventDefault(); 
                 console.log('Formulario inválido, "Comprar" detenido.');
             } else {
                 console.log('Formulario válido, sumando al carrito...');
 
-                let count = sessionStorage.getItem("courseCounter");
-                if (count) {
-                    count = parseInt(count);
+                incrementarCarrito();
+
+                const montoElement = document.querySelector('input[name="monto"]:checked');
+                let montoValor;
+                let montoTexto;
+
+                if (montoElement.value === 'other') {
+                    montoValor = document.getElementById('monto-otro').value;
+                    montoTexto = montoValor;
                 } else {
-                    count = 0;
+                    montoValor = montoElement.value;
+                    montoTexto = montoElement.dataset.amount.replace('$', ''); // Ej: "5.000"
                 }
-                count++;
+                
+                const fondoElement = document.querySelector('input[name="fondo"]:checked');
 
-                if (courseCounter) {
-                    courseCounter.textContent = count;
-                }
+                const giftCardInfo = {
+                    titulo: `Gift Card para ${inputName.value}`,
+                    precio: montoTexto, 
+                    imagen: fondoElement.value,
+                    horas: 'N/A' 
+                };
 
-                sessionStorage.setItem("courseCounter", count);
-
+                mostrarModal(giftCardInfo);
             }
         });
     } else {
         console.error("No se pudo encontrar el formulario con id 'giftcard-form'");
     }
-
-}); 
+});

@@ -63,17 +63,19 @@
           </select>
 
           <!-- Monto -->
-          <label>Monto</label>
-          <div class="options amount-options">
-            <label><input type="radio" name="monto" value="5000" data-amount="$5.000"><span>$5.000</span></label>
-            <label><input type="radio" name="monto" value="10000" data-amount="$10.000"><span>$10.000</span></label>
-            <label><input type="radio" name="monto" value="15000" data-amount="$15.000"><span>$15.000</span></label>
-            <label class="other-swatch">
-              <input type="radio" name="monto" value="other" data-amount="other">
-              <span>+</span>
-              <input type="number" id="monto-otro" name="monto-otro" class="other-input" placeholder="$">
-            </label>
-          </div>
+          <label>Monto <span class="required">*</span></label>
+          <div class="error-message" id="error-monto"></div>
+          
+          <div class="options amount-options" id="group-monto">
+          <label><input type="radio" name="monto" value="5000" data-amount="$5.000"><span>$5.000</span></label>
+          <label><input type="radio" name="monto" value="10000" data-amount="$10.000"><span>$10.000</span></label>
+          <label><input type="radio" name="monto" value="15000" data-amount="$15.000"><span>$15.000</span></label>
+          <label class="other-swatch">
+          <input type="radio" name="monto" value="other" data-amount="other">
+          <span>+</span>
+          <input type="number" id="monto-otro" name="monto-otro" class="other-input" placeholder="$">
+          </label>
+      </div>
 
           <!-- Ubicación -->
           <label>Ubicación</label>
@@ -139,7 +141,6 @@
 
   <!-- Scripts -->
   <script type="module" src="../js/renderizar-layout.js"></script>
-  <script src="../js/giftcard.js" defer></script>
-  <script type="module" src="../js/init-carrito.js"></script>
+  <script type="module" src="../js/giftcard.js"></script>
 </body>
 </html>
