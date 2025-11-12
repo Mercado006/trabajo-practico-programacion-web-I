@@ -4,23 +4,24 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    width: 100%;
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     font-size: 0.938em; 
 }
 
-/*desktop*/
-
+/* ===== HEADER ===== */
 header {
     width: 100%;
     height: 4.5em;
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     display: flex;
     align-items: center;
     box-shadow: 0 0.125em 0.313em rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     z-index: 1000;
 }
 
@@ -28,22 +29,22 @@ nav {
     width: 100%;
     display: flex;
     padding: 0 2em;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
 }
 
 .logo img {
     height: 4em;
     width: auto;
-    margin-left:0.5em;
+    margin-left: 0.5em;
 }
 
-/* Buscador */
+/* ===== BUSCADOR ===== */
 .search-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Permite que crezca */
+    flex-grow: 1;
 }
 
 .search-wrapper input {
@@ -70,24 +71,24 @@ nav {
     pointer-events: none;
 }
 
-/* Menu Principal */
+/* ===== MENÚ PRINCIPAL ===== */
 .menu {
     list-style: none;
     display: flex;
     gap: 1.5em;
-    margin:0;
+    margin: 0;
 }
-/* ... otros estilos del menú ... */
-.menu li{
-    background-color: rgb(255, 255, 255);
+
+.menu li {
+    background-color: #fff;
     border-radius: 0.75em;
 }
 
-.menu a{
+.menu a {
     display: block;
     padding: 0.5em 1em;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #000;
     font-weight: 500;
     font-size: 0.875em;
 }
@@ -96,25 +97,22 @@ nav {
     background-color: rgb(181, 210, 224);
 }
 
-/* Botón Login y Carrito */
+/* ===== BOTONES LOGIN Y CARRITO ===== */
 .login {
     font-weight: 400;
     font-size: 0.875em;
-    color: rgb(255, 255, 255);
+    color: #fff;
     text-decoration: none;
     padding: 0.5em 1em;
     background: rgb(2, 48, 71);
     border-radius: 0.75em;
     transition: 0.3s;
-
 }
 
-.login:hover{
+.login:hover {
     background: rgb(255,183,3);
-    color: rgb(0, 0, 0);
+    color: #000;
 }
-
-/*carrito con contador*/
 
 .cart {
     position: relative;
@@ -125,7 +123,7 @@ nav {
     cursor: pointer;
     padding: 0.6em;
     border-radius: 0.75em;
-    color: rgb(255, 255, 255);
+    color: #fff;
     font-size: 0.875em;
     transition: 0.3s;
     margin-right: 2.5em;
@@ -150,13 +148,11 @@ nav {
     width: 1.6em;
     height: 1.6em;
     background: rgb(2, 48, 71);
-    color: rgb(255, 255, 255);
+    color: #fff;
     font-size: 0.75em;
     font-weight: 600;
-    padding: 0.2;
     border-radius: 50%;
 }
-
 
 .nav-actions {
     display: flex;
@@ -164,83 +160,126 @@ nav {
     gap: 1em;
 }
 
-/*SideBar*/
+/* ===== SIDEBAR ===== */
 .cart-sidebar {
     display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "encabezado"
         "tabla"
         "botones";
     position: fixed;
     top: 0;
-    right: -400px;
-    width: 25rem;
+    right: -28rem;
+    width: 28rem;
     height: 100%;
     background-color: #fff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
     padding: 2em;
     transition: right 0.3s ease;
-}
-
-.info-sidebar {
-    grid-area: encabezado;
-    display: grid;
-    grid-template-columns: 1fr 0.7fr;
-    grid-template-areas: "carrito unidades";
-    padding: 1em;
-    margin-bottom: 2em;
+    z-index: 1001;
+    overflow: hidden;
 }
 
 .cart-sidebar.open {
     right: 0;
 }
 
+.info-sidebar {
+    grid-area: encabezado;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "carrito unidades";
+    padding: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
 .cart-sidebar h2 {
     grid-area: carrito;
     font-size: 2em;
     font-weight: 600;
-    margin-top: 0;
+    margin: 0;
 }
-
 
 .cart-count-info {
     grid-area: unidades;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     height: 3em;
-    gap: 1em;
-    padding: 0.5em;
+    gap: 0.5em;
+    padding: 0.5em 1em;
     border-radius: 2em;
     background-color: rgb(181 210 224);
-    color: rgb(0 0 0);
+    color: #000;
     font-size: 1rem;
     font-weight: 600;
-
+    white-space: nowrap;
 }
 
-.cart-sidebar table {
+.side-bar {
     grid-area: tabla;
     width: 100%;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    border-collapse: collapse;
+    font-size: 0.875em;
+    display: block;
+    overflow-y: auto;
+    max-height: calc(100vh - 280px);
+}
+
+.side-bar thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.side-bar tbody {
+    display: block;
+    overflow-y: auto;
+    max-height: calc(100vh - 320px);
+    width: 100%;
+}
+
+.side-bar tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.side-bar th, .side-bar td {
+    padding: 0.75em 0.5em;
+    text-align: left;
+    border-bottom: 1px solid #e8e6e6;
+}
+
+.side-bar td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* OCULTAR BOTÓN DE ELIMINAR EN SIDEBAR */
+.side-bar .btn-remove {
+    display: none;
 }
 
 .sidebar-button {
     grid-area: botones;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 2em;
+    gap: 1em;
+    padding-top: 1em;
 }
 
 .cart-sidebar button {
-    background-color: rgb(2 48 71);
-    color: rgb(255 255 255);
+    background-color: rgb(2, 48, 71);
+    color: #fff;
     border: none;
     border-radius: 2em;
     padding: 1em;
@@ -249,86 +288,72 @@ nav {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .cart-sidebar button:hover {
     background: rgb(255, 183, 3);
-    color: rgb(0, 0, 0);
+    color: #000;
 }
 
+/* ===== BOTONES DE CANTIDAD ===== */
+.btn-quantity {
+    background-color: rgb(2, 48, 71);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    min-width: 28px;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.2s, transform 0.1s;
+}
 
-/* RESPONSIVE DEL HEADER (Tablets: max-width: 64em / 1024px)  */
+.btn-quantity:hover {
+    background-color: rgb(255, 183, 3);
+    color: #000;
+}
+
+.btn-quantity:active {
+    transform: scale(0.95);
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 64em) {
-
-    .menu {
-        display: none; /* Oculto por defecto */
-    }
-    
-    .menu-toggle {
-        display: none; 
-    }
-
-    .search-wrapper {
-        min-width: unset; 
-        max-width: 20em; 
-        margin: 0 0.5em;
-    }
-
-    .search-wrapper input {
-        min-width: unset;
-    }
-    
-    .cart {
-        margin-right: 1em; 
-    }
+    .menu { display: none; }
+    .menu-toggle { display: none; }
+    .search-wrapper { max-width: 20em; margin: 0 0.5em; }
+    .cart { margin-right: 1em; }
 }
 
-/* --- RESPONSIVE DEL HEADER (Móviles: max-width: 48em / 768px) --- */
 @media (max-width: 48em) {
+    header { height: auto; padding: 0.5em 0; }
+    nav { flex-wrap: wrap; justify-content: space-between; }
+    .search-wrapper { order: 3; width: 95%; margin: 0.5em 0; }
+    .login { display: none; }
+    .logo img { height: 3.5em; }
+    .nav-actions { order: 2; gap: 0.5em; }
 
-    header {
-        height: auto; /* Permite que el header crezca si los elementos saltan de línea */
-        padding: 0.5em 0;
+    .cart-sidebar {
+        width: 90vw;
+        right: -90vw;
+        padding: 1.5em;
     }
-    
-    nav {
-        flex-wrap: wrap; 
-        justify-content: space-between;
-    }
-    
-    /* Mover el buscador a una línea separada y que ocupe más ancho */
-    .search-wrapper {
-        order: 3; 
-        width: 95%; 
-        margin: 0.5em 0; 
-    }
-    
-    /*Ocultar elementos menos esenciales */
-    .login {
-        display: none; 
-    }
-    
-    /* 3. Ajustar el espaciado del logo y acciones */
-    .logo img {
-        height: 3.5em;
-    }
-    
-    .nav-actions {
-        order: 2; 
-        gap: 0.5em;
-    }
-
+    .cart-sidebar h2 { font-size: 1.5em; }
+    .side-bar { font-size: 0.75em; max-height: calc(100vh - 250px); }
 }
 
-
-/* --- FOOTER (Desktop) --- */
-
+/* ===== FOOTER ===== */
 footer {
     background-color: rgb(2, 48, 71);
-    color: rgb(255, 255, 255);
+    color: #fff;
     padding: 2em 1em;
     font-size: 0.813em;
-    font-weight: 400;
 }
 
 .footer-container {
@@ -337,74 +362,42 @@ footer {
     flex-wrap: wrap;
     gap: 2em;
     padding: 0 1em;
-    max-width: 75em; 
-    margin: 0 auto; 
+    max-width: 75em;
+    margin: 0 auto;
 }
 
-/*por columna*/
-
-.footer-logo {
-    display: flex;
-    align-items:start;
-    justify-content:left;
-    flex: 1;
-    min-width: 10em;
-}
-
-.footer-logo img{
+.footer-logo img {
     height: 5em;
     width: auto;
-    margin-top: -1em;
 }
 
-
-.footer-datos,.footer-menu, .footer-redes {
+.footer-datos, .footer-menu, .footer-redes {
     flex: 1;
     min-width: 15em;
-    max-width: 20em; /*para evitar que se estiren demasiado en pantallas muy grandes */
     display: flex;
     flex-direction: column;
     gap: 0.5em;
 }
 
-/*Títulos de cada columna*/
 footer h3 {
     margin-bottom: 0.5em;
     font-size: 1.1em;
     font-weight: 600;
 }
 
-/*Lista del menú*/
-
-.footer-menu ul{
+.footer-menu ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
 }
 
-.footer-menu a {
-    color: rgb(255, 255, 255);
+.footer-menu a, .footer-redes a {
+    color: #fff;
     text-decoration: none;
 }
 
-.footer-menu a:hover{
-    color: rgb(255,183,3);
-}
-
-/*Redes sociales*/
-.footer-redes a{
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin-bottom: 0.5em;
-}
-
-.footer-redes a:hover{
+.footer-menu a:hover, .footer-redes a:hover {
     color: rgb(255,183,3);
 }
 
@@ -417,37 +410,14 @@ footer h3 {
     text-align: center;
     margin-top: 2em;
     font-size: 0.875em;
-    color: rgb(255,255,255,0.7);
+    color: rgba(255,255,255,0.7);
 }
 
-
-/* --- RESPONSIVE DEL FOOTER (Móviles: max-width: 48em / 768px) --- */
-@media (max-width: 48em){
-    /* El contenedor cambia de fila a columna y se centra */
-    .footer-container{
+@media (max-width: 48em) {
+    .footer-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 2em; /* Más espacio entre las secciones */
-    }
-    
-    /* Asegurar que las secciones internas se centren */
-    .footer-datos, .footer-menu, .footer-redes {
-        min-width: 90%; /* Ocupa casi todo el ancho */
-        align-items: center;
-    }
-
-    .footer-logo {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer-menu ul{
-        align-items: center;
-    }
-
-    /* Centrar los iconos de redes sociales */
-    .footer-redes a {
-        justify-content: center;
+        gap: 2em;
     }
 }

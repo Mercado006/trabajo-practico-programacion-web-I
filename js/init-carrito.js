@@ -1,67 +1,48 @@
-import { getCurrentUser, getCartCount, incrementCartCount, decrementCartCount } from './almacenamiento.js';
-
-// Clave para carrito de invitados (sin login)
-const GUEST_CART_KEY = 'guest_cart_count';
+import { getCurrentUser, getCartItems, addItemToCart, removeItemFromCart } from './almacenamiento.js';
 
 export function inicializarCarrito() {
   const currentUser = getCurrentUser();
-  
-  let contador;
-  if (currentUser) {
-    // Usuario logueado: usar su carrito personal
-    contador = getCartCount(currentUser);
-  } else {
-    // Usuario invitado: usar carrito temporal en localStorage
-    contador = parseInt(localStorage.getItem(GUEST_CART_KEY) || '0');
-  }
+  const items = getCartItems(currentUser);
+  const contador = items.reduce((total, item) => total + item.cantidad, 0);
   
   actualizarContadorDOM(contador);
 }
 
 export function incrementarCarrito() {
   const currentUser = getCurrentUser();
-  let nuevoContador;
+  const items = getCartItems(currentUser);
+  const contador = items.reduce((total, item) => total + item.cantidad, 0);
   
-  if (currentUser) {
-    // Usuario logueado
-    nuevoContador = incrementCartCount(currentUser);
-  } else {
-    // Usuario invitado
-    const contadorActual = parseInt(localStorage.getItem(GUEST_CART_KEY) || '0');
-    nuevoContador = contadorActual + 1;
-    localStorage.setItem(GUEST_CART_KEY, nuevoContador.toString());
-  }
-  
-  actualizarContadorDOM(nuevoContador);
-  return nuevoContador;
+  actualizarContadorDOM(contador);
+  return contador;
 }
 
 export function decrementarCarrito() {
   const currentUser = getCurrentUser();
-  let nuevoContador;
+  const items = getCartItems(currentUser);
+  const contador = items.reduce((total, item) => total + item.cantidad, 0);
   
-  if (currentUser) {
-    // Usuario logueado
-    nuevoContador = decrementCartCount(currentUser);
-  } else {
-    // Usuario invitado
-    const contadorActual = parseInt(localStorage.getItem(GUEST_CART_KEY) || '0');
-    nuevoContador = Math.max(0, contadorActual - 1);
-    localStorage.setItem(GUEST_CART_KEY, nuevoContador.toString());
-  }
+  actualizarContadorDOM(contador);
+  return contador;
+}
+
+export function actualizarContadorCarrito() {
+  const currentUser = getCurrentUser();
+  const items = getCartItems(currentUser);
+  const contador = items.reduce((total, item) => total + item.cantidad, 0);
   
-  actualizarContadorDOM(nuevoContador);
-  return nuevoContador;
+  actualizarContadorDOM(contador);
+  return contador;
 }
 
 function actualizarContadorDOM(valor) {
-  //contador para el carriot del header
+  // Contador para el carrito del header
   const contadorElemento = document.querySelector('.cart-count');
   if (contadorElemento) {
     contadorElemento.textContent = valor;
   }
 
-  //contador para el sidebar
+  // Contador para el sidebar
   const contadorSidebar = document.querySelector('.cart-count-sidebar');
   if (contadorSidebar) {
     contadorSidebar.textContent = valor;

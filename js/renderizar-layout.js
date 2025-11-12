@@ -1,44 +1,45 @@
 import { headerHTML } from './componentes/header.js';
 import { footerHTML } from './componentes/footer.js';
 import { inicializarSidebar } from './componentes/sidebar.js';
-import { getCurrentUser, logoutUser } from './almacenamiento.js';
 
+// Renderizar header
+const headerContainer = document.getElementById('header');
+if (headerContainer) {
+  headerContainer.innerHTML = headerHTML;
+}
+
+// Renderizar footer
+const footerContainer = document.getElementById('footer');
+if (footerContainer) {
+  footerContainer.innerHTML = footerHTML;
+}
+
+// Inicializar sidebar después de que el header esté renderizado
 document.addEventListener('DOMContentLoaded', () => {
-    const headerContainer = document.getElementById('header');
-    const footerContainer = document.getElementById('footer');
-
-    if (headerContainer) headerContainer.innerHTML = headerHTML;
-    if (footerContainer) footerContainer.innerHTML = footerHTML;
-    
+  // Pequeño delay para asegurar que todo el DOM esté listo
+  setTimeout(() => {
     inicializarSidebar();
-    actualizarEstadoAutenticacion();
+    actualizarEstadoUsuario();
+  }, 0);
 });
 
-function actualizarEstadoAutenticacion() {
-    const currentUser = getCurrentUser();
-    const authButton = document.getElementById('auth-button');
-    const perfilMenuItem = document.getElementById('perfil-menu-item');
-
-    if (currentUser) {
-        authButton.textContent = 'Cerrar sesión';
-        authButton.href = '#';
-        
-        if (perfilMenuItem) {
-            perfilMenuItem.style.display = 'block';
-        }
-        
-        authButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            logoutUser();
-            alert('Sesión cerrada exitosamente');
-            window.location.href = '/index.html';
-        });
-    } else {
-        authButton.textContent = 'Acceder';
-        authButton.href = '/pages/login.html';
-        
-        if (perfilMenuItem) {
-            perfilMenuItem.style.display = 'none';
-        }
+// Función para actualizar el estado del usuario en el header
+function actualizarEstadoUsuario() {
+  const authButton = document.getElementById('auth-button');
+  const perfilMenuItem = document.getElementById('perfil-menu-item');
+  const currentUser = localStorage.getItem('currentUser');
+  
+  if (currentUser && authButton) {
+    authButton.textContent = 'Cerrar sesión';
+    authButton.href = '#';
+    authButton.onclick = (e) => {
+      e.preventDefault();
+      localStorage.removeItem('currentUser');
+      window.location.href = '/index.html';
+    };
+    
+    if (perfilMenuItem) {
+      perfilMenuItem.style.display = 'block';
     }
+  }
 }

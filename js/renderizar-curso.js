@@ -1,6 +1,8 @@
 import { cursosData } from './cursos-data.js';
 import { mostrarModal } from './modal-carrito.js';
-import { inicializarCarrito, incrementarCarrito } from './init-carrito.js'; 
+import { inicializarCarrito, actualizarContadorCarrito } from './init-carrito.js';
+import { getCurrentUser, addItemToCart } from './almacenamiento.js';
+import { notificarActualizacionCarrito } from './componentes/sidebar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   inicializarCarrito();
@@ -123,10 +125,27 @@ function agregarEventosCompra(cursoActual) {
       const id = btn.dataset.id || cursoActual.id;
       const cursoSeleccionado = cursosData[id] || cursoActual;
       
-      // PRIMERO incrementamos el contador
-      incrementarCarrito();
+      // Crear objeto del item
+      const item = {
+        id: cursoSeleccionado.id,
+        tipo: 'curso',
+        titulo: cursoSeleccionado.titulo,
+        precio: cursoSeleccionado.precio,
+        imagen: cursoSeleccionado.imagen,
+        horas: cursoSeleccionado.horas
+      };
       
-      // DESPUÉS mostramos el modal
+      // Agregar al carrito
+      const currentUser = getCurrentUser();
+      addItemToCart(currentUser, item);
+      
+      // Actualizar contador
+      actualizarContadorCarrito();
+      
+      // Notificar al sidebar
+      notificarActualizacionCarrito();
+      
+      // Mostrar modal
       mostrarModal(cursoSeleccionado);
     });
   });

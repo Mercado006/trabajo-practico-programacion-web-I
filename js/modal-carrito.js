@@ -1,4 +1,6 @@
-import { decrementarCarrito } from './init-carrito.js'; 
+import { actualizarContadorCarrito } from './init-carrito.js'; 
+import { getCurrentUser, updateItemQuantity, getCartItems } from './almacenamiento.js';
+import { notificarActualizacionCarrito } from './componentes/sidebar.js';
 
 export function mostrarModal(curso) {
   const modalExistente = document.querySelector('.modal');
@@ -38,7 +40,22 @@ export function mostrarModal(curso) {
   };
 
   modal.querySelector('.modal-eliminar-curso').onclick = () => {
-    decrementarCarrito(); 
-    modal.remove();      
+    const currentUser = getCurrentUser();
+    const items = getCartItems(currentUser);
+    const item = items.find(i => i.id === curso.id);
+    
+    if (item) {
+      // Decrementar la cantidad en 1, no eliminar todo el item
+      const newQuantity = item.cantidad - 1;
+      updateItemQuantity(currentUser, curso.id, newQuantity);
+      
+      // Actualizar el contador visual
+      actualizarContadorCarrito();
+      
+      // Notificar al sidebar para que se actualice
+      notificarActualizacionCarrito();
+    }
+    
+    modal.remove();
   };
 }

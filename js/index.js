@@ -1,6 +1,11 @@
-//Modulado
-import {InicializadorSlider} from "./Slider.js";
+// Modulado
+import { InicializadorSlider } from "./Slider.js";
 
-InicializadorSlider();
-
-
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', () => {
+  // Inicializar slider si existe
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  if (sliderWrapper) {
+    InicializadorSlider();
+  }
+});
