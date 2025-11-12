@@ -18,12 +18,9 @@ export class BuscadorElementos {
         if (element) element.textContent = newText;
     }
 
-<<<<<<< HEAD
-=======
     idElement(selector) {
         return document.getElementById(selector);
     }
 
 
->>>>>>> main
 }

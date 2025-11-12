@@ -31,6 +31,27 @@ main {
   margin: auto;
 }
 
+.titulo__contenedor {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+   padding-top: 3em;
+}
+
+.js-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #012b42;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+ 
+}
+
+
+
+
 .contenedor-botones {
   display: flex;
   justify-content: center;
@@ -112,6 +133,78 @@ main {
   text-align: center;
   padding-right: 1.5em;
 }
+
+
+/* ===== ENCABEZADOS PERSONAL ===== */
+.encabezados__personal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  font-weight: 600;
+  color: #012b42;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  text-align: center;
+  align-items: center;
+}
+
+/* ===== ROW PERSONAL ===== */
+.row-contenedor__personal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+.contenedor-personal{
+  display: flex;
+  gap: 1em;
+  
+}
+
+.subcontenedor-personal input {
+  width: 100%;
+  max-width: 250px;
+  padding: 0.6em;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 0.4em;
+  transition: border-color 0.2s ease;
+}
+
+.subcontenedor-personal input:focus {
+  border-color: #022f47;
+  outline: none;
+}
+
+/* ===== BOTÓN PERSONAL ===== */
+.subcontenedor-boton__personal {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.subcontenedor-boton__personal button {
+  background-color: rgba(2, 48, 71, 0.85);
+  color: #fff;
+  border: none;
+  border-radius: 0.4em;
+  
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.subcontenedor-boton__personal button:hover {
+  background-color: #004b6a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 
 /* ===== CADA FILA DE INPUTS ===== */
 .js-row-contenedor {
