@@ -1,3 +1,3 @@
 //ContadorCarrito
-import { inicializadorContador  } from "./contadorCursos.js";
+import { inicializadorContador  } from "./init-carrito.js";
 inicializadorContador();

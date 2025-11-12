@@ -1,27 +1,9 @@
-const CART_KEY = 'contadorCarrito';
+// ARCHIVO DEPRECADO - Redirige a init-carrito.js
+// Este archivo solo existe para mantener compatibilidad
+// TODO: Cambiar todos los imports a './init-carrito.js'
 
-export function inicializarCarrito() {
-  const contadorGuardado = parseInt(sessionStorage.getItem(CART_KEY)) || 0;
-  actualizarContadorDOM(contadorGuardado);
-}
-
-export function incrementarCarrito() {
-  let contador = parseInt(sessionStorage.getItem(CART_KEY)) || 0;
-  contador++;
-  sessionStorage.setItem(CART_KEY, contador);
-  actualizarContadorDOM(contador);
-}
-
-export function decrementarCarrito() {
-  let contador = parseInt(sessionStorage.getItem(CART_KEY)) || 0;
-  if (contador > 0) contador--;
-  sessionStorage.setItem(CART_KEY, contador);
-  actualizarContadorDOM(contador);
-}
-
-function actualizarContadorDOM(valor) {
-  const contadorElemento = document.querySelector('.cart-count');
-  if (contadorElemento) {
-    contadorElemento.textContent = valor;
-  }
-}
+export { 
+  inicializarCarrito, 
+  incrementarCarrito, 
+  decrementarCarrito 
+} from './init-carrito.js';

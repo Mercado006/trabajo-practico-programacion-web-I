@@ -23,10 +23,11 @@ export const headerHTML = `
             <li><a href="/pages/Calendario.html">Cursos</a></li>
             <li><a href="/pages/formulario-inscripcion.html">Empresas</a></li>
             <li><a href="/pages/PaginaContacto.html">Contacto</a></li>
+            <li id="perfil-menu-item" style="display: none;"><a href="/pages/perfil.html">Mi perfil</a></li>
         </ul>
 
          <div class="nav-actions">
-        <a href="./pages/login.html" class="login">Acceder</a>
+        <a href="./pages/login.html" id="auth-button" class="login">Acceder</a>
 
         <button id="cart-button" class="cart">
           <img src="../img/carrito.png" alt="Carrito de cursos">

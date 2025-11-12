@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="../styles/perfil.css">
+    <link rel="stylesheet" href="../styles/header-footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="perfil-container">
+        <div class="perfil-card">
+            <h1 class="perfil-title">Mi Perfil</h1>
+            
+            <div class="perfil-content">
+                <div class="perfil-imagen">
+                    <img id="foto-perfil" src="../img/usuario-placeholder.png" alt="Foto de perfil">
+                </div>
+
+                <div class="perfil-info">
+                    <div class="info-item">
+                        <label>Nombre:</label>
+                        <p id="usuario-nombre">Cargando...</p>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Correo:</label>
+                        <p id="usuario-email">Cargando...</p>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Contraseña:</label>
+                        <div class="password-container">
+                            <p id="usuario-password" class="password-hidden">••••••••</p>
+                            <button id="toggle-password" class="toggle-password">
+                                <img id="eye-icon" src="../img/ojo-cerrado.png" alt="Mostrar contraseña">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <button id="eliminar-cuenta" class="btn-eliminar-cuenta">Eliminar Cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../js/renderizar-layout.js"></script>
+    <script type="module" src="../js/init-carrito.js"></script>
+    <script type="module" src="../js/perfil.js"></script>
+</body>
+</html>

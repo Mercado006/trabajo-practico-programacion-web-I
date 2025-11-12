@@ -1,4 +1,4 @@
-import { decrementarCarrito } from './carrito.js'; 
+import { decrementarCarrito } from './init-carrito.js'; 
 
 export function mostrarModal(curso) {
   const modalExistente = document.querySelector('.modal');
