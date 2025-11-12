@@ -6,34 +6,34 @@ const calendarioCursos = {
   '2025-11-22': ['javascript']
 };
 
-let currentDate = new Date(2025, 10, 1); 
+let fechaActual = new Date(2025, 10, 1); 
 
 document.addEventListener('DOMContentLoaded', () => {
   const calendarGrid = document.getElementById('calendarGrid');
-  const currentMonthDisplay = document.getElementById('currentMonthDisplay');
+  const nombreDelMes = document.getElementById('nombreDelMes');
   const prevBtn = document.getElementById('prevMonth');
   const nextBtn = document.getElementById('nextMonth');
 
   function renderCalendar() {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
+    const anio = fechaActual.getFullYear();
+    const mes = fechaActual.getMonth();
 
-    const monthName = new Intl.DateTimeFormat('es-ES', { month: 'long' }).format(currentDate);
-    currentMonthDisplay.textContent = `${monthName.toUpperCase()} ${year}`;
+    const nombreDelMes = new Intl.DateTimeFormat('es-ES', { mes: 'long' }).format(fechaActual);
+    nombreDelMes.textContent = `${nombreDelMes.toUpperCase()} ${anio}`;
 
-    const firstDayOfMonth = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const inicioDelMes = new Date(anio, mes, 1).getDay();
+    const diasDelMes = new Date(anio, mes + 1, 0).getDate();
 
     const cellsToRemove = calendarGrid.querySelectorAll('.calendar-day');
     cellsToRemove.forEach(cell => cell.remove());
 
-    for (let i = 0; i < firstDayOfMonth; i++) {
+    for (let i = 0; i < inicioDelMes; i++) {
       const emptyCell = document.createElement('div');
       emptyCell.className = 'calendar-day empty';
       calendarGrid.appendChild(emptyCell);
     }
 
-    for (let day = 1; day <= daysInMonth; day++) {
+    for (let day = 1; day <= diasDelMes; day++) {
       const dayCell = document.createElement('div');
       dayCell.className = 'calendar-day';
 
@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
       dayCell.appendChild(dayNumber);
 
       const today = new Date();
-      if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+      if (day === today.getDate() && mes === today.getMonth() && anio === today.getFullYear()) {
         dayCell.classList.add('today');
       }
 
-      const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      const dateString = `${anio}-${String(mes + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
       
       if (calendarioCursos[dateString]) {
         dayCell.classList.add('con-cursos');
@@ -95,12 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   prevBtn.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() - 1);
+    fechaActual.setMonth(fechaActual.getMonth() - 1);
     renderCalendar();
   });
 
   nextBtn.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() + 1);
+    fechaActual.setMonth(fechaActual.getMonth() + 1);
     renderCalendar();
   });
 
