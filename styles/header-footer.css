@@ -120,7 +120,9 @@ nav {
     position: relative;
     display: flex;
     align-items: center;
-    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
     padding: 0.6em;
     border-radius: 0.75em;
     color: rgb(255, 255, 255);
@@ -130,23 +132,28 @@ nav {
 }
 
 .cart:hover {
-    background: rgb(255,183,3);
+    background: rgb(255, 183, 3);
 }
 
-.cart img{
+.cart img {
     height: 1.5em;
     width: auto;
 }
 
 .cart-count {
+    display: flex;
     position: absolute;
+    justify-content: center;
+    align-items: center;
     top: -0.3em;
     right: -0.6em;
+    width: 1.6em;
+    height: 1.6em;
     background: rgb(2, 48, 71);
     color: rgb(255, 255, 255);
     font-size: 0.75em;
     font-weight: 600;
-    padding: 0.15em 0.5em;
+    padding: 0.2;
     border-radius: 50%;
 }
 
@@ -154,7 +161,99 @@ nav {
 .nav-actions {
     display: flex;
     align-items: center;
-    gap:1em;
+    gap: 1em;
+}
+
+/*SideBar*/
+.cart-sidebar {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+        "encabezado"
+        "tabla"
+        "botones";
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 25rem;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 2em;
+    transition: right 0.3s ease;
+}
+
+.info-sidebar {
+    grid-area: encabezado;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    grid-template-areas: "carrito unidades";
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-sidebar h2 {
+    grid-area: carrito;
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+
+.cart-count-info {
+    grid-area: unidades;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    gap: 1em;
+    padding: 0.5em;
+    border-radius: 2em;
+    background-color: rgb(181 210 224);
+    color: rgb(0 0 0);
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.cart-sidebar table {
+    grid-area: tabla;
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.sidebar-button {
+    grid-area: botones;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2em;
+}
+
+.cart-sidebar button {
+    background-color: rgb(2 48 71);
+    color: rgb(255 255 255);
+    border: none;
+    border-radius: 2em;
+    padding: 1em;
+    height: 3em;
+    width: 10em;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cart-sidebar button:hover {
+    background: rgb(255, 183, 3);
+    color: rgb(0, 0, 0);
 }
 
 

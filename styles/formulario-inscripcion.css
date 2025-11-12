@@ -1,19 +1,8 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins';
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -25,9 +14,13 @@ body {
 main {
     flex: 1;
     justify-content: center;
+<<<<<<< HEAD:css/formulario-inscripcion.css
     display: flex;
     flex-direction: column;
     align-items: center;
+=======
+    margin: 2em 0;
+>>>>>>> main:styles/formulario-inscripcion.css
 }
 
 /* ===== FORM ===== */

@@ -1,192 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../header-footer.css">
-    <link rel="stylesheet" href="../css/EstiloPaginaContacto.css">
-    <title>Página de contacto</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/header-footer.css">
+  <link rel="stylesheet" href="../styles/EstiloPaginaContacto.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Página de contacto</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <!-- Logo -->
-      <a href="/index.html" class="logo">
-        <img src="/img/logo skillup.png" alt="SkillUp">
-      </a>
 
-        <!-- Buscador -->
+  <!-- Header generado automáticamente -->
+  <div id="header"></div>
 
-        <form class= "search-form" action="#" method="get">
-            <div class="search-wrapper">
-                <img src="../img/lupa.png" alt="Buscar" class="search-icon">
-                <input type="search" list="cursos" name= "q" placeholder="Buscar cursos" autocomplete="off">
-                <datalist id="cursos">
-                    <option value="UX/UI"></option>
-                    <option value="JavaScript"></option>
-                    <option value="Python"></option>
-                    <option value="Marketing digital"></option>
-                </datalist>
-            </div>
-        </form>
+  <main>
 
-        <!-- Menú -->
-        <ul class="menu">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../pages/Calendario.html">Cursos</a></li>
-            <li><a href="../pages/formulario-inscripcion.html">Empresas</a></li>
-            <li><a href="../pages/PaginaContacto.html">Contacto</a></li>
-        </ul>
-
-        <!-- Acceso / CTA y carrito-->
-    <div class="nav-actions">
-        <a href="../pages/login.html" class="login">Acceder</a>
-        <a href="#" class="cart">
-        <img src="../img/carrito.png" alt="Carrito de cursos">
-        <span class="cart-count">3</span> <!-- por ahora número fijo -->
-        </a>
-        </div>
-        </nav>
-    </header>
-
-    <main>
-
-        <!-- Banner contacto  -->
+    <!-- Banner contacto -->
     <section class="banner-contacto">
-        <div class="banner-text">
-            <h1>Contáctanos</h1>
-                <p>Te ayudamos a elegir el curso perfecto para alcanzar tus metas</p>
-        </div>
+      <div class="banner-text">
+        <h1>Contáctanos</h1>
+        <p>Te ayudamos a elegir el curso perfecto para alcanzar tus metas</p>
+      </div>
     </section>
 
     <!-- Sección contacto -->
     <section id="contacto" class="contacto">
 
-    <!-- Formulario -->
-        <div class="formulario">
+      <!-- Formulario -->
+      <div class="formulario">
         <h2>Escribinos tu consulta</h2>
 
-    <div class="success-overlay" style="display: flex;">
-        <div class="success-message">
-        <p>¡Formulario enviado con éxito!</p>
-        <a href="../pages/PaginaContacto.html" class="close-btn">Cerrar</a>
+        <div class="success-overlay" style="display: flex;">
+          <div class="success-message">
+            <p>¡Formulario enviado con éxito!</p>
+            <a href="../pages/PaginaContacto.html" class="close-btn">Cerrar</a>
+          </div>
         </div>
-    </div>
 
         <form action="mailto:empresa@ejemplo.com" method="get" enctype="text/plain">
-            <div class="campo">
+          <div class="campo">
             <label for="nombre">Nombre y Apellido*:</label>
             <input type="text" id="nombre" name="nombre" required>
-            </div>
+          </div>
 
-            <div class="campo">
+          <div class="campo">
             <label for="email">Correo electrónico*:</label>
             <input type="email" id="email" name="email" required>
-            </div>
+          </div>
 
-            <div class="campo">
+          <div class="campo">
             <label for="telefono">Teléfono (opcional):</label>
             <input type="tel" id="telefono" name="telefono">
-            </div>
+          </div>
 
-            <div class="campo">
+          <div class="campo">
             <label for="consulta">Consulta*:</label>
             <textarea name="consulta" id="consulta" rows="5" required></textarea>
-            </div>
+          </div>
 
-        <!-- "Boton" -->
-        <div class="boton-enviar">
-        <button type="submit" class="btn-enviar">Enviar</button>
-        </div>
+          <div class="boton-enviar">
+            <button type="submit" class="btn-enviar">Enviar</button>
+          </div>
         </form>
-    </div>
+      </div>
 
-    <!-- Datos de la empresa -->
-<div class="datos-empresa">
-    <h2>Datos de la empresa</h2>
+      <!-- Datos de la empresa -->
+      <div class="datos-empresa">
+        <h2>Datos de la empresa</h2>
 
-    <div class="dato">
-        <img src="../img/ubicacion.png" alt="Dirección" class="icono">
-        <div class="dato-texto">
+        <div class="dato">
+          <img src="../img/ubicacion.png" alt="Dirección" class="icono">
+          <div class="dato-texto">
             <span class="dato-titulo">Dirección:</span>
             <span class="dato-contenido">Av. Corrientes 1234, Buenos Aires, Argentina</span>
+          </div>
         </div>
-    </div>
 
-    <div class="dato">
-        <img src="../img/telefono.png" alt="Teléfono" class="icono">
-        <div class="dato-texto">
+        <div class="dato">
+          <img src="../img/telefono.png" alt="Teléfono" class="icono">
+          <div class="dato-texto">
             <span class="dato-titulo">Teléfono:</span>
             <span class="dato-contenido">+54 11 4321 8765</span>
+          </div>
         </div>
-    </div>
 
-    <div class="dato">
-        <img src="../img/email.png" alt="Email" class="icono">
-        <div class="dato-texto">
+        <div class="dato">
+          <img src="../img/email.png" alt="Email" class="icono">
+          <div class="dato-texto">
             <span class="dato-titulo">Email:</span>
             <span class="dato-contenido">contacto@skillup.com</span>
+          </div>
         </div>
-    </div>
 
-    <div class="dato">
-        <img src="../img/horario.png" alt="Horario" class="icono">
-        <div class="dato-texto">
+        <div class="dato">
+          <img src="../img/horario.png" alt="Horario" class="icono">
+          <div class="dato-texto">
             <span class="dato-titulo">Horario de atención:</span>
             <span class="dato-contenido">Lunes a Viernes, 9:00 a 18:00hs</span>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
 
     <!-- Ubicación -->
-
     <section id="ubicacion">
-        <h2>Ubicación</h2>
-        <p>Acercate a una de nuestras oficinas</p>
-        <iframe 
+      <h2>Ubicación</h2>
+      <p>Acercate a una de nuestras oficinas</p>
+      <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7498891068265!2d-58.38159268417565!3d-34.60368498045964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac7d8b6a2ff%3A0x6e92b9d42bdfcba!2sObelisco!5e0!3m2!1ses!2sar!4v1614996400000!5m2!1ses!2sar"
         allowfullscreen=""
         loading="lazy"
         title="Mapa de la ubicación de la oficina central">
-        </iframe>
+      </iframe>
     </section>
-    </main>
+  </main>
 
-<!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <section class="footer-logo">
-            <img src="../img/logo skillup blanco.png" alt="Logo Skillup">
-        </section>
+  <!-- Footer generado automáticamente -->
+  <div id="footer"></div>
 
-        <section class="footer-datos">
-            <h3>Datos del grupo</h3>
-            <p>Alegre Melisa - DNI 42.094.003</p>
-            <p>Cali Francisco - DNI 47.166.154</p>
-            <p>Leonardi Mayra - DNI 44.360.732</p>
-            <p>Mercado Sofía Victoria - DNI 47.410.999</p>
-            <p>Possentini Rafael - DNI 95.969.407</p>
-        </section>
-
-        <section class="footer-menu">
-            <h3>Acerca de</h3>
-            <ul>
-                <li><a href="../pages/sobre-nosotros.html">¿Quienés somos?</a></li>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">Privacidad</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-            </ul>
-        </section>
-
-        <section class="footer-redes">
-            <h3>Siguenos</h3>
-            <a href="#"><img src="../img/facebook.png" alt="Facebook">Facebook</a>
-            <a href="#"><img src="../img/instagram.png" alt="Instagram">Instagram</a>
-            <a href="#"><img src="../img/linkedin.png" alt="LinkedIn">LinkedIn</a>
-        </section>
-    </div>
-    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
-    </footer>
-
+  <!-- Script de layout (header/footer) -->
+  <script type="module" src="../js/renderizar-layout.js"></script>
+  <script type="module" src="../js/init-carrito.js"></script>
 </body>
 </html>

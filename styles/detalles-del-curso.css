@@ -14,6 +14,7 @@ main {
     flex-direction: column;
     padding: 4.2em 0em 2em 0em;
     flex: 1;
+    margin-top: 3.5em;
 }
 
 .curso-section {
@@ -25,12 +26,13 @@ main {
     padding: 0 19%;
 }
 
-.curso-java-1-img {
+/* Clase unificada para la imagen principal del curso */
+.curso-img-principal {
     width: 95%;
     margin-top: 1em;
 }
 
-.curso-java-1-img img {
+.curso-img-principal img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -85,18 +87,26 @@ main {
     margin: 1.2em 5em 1em 1em;
 }
 
-.curso-contenidos details summary::after {
-    content: url('/img/flecha-abajo-icono.svg');
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
+.curso-info details summary::-webkit-details-marker {
+  display: none;
 }
 
-.curso-contenidos details[open] summary::after {
-    content: url('/img/flecha-arriba-icono.svg');
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
+.curso-info details summary::marker {
+  content: none;
+}
+
+.curso-info details summary::after {
+  content: url('/img/flecha-abajo-icono.svg');
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+}
+
+.curso-info details[open] summary::after {
+  content: url('/img/flecha-arriba-icono.svg');
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
 }
 
 .buy-course {
@@ -160,14 +170,14 @@ summary {
 }
 
 .curso-contenidos details summary::after {
-    content: url('../detalles-del-curso-img/flecha-abajo-icono.svg');
+    content: url('/img/flecha-abajo-icono.svg');
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
 }
 
 .curso-contenidos details[open] summary::after {
-    content: url('../detalles-del-curso-img/flecha-arriba-icono.svg');
+    content: url('/img/flecha-arriba-icono.svg');
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
@@ -267,29 +277,9 @@ summary {
     object-fit: cover;
 }
 
-.curso-precio-java, .curso-precio-sql, .curso-precio-fundamentos-de-js, .curso-precio-testing {
+.curso-precio {
     position: absolute;
     top: 1.2em;
-    right: 0em;
-    background: black;
-    color: white;
-    padding: 0.3em 0.5em;
-    font-size: 0.9rem;
-}
-
-.curso-precio-fundamentos-de-js {
-    position: absolute;
-    top: 9em;
-    right: 11.05em;
-    background: black;
-    color: white;
-    padding: 0.3em 0.5em;
-    font-size: 0.9rem;
-}
-
-.curso-precio-sql {
-    position: absolute;
-    top: 3em;
     right: 0em;
     background: black;
     color: white;
@@ -315,10 +305,6 @@ summary {
     background-color: rgb(3 93 138);
 }
 
-.curso-tarjeta button:hover {
-    background-color: rgb(3 93 138);
-}
-
 .curso-tarjeta h5 {
     font-size: 1rem;
     font-weight: normal;
@@ -335,193 +321,100 @@ summary {
     text-decoration: underline;
 }
 
-/* --- FOOTER (Desktop) --- */
-
-footer {
-    background-color: rgb(2, 48, 71);
-    color: rgb(255, 255, 255);
-    padding: 2em 1em;
-    font-size: 0.813em;
-    font-weight: 400;
+/* Modal Carrito */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2em;
-    padding: 0 1em;
-    max-width: 75em; 
-    margin: 0 auto; 
+.modal.visible {
+  opacity: 1;
 }
 
-/*por columna*/
-
-.footer-logo {
-    display: flex;
-    align-items:start;
-    justify-content:left;
-    flex: 1;
-    min-width: 10em;
+.modal-content {
+  background: #fff;
+  padding: 2.3em 3.3em;
+  border-radius: 1em;
+  width: 28%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-.footer-logo img{
-    height: 5em;
-    width: auto;
-    margin-top: -1em;
+.modal-content h2 {
+    font-size: 1.4em;
 }
 
-
-.footer-datos,.footer-menu, .footer-redes {
-    flex: 1;
-    min-width: 15em;
-    max-width: 20em; /*para evitar que se estiren demasiado en pantallas muy grandes */
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+.close-modal {
+  position: absolute;
+  top: 0.2em;
+  right: 0.6em;
+  font-size: 2em;
+  cursor: pointer;
+  color: #555;
 }
 
-footer h3 {
-    margin-bottom: 0.5em;
-    font-size: 1.1em;
-    font-weight: 600;
+.modal-curso-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1em;
+  margin: 2.5em 0;
 }
 
-.footer-menu ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+.modal-curso-info img {
+  width: 30%;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
-.footer-menu a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
+.modal-detalles {
+    text-align: start;
+    margin-left: 0.5em;
 }
 
-.footer-menu a:hover{
-    color: rgb(255,183,3);
+.modal-eliminar-curso {
+  background-color: rgb(2 48 71);
+  color: white;
+  box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.1);
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 0.75em;
+  cursor: pointer;
+  font-family: 'Poppins';
+  font-size: 1em;
 }
 
-/*Redes sociales*/
-.footer-redes a{
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin-bottom: 0.5em;
+.modal-ok {
+  background-color: rgb(3 93 138);
+  color: white;
+  box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.1);
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 0.75em;
+  cursor: pointer;
+  font-family: 'Poppins';
+  font-size: 1em;
+  margin-right: 1em;
 }
 
-.footer-redes a:hover{
-    color: rgb(255,183,3);
+.modal-ok:hover {
+  background-color: rgb(2 48 71);
 }
 
-.footer-redes img {
-    width: 1.2em;
-    height: 1.2em;
-}
-
-.footer-copy {
-    text-align: center;
-    margin-top: 2em;
-    font-size: 0.875em;
-    color: rgb(255,255,255,0.7);
-}
-
-
-/* --- RESPONSIVE DEL FOOTER (Móviles: max-width: 48em / 768px) --- */
-@media (max-width: 48em){
-    .footer-container{
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 2em; 
-    }
-    
-    .footer-datos, .footer-menu, .footer-redes {
-        min-width: 90%; 
-        align-items: center;
-    }
-
-    .footer-logo {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer-menu ul{
-        align-items: center;
-    }
-
-    .footer-redes a {
-        justify-content: center;
-    }
-}
-
-/* RESPONSIVE DEL HEADER (Tablets: max-width: 64em / 1024px)  */
-@media (max-width: 64em) {
-
-    .menu {
-        display: none;
-    }
-    
-    .menu-toggle {
-        display: none; 
-    }
-
-    .search-wrapper {
-        min-width: unset; 
-        max-width: 20em; 
-        margin: 0 0.5em;
-    }
-
-    .search-wrapper input {
-        min-width: unset;
-    }
-    
-    .cart {
-        margin-right: 1em; 
-    }
-}
-
-/* --- RESPONSIVE DEL HEADER (Móviles: max-width: 48em / 768px) --- */
-@media (max-width: 48em) {
-
-    header {
-        height: auto; 
-        padding: 0.5em 0;
-    }
-    
-    nav {
-        flex-wrap: wrap; 
-        justify-content: space-between;
-    }
-    
-    .search-wrapper {
-        order: 3; 
-        width: 95%; 
-        margin: 0.5em 0; 
-    }
-    
-    .login {
-        display: none; 
-    }
-    
-    .logo img {
-        height: 3.5em;
-    }
-    
-    .nav-actions {
-        order: 2; 
-        gap: 0.5em;
-    }
+.modal-eliminar-curso:hover {
+    background-color: rgb(3 93 138);
 }
 
 /* Responsive del contenido principal */
 @media (max-width: 64em) {
-    
     main {
         padding: 3em 0 2em 0;
     }
@@ -532,7 +425,7 @@ footer h3 {
         padding: 0 8%;
     }
     
-    .curso-java-1-img {
+    .curso-img-principal {
         width: 100%;
         margin-top: 0;
     }
@@ -569,7 +462,7 @@ footer h3 {
         margin-right: 1em;
     }
     
-    .curso-boton-inscripcion {
+    .buy-course {
         margin: 2em 0 3em 0;
     }
     
@@ -633,9 +526,9 @@ footer h3 {
 
 /* Responsive del contenido principal */
 @media (max-width: 48em) {
-    
     main {
         padding: 2em 0 1.5em 0;
+        margin-top: 9em;
     }
     
     .curso-section {
@@ -644,12 +537,12 @@ footer h3 {
         padding: 0 5%;
     }
     
-    .curso-java-1-img {
+    .curso-img-principal {
         width: 100%;
         margin-top: 0;
     }
     
-    .curso-java-1-img img {
+    .curso-img-principal img {
         box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
     
@@ -694,7 +587,7 @@ footer h3 {
         margin-right: 0;
     }
     
-    .curso-boton-inscripcion {
+    .buy-course {
         width: 100%;
         height: 2.8em;
         margin: 1.5em 0 2.5em 0;
@@ -801,16 +694,7 @@ footer h3 {
         height: 10em;
     }
     
-    .curso-precio-java, 
-    .curso-precio-sql, 
-    .curso-precio-testing {
-        top: 0.8em;
-        right: 0;
-        padding: 0.3em 0.5em;
-        font-size: 0.85rem;
-    }
-    
-    .curso-precio-fundamentos-de-js {
+    .curso-precio {
         top: 0.8em;
         right: 0;
         padding: 0.3em 0.5em;

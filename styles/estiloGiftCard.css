@@ -16,6 +16,7 @@ body {
 
 .giftcard-main {
     width: 100%;
+    margin-top: 2em;
 }
 
 .giftcard-content {
@@ -44,27 +45,34 @@ body {
     border-radius: 1em;
     background-size: cover;
     background-position: center;
+    padding: 1.5em;
+    box-shadow: 0 0.4em 1em rgba(0,0,0,0.15);
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 1em;
-    box-shadow: 0 0.4em 1em rgba(0,0,0,0.15);
     color: white;
-    position: relative;
 }
 
 .card-amount {
-    font-size: 1rem;
-    font-weight: 500;
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0.125em 0.25em rgba(0,0,0,0.6);
+    font-size: 2rem; 
+    font-weight: 700;
+    color: rgb(0, 0, 0); 
+    text-shadow: 0 1px 3px rgba(255,255,255,0.7);
+    transition: all 0.3s ease;
 }
+
 
 .preview-note {
     font-size: 0.875em;
-    opacity: 0.8;
-    margin-top: 0.5em;
-    color: rgb(0, 0, 0);
+    opacity: 0.9;
+    color: #ffffff; /* CAMBIADO A BLANCO */
+    background-color: rgba(0,0,0,0.4);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    position: absolute; /* La fijamos en una esquina */
+    top: 0.5em;
+    left: 0.5em;
 }
 
 /* Formulario */
@@ -246,7 +254,7 @@ input[type="radio"]:checked + .loc-swatch {
 }
 
 /* Botón */
-.btn-añadircarrito, .btn-comprar {
+.btn-comprar {
     display: block;
     font-family: 'Poppins';
     width: 100%;
@@ -260,20 +268,9 @@ input[type="radio"]:checked + .loc-swatch {
     transition: 0.3s;
 }
 
-.btn-añadircarrito {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: 0.180em solid rgb(2, 48, 71);
-}
-
 .btn-comprar {
     background-color: rgb(2, 48, 71);
     color: rgb(255, 255, 255);
-}
-
-.btn-añadircarrito:hover {
-    background: rgb(181, 210, 224);
-    color: rgb(0, 0, 0);
 }
 
 .btn-comprar:hover {
@@ -342,6 +339,68 @@ textarea#mensaje {
     font-size: 1em;
     color: rgb(51, 51, 51);
 }
+
+/* Contenedor del texto */
+.card-text-container {
+    position: absolute; 
+    padding: 1.25em;
+    border-radius: 0.5em;
+}
+
+/* nombre del destinatario */
+.card-name {
+    font-size: 1.25rem; 
+    font-weight: 500;
+    color: rgb(0, 0, 0); 
+    text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+    margin-bottom: 0.25em;
+    transition: all 0.3s ease;
+}
+
+
+/* Posición para el 'preview-text-container' */
+.position-top-left {
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    text-align: left;
+}
+.position-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    text-align: right;
+}
+.position-bottom-left {
+    bottom: 0;
+    left: 0;
+    top: auto;
+    right: auto;
+    text-align: left;
+}
+.position-bottom-right {
+    bottom: 0;
+    right: 0;
+    top: auto;
+    left: auto;
+    text-align: right;
+}
+
+.error-message {
+    color: rgba(241, 69, 69);
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-bottom: 0.3em; 
+    display: none; 
+}
+
+.form-group.error input {
+    border-color: rgba(241, 69, 69);
+    background-color: rgba(252, 199, 199);
+}
+
 
 /* --- RESPONSIVE --- */
 @media (max-width: 48em) {
