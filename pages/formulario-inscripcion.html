@@ -8,133 +8,166 @@
   <link rel="stylesheet" href="../header-footer.css">
 </head>
 <body>
-    <header>
-      <nav>
-        <!-- Logo -->
+  <header>
+    <nav>
+      <!-- Logo -->
       <a href="/index.html" class="logo">
-        <img src="/img/logo skillup.png" alt="SkillUp">
+        <img src="../img/logo skillup.png" alt="SkillUp">
       </a>
 
-        <!-- Buscador -->
-        <form class="search-form" action="#" method="get">
-          <div class="search-wrapper">
-            <img src="../img/lupa.png" alt="Buscar" class="search-icon">
-            <input type="search" list="cursos" name="q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
-            <datalist id="cursos">
-              <option value="UX/UI"></option>
-              <option value="JavaScript"></option>
-              <option value="Python"></option>
-              <option value="Marketing digital"></option>
-            </datalist>
-          </div>
-        </form>
-
-        <!-- Menú -->
-       <ul class="menu">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../pages/Calendario.html">Cursos</a></li>
-            <li><a href="../pages/formulario-inscripcion.html">Empresas</a></li>
-            <li><a href="../pages/PaginaContacto.html">Contacto</a></li>
-        </ul>
-
-        <!-- Acceso / CTA y carrito -->
-        <div class="nav-actions">
-          <a href="../pages/login.html" class="login">Acceder</a>
-          <a href="#" class="cart">
-            <img src="../img/carrito.png" alt="Carrito de cursos">
-            <span class="cart-count">0</span>
-          </a>
+      <!-- Buscador -->
+      <form class="search-form" action="#" method="get">
+        <div class="search-wrapper">
+          <img src="../img/lupa.png" alt="Buscar" class="search-icon">
+          <input type="search" list="cursos" name="q" placeholder="¿Qué cursos quieres buscar?" autocomplete="off">
+          <datalist id="cursos">
+            <option value="UX/UI"></option>
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="Marketing digital"></option>
+          </datalist>
         </div>
-      </nav>
-    </header>
+      </form>
+
+      <!-- Menú -->
+      <ul class="menu">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../pages/Calendario.html">Cursos</a></li>
+        <li><a href="../pages/formulario-inscripcion.html">Empresas</a></li>
+        <li><a href="../pages/PaginaContacto.html">Contacto</a></li>
+      </ul>
+
+      <!-- Acceso / CTA y carrito -->
+      <div class="nav-actions">
+        <a href="../pages/login.html" class="login">Acceder</a>
+        <a href="#" class="cart">
+          <img src="../img/carrito.png" alt="Carrito de cursos">
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
 
   <main class="main">
-  <div class="titulo__contenedor"> 
-    <h1 class="titulo">FORMULARIO DE INSCRIPCION</h1>
-  
-    
-  </div>
-
-  <form class="form" method="get">
-
-    <!-- Encabezados -->
-    <div class="row encabezados">
-         <span>DNI</span>
-         <span>Nombre</span>
-         <span>Apellido</span>
+    <div class="titulo__contenedor">
+      <h1 class="titulo js-titulo">FORMULARIO DE INSCRIPCION</h1>
     </div>
 
-    <!-- Fila 1 -->
-    <div class="row">
-      <input type="number" name="dni1" required >
-      <input type="text" name="nombre1" required>
-      <input type="text" name="apellido1" required>
-      <button type="button" class="dlt-btn">-</button>
-    </div>
+    <section class="contenedor-botones">
+      <div class="boton1 botonS">
+        <button type="button" class="js-boton-personal">Personal</button>
+      </div>
 
-    <!-- Fila 2 -->
-    <div class="row">
-      <input type="number" name="dni2" required>
-      <input type="text" name="nombre2" required>
-      <input type="text" name="apellido2" required>
-      <button type="button" class="dlt-btn">-</button>
-    </div>
+      <div class="boton2 botonS">
+        <button type="button" class="js-boton-empresa">Empresa</button>
+      </div>
+    </section>
 
-    <!-- Fila 3 -->
-    <div class="row">
-      <input type="number" name="dni3" required>
-      <input type="text" name="nombre3" required>
-      <input type="text" name="apellido3" required>
-      <button type="button" class="dlt-btn">-</button>
-    </div>
-
-    <div class="agregar__persona">
-      <button type="submit" class="boton">+</button>
-      <h3 class="agregar">AGREGAR PERSONA</h3>
-    </div>
-
-    <div class="boton__de__inscripcion">
-        <span class="span__000">$000.-</span> 
-        <button type="submit" class="inscribirse">INSCRIBIRSE</button> 
-    </div>
-  </form>
-</main>
-
-
-      <footer>
-        <div class="footer-container">
-          <section class="footer-logo">
-            <img src="../img/logo skillup blanco.png" alt="Logo Skillup">
-          </section>
-
-          <section class="footer-datos">
-            <h3>Datos del grupo</h3>
-            <p>Alegre Melisa - DNI 42.094.003</p>
-            <p>Cali Francisco - DNI 47.166.154</p>
-            <p>Leonardi Mayra - DNI 44.360.732</p>
-            <p>Mercado Sofía Victoria - DNI 47.410.999</p>
-            <p>Possentini Rafael - DNI 00.000.000</p>
-          </section>
-
-          <section class="footer-menu">
-            <h3>Acerca de</h3>
-            <ul>
-              <li><a href="../pages/sobre-nosotros.html">¿Quiénes somos?</a></li>
-              <li><a href="#">Preguntas frecuentes</a></li>
-              <li><a href="#">Privacidad</a></li>
-              <li><a href="#">Términos y condiciones</a></li>
-            </ul>
-          </section>
-
-          <section class="footer-redes">
-            <h3>Síguenos</h3>
-            <a href="#"><img src="../img/facebook.png" alt="Facebook">Facebook</a>
-            <a href="#"><img src="../img/instagram.png" alt="Instagram">Instagram</a>
-            <a href="#"><img src="../img/linkedin.png" alt="LinkedIn">LinkedIn</a>
-          </section>
+    <form class="form__inscripcion js-form-inscripcion" method="get">
+      <!-- ===== EMPRESA ===== -->
+      <section class="sectionEmpresa js-section-empresa">
+        <div class="encabezados__empresa">
+          <span>DNI</span>
+          <span>Nombre</span>
+          <span>Apellido</span>
+          <span>Email</span>
+          <span>Teléfono</span>
         </div>
-        <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
-      </footer>
-  
+
+        <div class="row-contenedor__empresa js-row-contenedor">
+          <div class="subcontenedor"><input type="number" name="dni1" required></div>
+          <div class="subcontenedor"><input type="text" name="nombre1" required></div>
+          <div class="subcontenedor"><input type="text" name="apellido1" required></div>
+          <div class="subcontenedor"><input type="email" name="email1" required></div>
+          <div class="subcontenedor telefono"><input type="number" name="telefono1" required></div>
+          <div class="subcontenedor-boton">
+            <button class="dlt-btn js-dlt-btn">-</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PERSONAL ===== -->
+      <section class="sectionPersonal js-section-personal">
+        <h2 class="datosDeContacto">Datos de contacto</h2>
+
+        <div class="contenedor-personal">
+          <div class="encabezados__personal">
+            <span>Email :</span>
+            <span>Teléfono :</span>
+          </div>
+
+          <div class="row-contenedor__personal">
+            <div class="subcontenedor-personal"><input type="email" name="emailPersonal"></div>
+            <div class="subcontenedor-personal"><input type="number" name="telefonoPersonal"></div>
+          </div>
+
+          <div class="subcontenedor-boton__personal">
+            <button type="button">Enviar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== AGREGAR PERSONA ===== -->
+      <div class="agregar__persona js-agregar-persona">
+        <button type="button" class="boton js-boton-agregar">+</button>
+        <h3 class="agregar">AGREGAR PERSONA</h3>
+      </div>
+
+      <!-- ===== PRECIO Y BOTÓN ===== -->
+      <div class="precioS js-precio">
+        <span class="span__gral">$<span class="span__numero js-monto">20</span></span>
+        <button type="submit" class="inscribirse js-boton-inscribirse">INSCRIBIRSE</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- ===== MODAL ===== -->
+  <section class="mensaje-modal js-modal">
+    <div class="data-content">
+      <h3>¡Gracias por inscribirse!</h3>
+      <p>Personas inscriptas: </p>
+      <ul class="ul-modal js-ul-modal"></ul>
+    </div>
+
+    <button type="button" class="cierreModal js-cierre-modal">Cerrar</button>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <section class="footer-logo">
+        <img src="../img/logo skillup blanco.png" alt="Logo Skillup">
+      </section>
+
+      <section class="footer-datos">
+        <h3>Datos del grupo</h3>
+        <p>Alegre Melisa - DNI 42.094.003</p>
+        <p>Cali Francisco - DNI 47.166.154</p>
+        <p>Leonardi Mayra - DNI 44.360.732</p>
+        <p>Mercado Sofía Victoria - DNI 47.410.999</p>
+        <p>Possentini Rafael - DNI 00.000.000</p>
+      </section>
+
+      <section class="footer-menu">
+        <h3>Acerca de</h3>
+        <ul>
+          <li><a href="../pages/sobre-nosotros.html">¿Quiénes somos?</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-redes">
+        <h3>Síguenos</h3>
+        <a href="#"><img src="../img/facebook.png" alt="Facebook">Facebook</a>
+        <a href="#"><img src="../img/instagram.png" alt="Instagram">Instagram</a>
+        <a href="#"><img src="../img/linkedin.png" alt="LinkedIn">LinkedIn</a>
+      </section>
+    </div>
+    <p class="footer-copy">© 2025 Grupo M. Todos los derechos reservados.</p>
+  </footer>
+
+  <script type="module" src="../js/formularioInscripcion.js"></script>
 </body>
 </html>
