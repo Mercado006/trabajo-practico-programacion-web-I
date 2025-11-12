@@ -1,4 +1,4 @@
-// 1. Importamos las "piezas de Lego" que necesitamos
+
 import { showError, clearError, showSuccessPopup } from '../PaginaContacto/interfazFormulario.js';
 import { isNombreValid, isEmailValid, validateTelefono, isConsultaValid } from '../PaginaContacto/validacion.js';
 
