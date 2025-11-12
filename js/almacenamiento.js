@@ -28,18 +28,18 @@ export function deleteUser(email) {
     return false;
 }
 
-// --- Funciones de Sesión (SessionStorage) ---
+// --- Funciones de Sesión (LocalStorage) ---
 
 export function setCurrentUser(email) {
-    sessionStorage.setItem(SESSION_KEY, email);
+    localStorage.setItem(SESSION_KEY, email);
 }
 
 export function getCurrentUser() {
-    return sessionStorage.getItem(SESSION_KEY);
+    return localStorage.getItem(SESSION_KEY);
 }
 
 export function logoutUser() {
-    sessionStorage.removeItem(SESSION_KEY);
+    localStorage.removeItem(SESSION_KEY);
 }
 
 // --- Funciones del Carrito POR USUARIO ---
